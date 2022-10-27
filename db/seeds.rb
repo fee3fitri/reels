@@ -16,7 +16,7 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('users')
 
   puts "Creating users..."
-  # Create one user with an easy to remember username, email, and password:
+  # Create one user with an easy to remember name, email, and password:
   User.create!(
     email: 'demo@user.com', 
     name: 'Demo', 
@@ -27,7 +27,7 @@ ApplicationRecord.transaction do
   10.times do 
     User.create!({
       email: Faker::Internet.unique.email,
-      name: Faker::Internet.username(specifier: 3),
+      name: Faker::Internet.name(specifier: 3),
       password: 'password'
     }) 
   end
