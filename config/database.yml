@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: reels_production
-  username: reels
-  password: <%= ENV["REELS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
