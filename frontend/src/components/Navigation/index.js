@@ -1,34 +1,49 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
-import LoginFormModal from '../LoginFormModal';
+import React, {useState} from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import AccountModal from './AccountModal';
 import './Navigation.css';
 
 function Navigation() {
-  const sessionUser = useSelector(state => state.session.user);
+  const [isHovering, setIsHovering] = useState('false');
 
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <ProfileButton user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
-      <>
-        <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
-    );
+  const handleMouseOver = () => {
+    setIsHovering(true);
   }
 
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  }
+  
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
-    </ul>
+    <header className='header_navigation flex-row justify-between align-center'>
+      <div className='left_nav flex-row' >
+        <Link>Women</Link>
+        <Link>Men</Link>
+      </div>
+
+      <div className='center_nav'>
+        <NavLink exact to="/">Reels</NavLink>
+      </div>
+
+      <div className='right_nav flex-row'>
+        <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
+          <i className="fa-brands fa-github"></i>
+        </Link>
+        <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
+          <i className="fa-brands fa-linkedin"></i>
+        </Link>
+        <div className='account_menu'
+          onMouseEnter={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
+          <i className="fa-solid fa-bars"></i>
+        </div>
+
+        {isHovering && (
+          <AccountModal />
+        )}
+      </div>
+    </header>
   );
 }
 

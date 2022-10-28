@@ -1,0 +1,9 @@
+.splash_wrapper {
+  position: absolute;
+  top: 0;
+  left: calc(0vw - var(--horizontal-edge));
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-image: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg);
+}

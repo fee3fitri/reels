@@ -1,0 +1,14 @@
+.header_navigation {
+  margin: var(--vertical-edge) var(--horizontal-edge);
+  height: 6vh;
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+
+.header_navigation .right_nav .account_menu{
+  cursor: pointer;
+}
+
+div > * {
+  margin: 0 1vw;
+}
