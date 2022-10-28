@@ -25,9 +25,9 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  def self.find_by_credentials(credential, password)
-    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :name
-    user = User.find_by(field => credential)
+  def self.find_by_credentials(email, password)
+    field = email =~ URI::MailTo::EMAIL_REGEXP ? :email : :name
+    user = User.find_by(field => email)
     user&.authenticate(password)
   end
 
