@@ -22,7 +22,7 @@ function Navigation() {
       </div>
 
       <div className='center_nav text-center'>
-        <NavLink exact to="/">Reels</NavLink>
+        <NavLink exact to="/"><h1>Reels</h1></NavLink>
       </div>
 
       <div className='right_nav flex-row justify-end'>

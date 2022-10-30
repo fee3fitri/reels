@@ -29,7 +29,10 @@ function LoginForm() {
 
   return (
     <div className="login_form_page">
-      <h1>Log In</h1>
+      <div className="flex-row justify-between">
+        <h1>Log In</h1>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
       <form 
         className="login_form flex-col"
         onSubmit={handleSubmit}>
