@@ -1,14 +1,24 @@
 .header_navigation {
   margin: var(--vertical-edge) var(--horizontal-edge);
   height: 6vh;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   font-weight: bold;
+}
+
+
+.header_navigation > div {
+  width: calc(100vw / 3);
+}
+
+.header_navigation > div > * {
+  margin: 0 2vw;
+}
+
+.header_navigation .fa-brands,
+.header_navigation .fa-solid {
+  font-size: 1.5vw;
 }
 
 .header_navigation .right_nav .account_menu{
   cursor: pointer;
-}
-
-div > * {
-  margin: 0 1vw;
 }

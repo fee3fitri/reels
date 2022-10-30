@@ -21,11 +21,11 @@ function Navigation() {
         <Link>Men</Link>
       </div>
 
-      <div className='center_nav'>
+      <div className='center_nav text-center'>
         <NavLink exact to="/">Reels</NavLink>
       </div>
 
-      <div className='right_nav flex-row'>
+      <div className='right_nav flex-row justify-end'>
         <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
           <i className="fa-brands fa-github"></i>
         </Link>
@@ -36,8 +36,9 @@ function Navigation() {
           onMouseEnter={handleMouseOver}
           onMouseOut={handleMouseOut}
         >
-          <i className="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-circle-user"></i>
         </div>
+        <i class="fa-solid fa-cart-shopping"></i>
 
         {isHovering && (
           <AccountModal />
