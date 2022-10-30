@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import "./LoginForm.css";
+import "./LoginFormModal.css";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -28,13 +28,15 @@ function LoginForm() {
   };
 
   return (
-    <>
+    <div className="login_form_page">
       <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+      <form 
+        className="login_form flex-col"
+        onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
-        <label>
+        <label className="flex-col">
           Email
           <input
             type="email"
@@ -43,7 +45,7 @@ function LoginForm() {
             required
           />
         </label>
-        <label>
+        <label className="flex-col">
           Password
           <input
             type="password"
@@ -52,9 +54,11 @@ function LoginForm() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button 
+          className="login_button"
+          type="submit">Log In</button>
       </form>
-    </>
+    </div>
   );
 }
 

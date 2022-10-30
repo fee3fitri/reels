@@ -59,12 +59,14 @@ table {
   --horizontal-edge: 3vw;
   --vertical-edge: 8vh;
   --grey-text: #808080;
+  --body-font: 'Poppins', sans-serif;
+  --purple: #8C9DCC;
 }
 
 
 /* Universal styling */
 * {
-  color: white;
+  color: var(--grey-text);
 }
 
 #root {

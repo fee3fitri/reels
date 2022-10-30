@@ -5,18 +5,19 @@
   font-weight: bold;
 }
 
-
 .header_navigation > div {
   width: calc(100vw / 3);
 }
 
 .header_navigation > div > * {
+  color: white;
   margin: 0 2vw;
 }
 
 .header_navigation .fa-brands,
 .header_navigation .fa-solid {
   font-size: 1.5vw;
+  color: white;
 }
 
 .header_navigation .right_nav .account_menu{

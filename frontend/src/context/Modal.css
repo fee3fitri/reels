@@ -1,4 +1,4 @@
-#modal {
+.login_modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -7,18 +7,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, .25);
 }
 
-#modal-background {
+.login_modal-background {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#modal-content {
+.login_modal_content {
   position: absolute;
   background-color:white;
+  padding: 2%;
+  border-radius: 10px;
 }
