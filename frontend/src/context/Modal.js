@@ -27,9 +27,9 @@ export function Modal({ onClose, children }) {
   if (!modalNode) return null;
 
   return ReactDOM.createPortal(
-    <div class="login_modal">
-      <div class="login_modal_background" onClick={onClose} />
-      <div class="login_modal_content">
+    <div className="login_modal">
+      <div className="login_modal_background" onClick={onClose} />
+      <div className="login_modal_content">
         {children}
       </div>
     </div>,

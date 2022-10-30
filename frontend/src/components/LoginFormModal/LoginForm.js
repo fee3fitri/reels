@@ -31,7 +31,7 @@ function LoginForm() {
     <div className="login_form_page">
       <div className="flex-row justify-between">
         <h1>Log In</h1>
-        <i class="fa-solid fa-xmark"></i>
+        <i className="fa-solid fa-xmark"></i>
       </div>
       <form 
         className="login_form flex-col"

@@ -36,9 +36,9 @@ function Navigation() {
           onMouseEnter={handleMouseOver}
           onMouseOut={handleMouseOut}
         >
-          <i class="fa-solid fa-circle-user"></i>
+          <i className="fa-solid fa-circle-user"></i>
         </div>
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i className="fa-solid fa-cart-shopping"></i>
 
         {isHovering && (
           <AccountModal />
