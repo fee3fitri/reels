@@ -59,6 +59,7 @@ table {
   --horizontal-edge: 3vw;
   --vertical-edge: 8vh;
   --grey-text: #808080;
+  --black-text: ##1a1a1a;
   --body-font: 'Poppins', sans-serif;
   --purple: #8C9DCC;
   --reels-font: 'Pacifico', cursive;
@@ -66,12 +67,11 @@ table {
 
 
 /* Universal styling */
-* {
-  color: var(--grey-text);
-}
-
 #root {
   font-family: 'Poppins', sans-serif;
+  font-size: 1.25vw;
+  line-height: 1.3;
+  color: var(--black-text);
 }
 
 a {

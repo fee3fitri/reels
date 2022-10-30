@@ -1,17 +1,20 @@
 .splash_wrapper {
   position: absolute;
   top: 0;
-  height: 100vh;
+  right: 0;
   width: 100vw;
   z-index: -1;
-  overflow: hidden;
   background-image: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg);
 }
+
+/* Hero CSS */
 
 .hero {
   position: relative;
   top: var(--vertical-edge);
   grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* .hero .hero_text{
@@ -80,7 +83,7 @@
 } */
 
 
-/* CSS Animation */
+/* Hero Animation */
 @keyframes rotate {
   0% {
     transform: rotate(20deg);
@@ -114,3 +117,62 @@
     transform: translateX(-200%);
   }
 } */
+
+
+/* Category CSS */
+.splash_category {
+  background-color: white;
+  padding: var(--vertical-edge) var(--horizontal-edge);
+  border-radius: 4% 4% 0 0;
+  padding-bottom: 10%;
+}
+
+.splash_category .text_content {
+  margin: 5vh 7vw;
+}
+
+.splash_category .text_content .free {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.splash_category .category_images {
+  height: 50vh;
+}
+
+.splash_category .category_images a,
+.splash_category .category_images .btn {
+  cursor: pointer;
+}
+
+.splash_category .category_images picture {
+  height: 50vh;
+  position: relative;
+}
+
+.splash_category .category_images img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  border-radius: 2vw;
+}
+
+.splash_category .category_images .btn {
+  position: absolute;
+  left: 3vw;
+  transform: translateY(650%);
+  border: none;
+  background-color: white;
+  font-family: var(--body-font);
+  font-size: 1.5vw;
+  padding: 2.5vh 2vw;
+  border-radius: 2vw;
+}
+
+
+/* Video CSS */
+.splash_video {
+  padding-top: 10%;
+  background-color: white;
+  grid-template-columns: 45% 35% 15%;
+}

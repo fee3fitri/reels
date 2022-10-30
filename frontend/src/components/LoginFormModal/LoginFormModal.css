@@ -22,6 +22,7 @@
 /* Login Form CSS */
 .login_form_page {
   width: 20vw;
+  padding: 1.5vw;
 }
 
 .login_form_page h1 {

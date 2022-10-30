@@ -1,10 +1,21 @@
 import React, {useState} from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
 import AccountModal from './AccountModal';
 import './Navigation.css';
 
 function Navigation() {
   const [isHovering, setIsHovering] = useState('false');
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = e => {
+    setAnchorEl(e.currentTarget);
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  }
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -32,13 +43,18 @@ function Navigation() {
         <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
           <i className="fa-brands fa-linkedin"></i>
         </Link>
-        <div className='account_menu'
-          onMouseEnter={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >
+        <div className='account_menu' onClick={handleClick}>
           <i className="fa-solid fa-circle-user"></i>
         </div>
         <i className="fa-solid fa-cart-shopping"></i>
+
+        {/* <Menu
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          >
+            <AccountModal />
+        </Menu> */}
 
         {isHovering && (
           <AccountModal />
