@@ -156,6 +156,7 @@ a {
 
 /* Picture CSS */
 .pic_container img {
+  max-width: 100%;
   border-radius: var(--border-radius);
   border: .5vw rgba(255, 255, 255, .5) solid;
 }

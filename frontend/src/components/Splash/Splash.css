@@ -18,9 +18,9 @@
   overflow: hidden;
 }
 
-/* .hero .hero_text{
-  margin-top: 15vh;
-} */
+.hero .hero_text{
+  margin-top: -20vh;
+}
 
 .hero .hero_text h1,
 .hero .hero_text p,
@@ -58,7 +58,7 @@
   max-width: 45vw;
 }
 
-/* .hero .hero_marquee {
+.hero .hero_marquee {
   position: absolute;
   overflow: hidden;
   bottom: 4vh;
@@ -66,22 +66,13 @@
   width: fit-content;
 }
 
-.hero .hero_marquee .marquee_text_1,
-.hero .hero_marquee .marquee_text_2 {
+.hero .hero_marquee .marquee_text {
   display: inline-block;
   font-size: 13vw;
   font-weight: 600;
   letter-spacing: -1vw;
+  animation: marquee 10s linear infinite;
 }
-
-.hero .hero_marquee .marquee_text_1 {
-  animation: marquee_1 10s linear infinite;
-}
-
-.hero .hero_marquee .marquee_text_2 {
-  animation-delay: 10s;
-  animation: marquee_2 10s linear infinite;
-} */
 
 
 /* Hero Animation */
@@ -99,25 +90,15 @@
   }
 }
 
-/* @keyframes marquee_1 {
+@keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
 
   100% {
     transform: translateX(-100%);
   }
 }
-
-@keyframes marquee_2 {
-  0% {
-    transform: translateX(-10%);
-  }
-
-  100% {
-    transform: translateX(-200%);
-  }
-} */
 
 
 /* Category CSS */

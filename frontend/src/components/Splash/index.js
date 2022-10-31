@@ -24,14 +24,11 @@ function Splash() {
           />
         </div>
 
-        {/* <div className="hero_marquee">
-          <p className="marquee_text_1">
+        <div className="hero_marquee">
+          <p className="marquee_text">
             Enemies of Gravity<i className="fa-regular fa-circle"></i>
           </p>
-          <p className="marquee_text_2">
-            Enemies of Gravity<i className="fa-regular fa-circle"></i> 
-          </p>
-        </div> */}
+        </div>
       </section>
 
       {/* Category Section */}
