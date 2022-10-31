@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import '../../context/Modal.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
-  const [hideAccount, setHideAccount] = useState(true);
+  const [hideAccount, setHideAccount] = useState(false);
  
   const logout = (e) => {
     e.preventDefault();
@@ -12,13 +13,13 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <div className={`profile_modal_container`}>
+    <div className={`profile_modal_container ${hideAccount ? 'hide-modal' : ''}`}>
       <div className="profile_content">
         <div className="title_area flex-row justify-between align-center">
           <h2>Profile</h2>
           <i 
             className="fa-solid fa-x"
-            onClick={() => setHideAccount(false)}>  
+            onClick={() => setHideAccount(true)}>  
           </i>
         </div>
         <form className="login_form flex-col">

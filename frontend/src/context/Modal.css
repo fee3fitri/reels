@@ -24,3 +24,15 @@
   padding: 2%;
   border-radius: 10px;
 }
+
+.hide-modal {
+  transform: translateX(100%);
+  overflow: hidden;
+  animation: hidden 2s linear;
+}
+
+@keyframes hidden {
+  100% {
+    transform: translateX(100%);
+  }
+}

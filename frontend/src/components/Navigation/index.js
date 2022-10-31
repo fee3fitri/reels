@@ -12,18 +12,6 @@ function Navigation() {
   const handleClick = e => {
     setAnchorEl(e.currentTarget);
   }
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  }
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  }
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  }
   
   return (
     <header className='header_navigation flex-row justify-between align-center'>
@@ -48,13 +36,6 @@ function Navigation() {
         </div>
         <i className="fa-solid fa-cart-shopping"></i>
 
-        {/* <Menu
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          >
-            <AccountModal />
-        </Menu> */}
 
         {isHovering && (
           <AccountModal />
