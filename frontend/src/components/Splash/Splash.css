@@ -4,7 +4,7 @@
   right: 0;
   width: 100vw;
   z-index: -1;
-  background-image: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg);
+  background-image: var(--background-img);
 }
 
 /* Hero CSS */
@@ -31,7 +31,7 @@
 
 .hero .hero_text h1 {
   font-size: 4vw;
-  font-weight: bold;
+  font-weight: 600;
   margin: 5% 0;
 }
 
@@ -69,7 +69,7 @@
 .hero .hero_marquee .marquee_text_2 {
   display: inline-block;
   font-size: 13vw;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: -1vw;
 }
 
@@ -133,7 +133,7 @@
 
 .splash_category .text_content .free {
   font-size: 5vw;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .splash_category .category_images {
@@ -154,7 +154,8 @@
   width: 100%;
   height: 70vh;
   object-fit: cover;
-  border-radius: 2vw;
+  object-position: 10% -5%;
+  border-radius: var(--border-radius);
 }
 
 .splash_category .category_images .btn {
@@ -166,13 +167,74 @@
   font-family: var(--body-font);
   font-size: 1.5vw;
   padding: 2.5vh 2vw;
-  border-radius: 2vw;
+  border-radius: var(--border-radius);
 }
 
 
 /* Video CSS */
 .splash_video {
-  padding-top: 10%;
+  padding: 10% 5vw 10% 10vw;
   background-color: white;
-  grid-template-columns: 45% 35% 15%;
+  grid-template-columns: 30vw 40vw 5vw;
+  gap: 5vw;
+}
+
+.splash_video .text_content {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.splash_video .text_content > p {
+  font-size: 1.1vw;
+  letter-spacing: .3vw;
+  color: var(--grey-text);
+}
+
+.splash_video .text_content > h2 {
+  font-size: 5vw;
+  line-height: 1;
+  margin: 5vh 0;
+}
+
+.splash_video .text_content > h2 > i {
+  font-size: 20%;
+}
+
+.splash_video .text_content .grid {
+  grid-template-columns: repeat(2, 40% 60%);
+  font-weight: 400;
+}
+
+.splash_video .text_content .grid  picture {
+  background: var(--background-img);
+  border-radius: var(--border-radius);
+  margin-top: 5vh;
+}
+
+.splash_video .text_content .grid  picture img {
+  width: 100%;
+  animation: fall 5s ease infinite;
+}
+
+
+.splash_video .promotional_video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
+  object-fit: cover;
+}
+
+
+
+/* Video Animation */
+@keyframes fall {
+
+  50% {
+    transform: translateY(8%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+
 }

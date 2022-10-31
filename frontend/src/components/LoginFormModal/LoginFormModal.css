@@ -3,7 +3,7 @@
 .account_modal {
   background-color: white;
   padding: 2vh 1vw;
-  border-radius: 15%;
+  border-radius: var(--border-radius);
   opacity: 90%;
   position: absolute;
   right: calc(var(--horizontal-edge) + 2.5vw);
@@ -14,7 +14,7 @@
   color: var(--grey-text);
   margin: 1vh 1vw;
   font-size: 1vw;
-  font-weight: bold;
+  font-weight: 600;
   font-family: var(--body-font);
 }
 
@@ -28,7 +28,7 @@
 .login_form_page h1 {
   font-size: 1.5vw;
   margin-bottom: 5%;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .login_form_page i {
@@ -62,7 +62,7 @@ input:-webkit-autofill:active {
   margin-top: 5%;
   border-radius: 10px;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.2vw;
 }
 

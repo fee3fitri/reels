@@ -2,7 +2,7 @@
   margin: var(--vertical-edge) var(--horizontal-edge);
   height: 6vh;
   font-size: 1.1vw;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .header_navigation > div {

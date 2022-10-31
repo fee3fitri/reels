@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import './Splash.css'
 
@@ -40,7 +41,7 @@ function Splash() {
           <p>For us, comfort isn&#39;t rocket science -<br />it&#39;s standard.</p>
         </div>
         <div className="category_images flex-row justify-around">
-          <a href="#">
+          <Link to={{ pathname: "#" }}>
             <picture>
               <img
                 src="https://cdn.shopify.com/s/files/1/0146/8461/8806/files/Womens_286c03b1-41b1-415c-8215-6d5e8834131f_845x.jpg?v=1657253925"
@@ -48,15 +49,15 @@ function Splash() {
                 />
               <button className="btn">Women</button>
             </picture>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to={{ pathname: "#" }}>
             <picture className="flex-row justify-center">
               <img 
                 src="https://cdn.shopify.com/s/files/1/0146/8461/8806/files/Men_78afae33-0da4-4908-910b-d6177235d722_425x.jpg?v=1655780752"
                 alt="men_category_pic" />
               <button className="btn">Men</button>
             </picture>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -65,29 +66,38 @@ function Splash() {
         <div className="text_content flex-col">
           <p>MEET THE ENEMIES OF GRAVITY</p>
           <h2>A color for every foot<i className="fa-regular fa-circle"></i></h2>
-          <div className="text_image_content">
-            <p>Our community makes us unique. They have an energy that reverberates around them. Their mission in life is to ensure the wonder in the world is not overlooked.</p>
-            <picture>
-              <img 
-                src="https://cdn.shopify.com/s/files/1/0146/8461/8806/files/SC01315_Derby_Brogue_Rise_Bold_Geo_H_414x.png?v=1666150631"
-                alt="featured_shoes" 
-              />
-            </picture>
+          <div className="grid">
+            <div className="empty_container"></div>
+            <Link 
+              to={{ pathname: "#" }}
+              className="text_image_content">
+              <p>Our community makes us unique. They have an energy that reverberates around them. Their mission in life is to ensure the wonder in the world is not overlooked.</p>
+              <picture className="flex-row align-center justify-center">
+                <img 
+                  src="https://cdn.shopify.com/s/files/1/0146/8461/8806/files/SC01315_Derby_Brogue_Rise_Bold_Geo_H_414x.png?v=1666150631"
+                  alt="featured_shoes" 
+                  />
+              </picture>
+            </Link>
           </div>
         </div>
-          <div className="video">
-            <video width="320" height="240" autoplay muted>
-              <source 
-                src="https://cdn.shopify.com/videos/c/o/v/c64935b2e92546cbacdd13170c55b6b3.mp4" type="video/mp4"
-              />
-              <p>
-                Your browser does not support HTML5 video. Here is the link to the video instead:
-                <br />
-                MP4: https://cdn.shopify.com/videos/c/o/v/c64935b2e92546cbacdd13170c55b6b3.mp4
-              </p>
-            </video>
+
+        <div className="promotional_video">
+          <video controls autoplay muted loop playsinline>
+            <source 
+              src="https://cdn.shopify.com/videos/c/o/v/c64935b2e92546cbacdd13170c55b6b3.mp4" type="video/mp4"
+            />
+            <p>
+              Your browser does not support HTML5 video. Here is the link to the video instead:
+              <br />
+              MP4: https://cdn.shopify.com/videos/c/o/v/c64935b2e92546cbacdd13170c55b6b3.mp4
+            </p>
+          </video>
+          <div className=""></div>
         </div>
       </section>
+
+      {/* Pitch Section */}
     </section>
   )
 }
