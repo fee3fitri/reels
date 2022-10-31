@@ -138,3 +138,24 @@ a {
 .grid {
   display: grid;
 }
+
+
+/* Button CSS*/
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  font-family: var(--body-font);
+  font-size: 1.1vw;
+  font-weight: 600;
+  padding: 2.5vh 2vw;
+  border-radius: var(--border-radius);
+  color: var(--grey-text)
+}
+
+
+/* Picture CSS */
+.pic_container img {
+  border-radius: var(--border-radius);
+  border: .5vw rgba(255, 255, 255, .5) solid;
+}
