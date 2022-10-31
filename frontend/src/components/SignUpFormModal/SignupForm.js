@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import "../LoginFormModal/LoginFormModal.css"
 
-const SignUpFormPage = () => {
+function SignUpForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState('');
@@ -15,15 +16,18 @@ const SignUpFormPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors([]);
+
     return dispatch(sessionActions.signup({ email, name, password }))
       .catch(async (res) => {
       let data;
+
       try {
-        // .clone() essentially allows you to read the response body twice
         data = await res.clone().json();
       } catch {
-        data = await res.text(); // Will hit this case if, e.g., server is down
+        data = await res.text();
       }
+
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
@@ -31,13 +35,13 @@ const SignUpFormPage = () => {
   };
 
   return (
-    <>
+    <div className="account_form_modal">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
-        <label>
+        <label className="flex-col">
           Email
           <input
             type="email"
@@ -46,7 +50,7 @@ const SignUpFormPage = () => {
             required
           />
         </label>
-        <label>
+        <label className="flex-col">
           Name
           <input
             type="text"
@@ -55,7 +59,7 @@ const SignUpFormPage = () => {
             required
           />
         </label>
-        <label>
+        <label className="flex-col">
           Password
           <input 
             type="password"
@@ -64,10 +68,14 @@ const SignUpFormPage = () => {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button 
+          className="modal_button block"
+          type="submit">
+          Signup
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
-export default SignUpFormPage;
+export default SignUpForm;

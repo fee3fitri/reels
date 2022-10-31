@@ -1,3 +1,5 @@
+/* Header Section */
+
 .header_navigation {
   margin: var(--vertical-edge) var(--horizontal-edge);
   height: 6vh;
@@ -29,4 +31,52 @@
   color: white;
   font-size: 5vw;
   transform: rotate(-10deg);
+}
+
+.header_navigation h1 {
+  font-family: var(--reels-font);
+  color: white;
+  font-size: 5vw;
+  transform: rotate(-10deg);
+}
+
+
+/* Profile Modal */
+.profile_modal_container .profile_content {
+  background-color: white;
+  color: black;
+  width: 20vw;
+  padding: 2vw;
+  position: absolute;
+  left: var(--horizontal-edge);
+  font-family: var(--body-font);
+  border-radius: var(--border-radius);
+}
+
+.profile_modal_container .profile_content h2 {
+  font-size: 1.6vw;
+  font-weight: 600;
+}
+
+.profile_modal_container .profile_content .fa-solid {
+  color: black;
+  font-size: 80%;
+  cursor: pointer;
+}
+
+.profile_modal_container .profile_content .login_form > * {
+  margin: 4% 0;
+}
+
+.profile_modal_container .profile_content .login_form label input {
+  margin-top: 2%;
+  padding: 4% 5%;
+  border-radius: 5px;
+  font-family: var(--body-font);
+  border: 1px var(--grey-text) solid;
+}
+
+.profile_modal_container .profile_content .btn{
+  color: white;
+  background-color: var(--grey-text);
 }

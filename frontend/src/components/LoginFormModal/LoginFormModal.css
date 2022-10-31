@@ -20,32 +20,37 @@
 
 
 /* Login Form CSS */
-.login_form_page {
+.account_form_modal {
   width: 20vw;
   padding: 1.5vw;
 }
 
-.login_form_page h1 {
+.account_form_modal h1 {
   font-size: 1.5vw;
   margin-bottom: 5%;
   font-weight: 600;
 }
 
-.login_form_page i {
+.account_form_modal i {
   font-size: 1.5vw;
 }
 
-.login_form_page form > label {
+.account_form_modal form > label {
   margin: 5% 0;
 
 }
 
-.login_form_page form > label input {
+.account_form_modal form > label input {
   margin-top: 2%;
   padding: 4% 5%;
   border-radius: 5px;
   font-family: var(--body-font);
   border: 1px var(--grey-text) solid;
+}
+
+.account_form_modal form > button {
+  width: 100%;
+  margin-top: 5%;
 }
 
 input:-webkit-autofill,
@@ -54,21 +59,4 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--grey-text);
   -webkit-box-shadow: white;
-}
-
-.login_form_page .login_button {
-  background-color: var(--purple);
-  padding: 2%;
-  margin-top: 5%;
-  border-radius: 10px;
-  color: white;
-  font-weight: 600;
-  font-size: 1.2vw;
-}
-
-.login_button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
 }

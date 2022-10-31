@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import * as sessionActions from "../../store/session";
 import "./LoginFormModal.css";
 
 function LoginForm() {
@@ -12,15 +12,17 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+
     return dispatch(sessionActions.login({ email, password }))
       .catch(async (res) => {
         let data;
+
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if, e.g., server is down
+          data = await res.text();
         }
+
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
@@ -28,8 +30,8 @@ function LoginForm() {
   };
 
   return (
-    <div className="login_form_page">
-      <h1>Log In</h1>
+    <div className="account_form_modal">
+      <h1>Login</h1>
       <form 
         className="login_form flex-col"
         onSubmit={handleSubmit}>
@@ -55,8 +57,10 @@ function LoginForm() {
           />
         </label>
         <button 
-          className="login_button"
-          type="submit">Log In</button>
+          className="modal_button"
+          type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
