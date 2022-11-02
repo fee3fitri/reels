@@ -16,8 +16,8 @@ function Navigation() {
   return (
     <header className='header_navigation flex-row justify-between align-center'>
       <div className='left_nav flex-row' >
-        <Link>Women</Link>
-        <Link>Men</Link>
+        <Link to="/collections/womens">Women</Link>
+        {/* <Link>Men</Link> */}
       </div>
 
       <div className='center_nav text-center'>
@@ -37,9 +37,9 @@ function Navigation() {
         <i className="fa-solid fa-cart-shopping"></i>
 
 
-        {isHovering && (
+        {/* {isHovering && (
           <AccountModal />
-        )}
+        )} */}
       </div>
     </header>
   );

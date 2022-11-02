@@ -4,7 +4,6 @@ import Marquee from 'react-fast-marquee';
 import './Splash.css'
 
 function Splash() {
-
   return (
     <section className="splash_wrapper">
 

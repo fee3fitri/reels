@@ -54,3 +54,8 @@ group :development do
   gem "binding_of_caller"
 end
 
+#  Handle attachments and blob tables
+gem "aws-sdk-s3"
+
+# wrapper for Net::HTTP, Net::HTTPS and Net::FTP
+gem 'open-uri'

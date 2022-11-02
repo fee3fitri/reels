@@ -38,14 +38,9 @@ function ProfileButton({ user }) {
             />
           </label>
           <button 
-            className="btn"
-            >
-            Edit Profile
-          </button>
-          <button 
             onClick={logout}
             className="btn"
-            >
+          >
             Log Out
           </button>
         </form>
