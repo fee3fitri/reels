@@ -1,7 +1,7 @@
 const ProductColor = () => {
   return (
     <div className="color_wrapper">
-      <h2>Color</h2>
+      <h3>Color</h3>
       <div className="color_img">
         {}
       </div>

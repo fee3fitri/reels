@@ -36,7 +36,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Cobalt Candy Gold White", 
     size: "5 6 7 8 9 10", 
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_cobalt = Product.create!(
     name: "Weekender Cobalt", 
@@ -45,7 +47,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Cobalt Candy Gold White", 
     size: "5 6 7 8 9 10", 
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_gold = Product.create!(
     name: "Weekender Red", 
@@ -54,20 +58,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Cobalt Candy Gold White", 
     size: "5 6 7 8 9 10", 
-  price: 159.95)
-
-
-  weekender_gold_img = URI.open('https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp')
-  weekender_gold.photos.attach(io: weekender_gold_img, filename: 'weekender_gold_1.webp')
- 
-  # weekender_gold.photos.attach(
-  #   io: URI.open('https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp'),
-  #   filename: 'weekender_gold_2.webp'
-  # )
-  # weekender_gold.photos.attach(
-  #   io: URI.open('https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp'),
-  #   filename: 'weekender_gold_3.webp'
-  # )
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_white = Product.create!(
     name: "Weekender White", 
@@ -75,7 +68,9 @@ ApplicationRecord.transaction do
     description: "Nitrobounce™ soles Get uplifted floating above thousands of micro air bubbles. Extra padding across the tongue and back collar for feel-good wears. Orthotic-friendly removable footbed Swap in your own insoles for that perfect fit. 3M Reflective Strip Jump on your bike and be seen after dark. Australian designed using cutting-edge innovation, originality and extreme attention to detail", 
     category: "Women", 
     color: "Cobalt Candy Gold White", 
-    size: "5 6 7 8 9 10", price: 159.95)
+    size: "5 6 7 8 9 10", price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   chelsea_black = Product.create!(
     name: "Chelsea Black", 
@@ -84,7 +79,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Ochre Leopard Bone Black", 
     size: "5 6 7 8 9 10", 
-    price: 179.95)
+    price: 179.95, 
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   chelsea_ochre = Product.create!(
     name: "Chelsea Ochre", 
@@ -93,7 +90,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Ochre Leopard Bone Black", 
     size: "5 6 7 8 9 10", 
-    price: 179.95)
+    price: 179.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   chelsea_leopard = Product.create!(
     name: "Chelsea Leopard", 
@@ -102,7 +101,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Ochre Leopard Bone Black", 
     size: "5 6 7 8 9 10", 
-    price: 179.95)
+    price: 179.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   chelsea_bone = Product.create!(
     name: "Chelsea Bone", 
@@ -111,7 +112,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Ochre Leopard Bone Black", 
     size: "5 6 7 8 9 10", 
-    price: 179.95)
+    price: 179.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_chrome = Product.create!(
     name: "Derby Chrome", 
@@ -120,7 +123,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Chrome Cognac Black", 
     size: "5 6 7 8 9 10", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_cognac = Product.create!(
     name: "Derby Cognac", 
@@ -129,7 +134,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Chrome Cognac Black", 
     size: "5 6 7 8 9 10", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_black = Product.create!(
     name: "Derby Black", 
@@ -138,7 +145,9 @@ ApplicationRecord.transaction do
     category: "Women", 
     color: "Chrome Cognac Black", 
     size: "5 6 7 8 9 10", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   penny_black = Product.create!(
     name: "Penny Loafer Black",
@@ -149,7 +158,9 @@ ApplicationRecord.transaction do
     category: "Women",
     color: "Black Leopard Tan",
     size: "5 6 7 8 9 10",
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   penny_leopard = Product.create!(
     name: "Penny Loafer Leopard",
@@ -160,7 +171,9 @@ ApplicationRecord.transaction do
     category: "Women",
     color: "Black Leopard Tan",
     size: "5 6 7 8 9 10",
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
     
   penny_tan = Product.create!(
     name: "Penny Loafer Tan",
@@ -171,7 +184,9 @@ ApplicationRecord.transaction do
     category: "Women",
     color: "Black Leopard Tan",
     size: "5 6 7 8 9 10",
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_m_black = Product.create!(
     name: "Derby Classic Black", 
@@ -180,7 +195,9 @@ ApplicationRecord.transaction do
     category: "Men", 
     color: "Black Caramel Moss", 
     size: "8 9 10 11 12 13", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_m_caramel = Product.create!(
     name: "Derby Caramel", 
@@ -189,7 +206,9 @@ ApplicationRecord.transaction do
     category: "Men", 
     color: "Black Caramel Moss", 
     size: "8 9 10 11 12 13", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   derby_m_moss = Product.create!(
     name: "Derby Moss", 
@@ -198,7 +217,9 @@ ApplicationRecord.transaction do
     category: "Men", 
     color: "Black Caramel Moss", 
     size: "8 9 10 11 12 13", 
-    price: 109.95)
+    price: 109.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_m_amber = Product.create!(
     name: "Weekender Amber",
@@ -207,7 +228,9 @@ ApplicationRecord.transaction do
     category: "Men",
     color: "Amber Black Cobalt Mint",
     size: "8 9 10 11 12 13",
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_m_black = Product.create!(
     name: "Weekender Black",
@@ -216,7 +239,9 @@ ApplicationRecord.transaction do
     category: "Men",
     color: "Amber Black Cobalt Mint",
     size: "8 9 10 11 12 13",
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_m_cobalt = Product.create!(
     name: "Weekender Cobalt Clash",
@@ -225,7 +250,9 @@ ApplicationRecord.transaction do
     category: "Men",
     color: "Amber Black Cobalt Mint",
     size: "8 9 10 11 12 13",
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   weekender_m_mint = Product.create!(
     name: "Weekender Mint",
@@ -234,7 +261,9 @@ ApplicationRecord.transaction do
     category: "Men",
     color: "Amber Black Cobalt Mint",
     size: "8 9 10 11 12 13",
-    price: 159.95)
+    price: 159.95,
+    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
+    )
 
   puts "Done!"
 end

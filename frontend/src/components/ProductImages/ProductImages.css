@@ -1,0 +1,10 @@
+.product_img_gallery {
+  width: 55vw;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+}
+
+.product_img_gallery .image_wrapper img {
+  width: 100%;
+  border-radius: var(--border-radius);
+}

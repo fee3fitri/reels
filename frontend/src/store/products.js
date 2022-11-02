@@ -31,7 +31,7 @@ export const fetchProducts = () => async dispatch => {
 export const fetchProduct = productId => async dispatch => {
   const res = await csrfFetch(`/api/products/${productId}`);
   const product = await res.json();
-  dispatch(getProducts(product));
+  dispatch(getProduct(product));
 }
 
 export const fetchCategory = category => async dispatch => {
@@ -57,7 +57,7 @@ const productsReducer = (state = {}, action) => {
     case GET_PRODUCTS:
       return action.products;
     case GET_PRODUCT:
-      return {...state, ...action.product};
+      return {...state, [action.product.id]: action.product};
     default:
       return state;
   }
