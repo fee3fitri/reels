@@ -1,6 +1,15 @@
 class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
+    if (params[:category] === 'womens')
+      @products = Product.where(
+        "category = 'Women'" 
+      ) 
+    else
+      @products = Product.where(
+        "category = 'Men'" 
+      ) 
+    end
     render :index
   end
 

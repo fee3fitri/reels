@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Modal } from '../../context/Modal';
 import SignUpForm from "./SignupForm";
 
-function SignUpFormModal() {
+const SignUpFormModal = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (

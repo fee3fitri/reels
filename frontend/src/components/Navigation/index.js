@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import AccountModal from './AccountModal';
 import './Navigation.css';
 
-function Navigation() {
+const Navigation = () => {
   const [isHovering, setIsHovering] = useState('false');
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -17,7 +17,7 @@ function Navigation() {
     <header className='header_navigation flex-row justify-between align-center'>
       <div className='left_nav flex-row' >
         <Link to="/collections/womens">Women</Link>
-        {/* <Link>Men</Link> */}
+        <Link to="/collections/mens">Men</Link>
       </div>
 
       <div className='center_nav text-center'>

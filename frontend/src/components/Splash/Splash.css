@@ -1,13 +1,3 @@
-.splash_wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  z-index: -1;
-  background-image: var(--background-img);
-  background-repeat: round;
-}
-
 /* Hero CSS */
 
 .hero {
@@ -43,10 +33,6 @@
 
 .hero .hero_text p.hero_p {
   letter-spacing: 1vw; 
-}
-
-.hero .fa-regular {
-  font-size: 25%;
 }
 
 .hero .hero_img {

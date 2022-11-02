@@ -1,0 +1,8 @@
+.product_listing_wrapper {
+  background-color: white;
+  padding: 5%;
+  border-radius: var(--border-radius);
+  font-size: 90%;
+  height: 40vh;
+  /* width: 30vw; */
+}

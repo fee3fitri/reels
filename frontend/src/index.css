@@ -85,6 +85,10 @@ a {
   text-align: center;
 }
 
+.fa-circle {
+  font-size: 25%;
+}
+
 
 /* Display CSS */
 .flex-row {
@@ -180,5 +184,17 @@ a {
   max-width: 100%;
   border-radius: var(--border-radius);
   border: .5vw rgba(255, 255, 255, .5) solid;
+}
+
+
+/* Page CSS */
+.page_wrapper {
+  position: absolute;
+  background-image: var(--background-img);
+  top: 0;
+  right: 0;
+  width: 100vw;
+  z-index: -1;
+  background-repeat: round;
 }
 

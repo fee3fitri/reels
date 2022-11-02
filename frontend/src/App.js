@@ -2,11 +2,12 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Splash from './components/Splash';
-import WomenCollections from './components/WomenCollections';
-import MenCollections from './components/MenCollections';
+import WomenCollections from './components/Collections/WomenCollections';
+import MenCollections from './components/Collections/MenCollections';
+import ProductItem from './components/ProductItem';
 
 
-function App() {
+const App = () => {
   return (
     <>
       <Navigation />
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/collections/mens">
             <MenCollections />
+          </Route>
+          <Route exact path="/products/:productId">
+            <ProductItem />
           </Route>
         </Switch>
     </>

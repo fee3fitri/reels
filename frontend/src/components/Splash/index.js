@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import './Splash.css'
 
-function Splash() {
+const Splash = () => {
   return (
-    <section className="splash_wrapper">
+    <section className="page_wrapper">
 
       {/* Hero Section */}
       <section className="hero grid">

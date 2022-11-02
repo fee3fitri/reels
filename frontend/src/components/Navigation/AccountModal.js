@@ -7,7 +7,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 import './Navigation.css';
 
-function AccountModal() {
+const AccountModal = () => {
   let sessionLinks;
   const sessionUser = useSelector(state => state.session.user);
 

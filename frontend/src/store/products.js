@@ -34,6 +34,12 @@ export const fetchProduct = productId => async dispatch => {
   dispatch(getProducts(product));
 }
 
+export const fetchCategory = category => async dispatch => {
+  const res = await csrfFetch(`/api/products?category=${category}`);
+  const product = await res.json();
+  dispatch(getProducts(product));
+}
+
 export const searchProduct = query => async dispatch => {
   const res = await csrfFetch(`/api/products/${query}`);
   if (res.status >= 400) throw res;

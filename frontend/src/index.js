@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
 }
 
-function Root() {
+const Root = () => {
   return (
     <ModalProvider>
       <Provider store={store}>

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import '../../context/Modal.css'
 
-function ProfileButton({ user }) {
+const ProfileButton= ({user}) => {
   const dispatch = useDispatch();
   const [hideAccount, setHideAccount] = useState(false);
  
