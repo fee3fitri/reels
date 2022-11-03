@@ -196,5 +196,6 @@ a {
   width: 100vw;
   z-index: -1;
   background-repeat: round;
+  background-size: cover;
 }
 

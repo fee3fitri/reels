@@ -1,8 +1,27 @@
 .product_listing_wrapper {
-  background-color: white;
-  padding: 5%;
-  border-radius: var(--border-radius);
+  width: 100%
+}
+
+.product_listing_wrapper picture{
   font-size: 90%;
   height: 40vh;
-  /* width: 30vw; */
+  width: 30vw;
+}
+
+.product_listing_wrapper img {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  max-width: 100%;
+}
+
+.product_listing_wrapper .product_listing_detail {
+  background-color: white;
+  margin-top: -15px;
+  padding: 7%;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  font-size: 1.1vw;
+}
+
+.product_listing_wrapper .product_listing_detail p {
+  color: var(--grey-text);
+  font-weight: 600;
 }

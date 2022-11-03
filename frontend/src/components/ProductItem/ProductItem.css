@@ -35,6 +35,10 @@
   margin-top: 8vh;
 }
 
+.product_details_wrapper .btn:hover {
+  background-color: white;
+}
+
 .product_details_wrapper .atc_area p {
   font-weight: 200;
   font-size: 1vw;

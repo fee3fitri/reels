@@ -30,7 +30,7 @@ ApplicationRecord.transaction do
 
   # Crate all products
   weekender_candy = Product.create!(
-    name: "Weekender Candy", 
+    name: "Weekender Candy ", 
     product_preview: "Experience the new wave of Australian sneaker design and world-class innovation. Get insanely comfortable with NitroBounce™ micro air bubble midsoles. Enjoy good weekend vibes, any day of the week.", 
     description: "Nitrobounce™ soles Get uplifted floating above thousands of micro air bubbles. Extra padding across the tongue and back collar for feel-good wears. Orthotic-friendly removable footbed Swap in your own insoles for that perfect fit. 3M Reflective Strip Jump on your bike and be seen after dark. Australian designed using cutting-edge innovation, originality and extreme attention to detail", 
     category: "Women", 
@@ -51,7 +51,7 @@ ApplicationRecord.transaction do
     image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
     )
 
-  weekender_gold = Product.create!(
+  weekender = Product.create!(
     name: "Weekender Red", 
     product_preview: "Experience the new wave of Australian sneaker design and world-class innovation. Get insanely comfortable with NitroBounce™ micro air bubble midsoles. Enjoy good weekend vibes, any day of the week.", 
     description: "Nitrobounce™ soles Get uplifted floating above thousands of micro air bubbles. Extra padding across the tongue and back collar for feel-good wears. Orthotic-friendly removable footbed Swap in your own insoles for that perfect fit. 3M Reflective Strip Jump on your bike and be seen after dark. Australian designed using cutting-edge innovation, originality and extreme attention to detail", 
@@ -61,6 +61,9 @@ ApplicationRecord.transaction do
     price: 159.95,
     image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
     )
+
+    # debugger
+  # weekender.photos.attach(io: URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp"), filename: "weekender_gold_1.webp")
 
   weekender_white = Product.create!(
     name: "Weekender White", 
