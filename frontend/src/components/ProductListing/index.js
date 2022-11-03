@@ -1,17 +1,35 @@
 import { Link } from "react-router-dom";
-import './ProductListing.css'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import './ProductListing.css';
 
 const ProductListing = ({product}) => {
   const {id, name, price, imageUrl} = product
   const images = imageUrl.split(' ');
   const image = images[0];
+  const rand = Math.floor(Math.random() * images.length);
+  const randImg = images[rand];
 
   return (
-    <div className="product_listing_wrapper flex-row align-end">
+    <div className="product_listing_wrapper">
       <Link to={`/products/${id}`}>
-        <picture>
-          <img src={image} alt={`${name}`} />
-        </picture>
+        <Swiper 
+          navigation={true} 
+          modules={[Navigation]}
+        >
+          <SwiperSlide className="swiper_listing">
+            <picture>
+              <img src={image} alt={`${name}`} />
+            </picture>
+          </SwiperSlide>
+          <SwiperSlide>
+            <picture>
+              <img src={randImg} alt={`${name}`} />
+            </picture>
+          </SwiperSlide>
+        </Swiper>
         <div className="product_listing_detail flex-row justify-between">
           <h2>{name}</h2>
           <p>{`$${price}`}</p>

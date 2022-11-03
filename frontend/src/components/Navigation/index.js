@@ -37,9 +37,9 @@ const Navigation = () => {
         <i className="fa-solid fa-cart-shopping"></i>
 
 
-        {/* {isHovering && (
+        {isHovering && (
           <AccountModal />
-        )} */}
+        )}
       </div>
     </header>
   );

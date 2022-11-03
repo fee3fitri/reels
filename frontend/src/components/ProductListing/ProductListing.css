@@ -1,15 +1,8 @@
 .product_listing_wrapper {
-  width: 100%
-}
-
-.product_listing_wrapper picture{
-  font-size: 90%;
-  height: 40vh;
-  width: 30vw;
+  width: 30vw
 }
 
 .product_listing_wrapper img {
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
   max-width: 100%;
 }
 
@@ -24,4 +17,15 @@
 .product_listing_wrapper .product_listing_detail p {
   color: var(--grey-text);
   font-weight: 600;
+}
+
+/* Swiper CSS */
+.product_listing_wrapper .swiper {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.product_listing_wrapper .swiper-button-prev,
+.product_listing_wrapper .swiper-button-next {
+  transform: scale(0.5);
+  color: var(--grey-text);
 }
