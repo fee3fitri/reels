@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, loadProduct } from "../../store/products";
-import ProductColor from "./ProductColor";
+import ProductColor from "../ProductColor";
 import ProductImages from "../ProductImages";
 import ProductSize from "../ProductSize";
 import './ProductItem.css'
