@@ -1,4 +1,7 @@
 class Api::CartItemsController < ApplicationController
+
+  before_action :require_logged_in
+
   def index
     @user = User.find(params[:id])
     @cart_items = CartItem.find_by(user_id: @user[:id])
@@ -8,7 +11,7 @@ class Api::CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find_by(id: params[:id])
     
-    if @cart_item && @cart_item.update(cart_params)
+    if @cart_item && @cart_item.update(cart_items_params)
       render :index
     else
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
@@ -16,7 +19,7 @@ class Api::CartItemsController < ApplicationController
   end
 
   def create
-    @cart_item = CartItem.new(cart_params)
+    @cart_item = CartItem.new(cart_items_params)
     
     if @cart.save
       render :index
@@ -36,7 +39,7 @@ class Api::CartItemsController < ApplicationController
   end
 
   private
-  def cart_params
+  def cart_items_params
     params.require(:cart_item).permit(
       :id,
       :user_id,
