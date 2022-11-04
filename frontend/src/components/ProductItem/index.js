@@ -49,7 +49,6 @@ const ProductItem = () => {
         }
       }
       return dispatch(createCartItem(newItem));
-      console.log(count);
     } else if (cartItem) {
       const updatedItem = {
         cartItem: {
