@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { Modal } from '../../context/Modal';
-import ProfileButton from './ProfileButton';
+import ProfileModal from './ProfileModal';
 import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 import './Navigation.css';
@@ -13,7 +11,7 @@ const AccountModal = () => {
 
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileModal user={sessionUser} />
     );
   } else {
     sessionLinks = (

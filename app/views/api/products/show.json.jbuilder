@@ -8,7 +8,8 @@ json.extract! @product,
   :size, 
   :price
 
-if product.photos.attached?
-  json.imgUrls product.photos.map{ |photo| photo.url }
+if @product.photos.attached?
+  json.imgUrls @product.photos.map{ |photo| photo.url }
 else
   json.imgUrls ""
+end

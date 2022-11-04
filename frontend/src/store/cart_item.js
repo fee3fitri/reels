@@ -20,16 +20,6 @@ export const removeItem = productId => ({
   productId
 })
 
-// export const updateCount = (itemId, count) => {
-//   if (count < 1) return removeItem(itemId);
-
-//   return {
-//     type: UPDATE_COUNT,
-//     itemId,
-//     count
-//   }
-// }
-
 export const loadCartItems = state => {
   return state.cartItems ? Object.values(state.cartItems) : [];
 }
@@ -39,13 +29,13 @@ export const loadCartItem = productId => state => {
 }
 
 export const fetchCartItems = () => async dispatch => {
-  const res = await csrfFetch(`api/cart_items`);
+  const res = await csrfFetch(`/api/cart_items`);
   const cartItems = await res.json();
   dispatch(addItems(cartItems));
 }
 
 export const createCartItem = cartData => async dispatch => {
-  const res = await csrfFetch(`api/cart_items`, {
+  const res = await csrfFetch(`/api/cart_items`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -59,7 +49,7 @@ export const createCartItem = cartData => async dispatch => {
 }
 
 export const updateCartItem = cartData => async dispatch => {
-  const res = await csrfFetch(`api/cart_items/${cartData.cartItem.id}`, {
+  const res = await csrfFetch(`/api/cart_items/${cartData.cartItem.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -73,7 +63,7 @@ export const updateCartItem = cartData => async dispatch => {
 }
 
 export const removeCartItem = (cartItemId, productId) => async dispatch => {
-  const res = await csrfFetch(`api/cart_items/${cartItemId}`, {
+  const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
     method: 'DELETE',
   });
 
@@ -98,4 +88,3 @@ const cartReducer = (state = {}, action) => {
 }
 
 export default cartReducer;
-

@@ -12,7 +12,7 @@ class Api::CartItemsController < ApplicationController
     @cart_item = CartItem.find_by(id: params[:id])
     
     if @cart_item && @cart_item.update(cart_items_params)
-      render :index
+      render :show
     else
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
@@ -20,9 +20,8 @@ class Api::CartItemsController < ApplicationController
 
   def create
     @cart_item = CartItem.new(cart_items_params)
-    
-    if @cart.save
-      render :index
+    if @cart_item.save
+      render :show
     else
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
@@ -35,7 +34,7 @@ class Api::CartItemsController < ApplicationController
       render :index
     else
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
-
+    end
   end
 
   private

@@ -11,7 +11,7 @@ const ProductListing = ({product}) => {
   const images = product.imgUrls;
   const image = images[0];
   const rand = Math.floor(Math.random() * images.length);
-  const randImg = images[1];
+  const randImg = images[rand];
 
   return (
     <div className="product_listing_wrapper">

@@ -1,22 +1,68 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { Modal } from "../../context/Modal"
+import { createCartItem, updateCartItem, loadCartItem } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
 import ProductColor from "../ProductColor";
 import ProductImages from "../ProductImages";
 import ProductSize from "../ProductSize";
+import Cart from "../Cart";
 import './ProductItem.css'
 
 const ProductItem = () => {
-  const {productId} = useParams();
   const dispatch = useDispatch();
+  // const history = useHistory();
+  const {productId} = useParams();
+  const user = useSelector(state => state.session.user);
   const product = useSelector(loadProduct(productId));
+  const cartItem = useSelector(loadCartItem(productId));
+  const [count, setCount] = useState(1);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
+  useEffect(() => {
+    if (user) {
+      dispatch(loadCartItem(productId));
+    }
+  }, [dispatch, productId]);
+
   if (!product) return null;
+
+  const addToCart = e => {
+    e.preventDefault();
+    setShowModal(true);
+    <Cart />
+
+    if (!user) return;
+    const userId = user.id;
+
+    if (!cartItem) {
+      const newItem = {
+        cartItem: {
+          userId: userId,
+          productId: productId,
+          quantity: setCount(1)
+        }
+      }
+      return dispatch(createCartItem(newItem));
+      console.log(count);
+    } else if (cartItem) {
+      const updatedItem = {
+        cartItem: {
+          id: cartItem.id,
+          userId: userId,
+          productId: productId,
+          quantity: setCount(count ++)
+        }
+      }
+      return dispatch(updateCartItem(updatedItem));
+    }
+  }
+
 
   return (
     <div className="product_item_wrapper page_wrapper grid">
@@ -31,7 +77,12 @@ const ProductItem = () => {
           <ProductColor />
           <ProductSize />
           <div className="atc_area flex-col">
-            <button className="btn">Add to Cart</button>
+            <button 
+              className="btn"
+              onClick={addToCart}
+            >
+              Add to Cart
+            </button>
             <p className="flex-row align-center justify-center">
               Buy now, pay later with 
               <svg 
@@ -45,7 +96,7 @@ const ProductItem = () => {
               </svg>
               or 
               <svg 
-                fill="none" 
+              fill="none"
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 63 12">
                 <path 

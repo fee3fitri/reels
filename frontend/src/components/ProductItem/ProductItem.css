@@ -36,7 +36,8 @@
 }
 
 .product_details_wrapper .btn:hover {
-  background-color: white;
+  background-color: rgba(128, 128, 128, .3);
+  color: white;
 }
 
 .product_details_wrapper .atc_area p {

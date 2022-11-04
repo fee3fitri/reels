@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import '../../context/Modal.css'
 
-const ProfileButton= ({user}) => {
+const ProfileModal = ({user}) => {
   const dispatch = useDispatch();
   const [hideAccount, setHideAccount] = useState(false);
  
-  const logout = (e) => {
+  const logout = e => {
     e.preventDefault();
     dispatch(sessionActions.logout());
   };
@@ -49,4 +49,4 @@ const ProfileButton= ({user}) => {
   );
 }
 
-export default ProfileButton;
+export default ProfileModal;
