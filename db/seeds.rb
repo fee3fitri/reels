@@ -37,8 +37,14 @@ ApplicationRecord.transaction do
     color: "Cobalt Candy Gold White", 
     size: "5 6 7 8 9 10", 
     price: 159.95,
-    image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
-    )
+  )
+  
+  weekender_candy.photos.attach([
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/candy/weekender_candy_1.webp"), filename: "weekender_candy_1.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/candy/weekender_candy_2.webp"), filename: "weekender_candy_2.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/candy/weekender_candy_3.webp"), filename: "weekender_candy_3.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/candy/weekender_candy_4.webp"), filename: "weekender_candy_4.webp"}
+  ])
 
   weekender_cobalt = Product.create!(
     name: "Weekender Cobalt", 
@@ -49,10 +55,10 @@ ApplicationRecord.transaction do
     size: "5 6 7 8 9 10", 
     price: 159.95,
     image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
-    )
+  )
 
-  weekender = Product.create!(
-    name: "Weekender Red", 
+  weekender_gold = Product.create!(
+    name: "Weekender Gold", 
     product_preview: "Experience the new wave of Australian sneaker design and world-class innovation. Get insanely comfortable with NitroBounce™ micro air bubble midsoles. Enjoy good weekend vibes, any day of the week.", 
     description: "Nitrobounce™ soles Get uplifted floating above thousands of micro air bubbles. Extra padding across the tongue and back collar for feel-good wears. Orthotic-friendly removable footbed Swap in your own insoles for that perfect fit. 3M Reflective Strip Jump on your bike and be seen after dark. Australian designed using cutting-edge innovation, originality and extreme attention to detail", 
     category: "Women", 
@@ -60,10 +66,18 @@ ApplicationRecord.transaction do
     size: "5 6 7 8 9 10", 
     price: 159.95,
     image_url: "https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_5.webp https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_6.webp"
-    )
+  )
 
-    # debugger
-  # weekender.photos.attach(io: URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp"), filename: "weekender_gold_1.webp")
+  # file1 = URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_1.webp")
+  # file2 = URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_2.webp")
+  # file3 = URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_3.webp")
+  # file4 = URI.open("https://reels-dev.s3.us-west-1.amazonaws.com/gold/weekender_gold_4.webp")
+
+  # weekender_gold.photos.attach(io: file1, filename: "weekender_gold_1.webp")
+  # weekender_gold.photos.attach(io: file2, filename: "weekender_gold_2.webp")
+  # weekender_gold.photos.attach(io: file3, filename: "weekender_gold_3.webp")
+  # weekender_gold.photos.attach(io: file4, filename: "weekender_gold_4.webp")
+
 
   weekender_white = Product.create!(
     name: "Weekender White", 

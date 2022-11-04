@@ -6,5 +6,9 @@ json.extract! @product,
   :category, 
   :color, 
   :size, 
-  :price, 
-  :image_url
+  :price
+
+if product.photos.attached?
+  json.imgUrls product.photos.map{ |photo| photo.url }
+else
+  json.imgUrls ""

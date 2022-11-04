@@ -9,6 +9,11 @@
       :color, 
       :size, 
       :price
-    json.img_urls product.photos.map{ |photo| url_for(photo) }
+
+    if product.photos.attached?
+      json.imgUrls product.photos.map{ |photo| photo.url }
+    else
+      json.imgUrls ""
+    end
   end
 end

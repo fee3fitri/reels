@@ -80,3 +80,22 @@ export const removeCartItem = (cartItemId, productId) => async dispatch => {
   dispatch(removeItem(productId));
 }
 
+const cartReducer = (state = {}, action) => {
+  Object.freeze(state);
+
+  switch(action.type) {
+    case ADD_ITEMS:
+      return action.products.cartItems
+    case ADD_ITEM:
+      return {...state, ...action.product.cartItem}
+    case REMOVE_ITEM:
+      const nextState = {...state}
+      delete nextState[action.cartItemId];
+      return nextState;
+    default:
+      return state;
+  }
+}
+
+export default cartReducer;
+
