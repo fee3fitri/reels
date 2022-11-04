@@ -1,6 +1,6 @@
 databases:
   - name: reels
-    user: reels
+    user: fifi
     plan: free
     region: oregon
 
