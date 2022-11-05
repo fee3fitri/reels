@@ -9,16 +9,17 @@ import ProductImages from "../ProductImages";
 import ProductSize from "../ProductSize";
 import Cart from "../Cart";
 import './ProductItem.css'
+import ProfileModal from "../Navigation/ProfileModal";
 
 const ProductItem = () => {
   const dispatch = useDispatch();
-  // const history = useHistory();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   const product = useSelector(loadProduct(productId));
   const cartItem = useSelector(loadCartItem(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  let cart;
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
@@ -34,8 +35,6 @@ const ProductItem = () => {
 
   const addToCart = e => {
     e.preventDefault();
-    setShowModal(true);
-    <Cart />
 
     if (!user) return;
     const userId = user.id;
@@ -50,7 +49,6 @@ const ProductItem = () => {
       return dispatch(createCartItem(newItem));
     } else if (cartItem) {
       setCount(count + 1)
-      debugger
       const updatedItem = {
         cart_item: {
           id: cartItem.id,
@@ -65,6 +63,7 @@ const ProductItem = () => {
 
 
   return (
+    <>
     <div className="product_item_wrapper page_wrapper grid">
       <div className="product_wrapper grid">
         <div className="product_img_gallery grid">
@@ -108,7 +107,10 @@ const ProductItem = () => {
           </div>
         </div>
       </div>
+      <Cart />
     </div>
+
+    </>
   )
 }
 

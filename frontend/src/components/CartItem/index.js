@@ -5,16 +5,16 @@ import { loadProduct } from "../../store/products";
 
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const user = useSelector(state => sessionStorage.user);
-  const {id, productId, quantity} = cartItem;
-  const product = useSelector(loadProduct(cartItem.productId));
-  const [count, setCount] = useState(quantity);
+  // const history = useHistory();
+  const user = useSelector(state => state.session.user);
   // const [removedItem, setRemovedItem] = useState(false);
-
-  if (!user) return history.push("/signup");
+  // if (!user) return history.push("/signup");
+  const {id, productId, quantity} = cartItem;
+  
+  const product = useSelector(loadProduct(productId));
+  const [count, setCount] = useState(quantity);
   if (!product) return null;
-
+  
   const images = product.imgUrls;
   const img = images[0];
   const {name, category, color, size, price} = product;
