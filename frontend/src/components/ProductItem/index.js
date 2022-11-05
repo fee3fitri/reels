@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../../context/Modal"
-import { createCartItem, updateCartItem, loadCartItem } from "../../store/cart_item";
+import { createCartItem, updateCartItem, loadCartItem, fetchCartItems } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
 import ProductColor from "../ProductColor";
 import ProductImages from "../ProductImages";
@@ -26,9 +26,9 @@ const ProductItem = () => {
 
   useEffect(() => {
     if (user) {
-      dispatch(loadCartItem(productId));
+      dispatch(fetchCartItems(user.id));
     }
-  }, [dispatch, productId]);
+  }, [dispatch, productId, user]);
 
   if (!product) return null;
 
@@ -39,23 +39,24 @@ const ProductItem = () => {
 
     if (!user) return;
     const userId = user.id;
-
-    if (!cartItem) {
+    if (!cartItem) { 
       const newItem = {
-        cartItem: {
+        cart_item: {
           userId: userId,
           productId: productId,
-          quantity: setCount(1)
+          quantity: count
         }
       }
       return dispatch(createCartItem(newItem));
     } else if (cartItem) {
+      setCount(count + 1)
+      debugger
       const updatedItem = {
-        cartItem: {
+        cart_item: {
           id: cartItem.id,
           userId: userId,
           productId: productId,
-          quantity: setCount(count ++)
+          quantity: count
         }
       }
       return dispatch(updateCartItem(updatedItem));

@@ -5,19 +5,19 @@ const ADD_ITEM = 'cartItem/ADD_ITEM';
 const REMOVE_ITEM = 'cartItem/REMOVE_ITEM';
 const UPDATE_COUNT = 'cartItem/UPDATE_COUNT';
 
-export const addItems = productId => ({
+export const addItems = items => ({
   type: ADD_ITEMS,
-  productId
+  items
 });
 
-export const addItem = productId => ({
+export const addItem = item => ({
   type: ADD_ITEM,
-  productId
+  item
 });
 
-export const removeItem = productId => ({
+export const removeItem = itemId => ({
   type: REMOVE_ITEM,
-  productId
+  itemId
 })
 
 export const loadCartItems = state => {
@@ -25,11 +25,11 @@ export const loadCartItems = state => {
 }
 
 export const loadCartItem = productId => state => {
-  return state.loadCartItems ? state.cartItems[productId] : null;
+  return state.cartItems ? state.cartItems[productId] : null;
 }
 
-export const fetchCartItems = () => async dispatch => {
-  const res = await csrfFetch(`/api/cart_items`);
+export const fetchCartItems = (userId) => async dispatch => {
+  const res = await csrfFetch(`/api/cart_items?userId=${userId}`);
   const cartItems = await res.json();
   dispatch(addItems(cartItems));
 }
@@ -43,14 +43,14 @@ export const createCartItem = cartData => async dispatch => {
     },
     body: JSON.stringify(cartData)
   });
-
+  
   const newCartItem = await res.json();
   dispatch(addItem(newCartItem));
 }
 
 export const updateCartItem = cartData => async dispatch => {
-  const res = await csrfFetch(`/api/cart_items/${cartData.cartItem.id}`, {
-    method: 'PUT',
+  const res = await csrfFetch(`/api/cart_items/${cartData.cart_item.id}`, {
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -75,12 +75,12 @@ const cartReducer = (state = {}, action) => {
 
   switch(action.type) {
     case ADD_ITEMS:
-      return action.products.cartItems
+      return action.items
     case ADD_ITEM:
-      return {...state, ...action.product.cartItem}
+      return {...state, ...action.item}
     case REMOVE_ITEM:
       const nextState = {...state}
-      delete nextState[action.cartItemId];
+      delete nextState[action.itemId];
       return nextState;
     default:
       return state;

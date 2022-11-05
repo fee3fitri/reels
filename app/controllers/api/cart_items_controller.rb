@@ -3,8 +3,9 @@ class Api::CartItemsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @user = User.find(params[:id])
-    @cart_items = CartItem.find_by(user_id: @user[:id])
+    @user = User.find(params[:user_id])
+    @cart_items = CartItem.where(user_id: @user[:id])
+    
     render :index
   end
 
@@ -14,7 +15,7 @@ class Api::CartItemsController < ApplicationController
     if @cart_item && @cart_item.update(cart_items_params)
       render :show
     else
-      render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
+      # render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
   end
 
@@ -23,7 +24,7 @@ class Api::CartItemsController < ApplicationController
     if @cart_item.save
       render :show
     else
-      render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
+      # render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
   end
 
@@ -33,7 +34,7 @@ class Api::CartItemsController < ApplicationController
     if @cart_item.destroy
       render :index
     else
-      render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
+      # render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
   end
 
