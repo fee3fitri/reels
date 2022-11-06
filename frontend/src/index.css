@@ -159,6 +159,11 @@ a {
   color: var(--grey-text)
 }
 
+.btn:hover {
+  background-color: rgba(128, 128, 128, .3);
+  color: white;
+}
+
 .account_button {
   border: none;
   background: none;

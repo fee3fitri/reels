@@ -4,9 +4,9 @@ import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../../context/Modal"
 import { createCartItem, updateCartItem, loadCartItem, fetchCartItems } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
-import ProductColor from "../ProductColor";
-import ProductImages from "../ProductImages";
-import ProductSize from "../ProductSize";
+import ProductColor from "./ProductColor";
+import ProductImages from "./ProductImages";
+import ProductSize from "./ProductSize";
 import Cart from "../Cart";
 import './ProductItem.css'
 import ProfileModal from "../Navigation/ProfileModal";
