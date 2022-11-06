@@ -64,24 +64,59 @@
 
 
 /* Product Size CSS */
-.product_size_wrapper h3 {
-  margin-bottom: 2vh;
+.product_size_wrapper {
+  margin-top: 3vh;
 }
 
-.size_wrapper {
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 1.1vw;
+.product_size_wrapper > div {
+  margin-bottom: 3vh;
 }
 
-.size_wrapper span {
-  border: .5px white solid;
-  margin: 2%;
-  padding: 10% 5%;
-  border-radius: 5px;
+.product_size_wrapper p {
+  border-bottom: 2px solid white;
+  padding: 2px 0;
+  margin-bottom: 0;
   cursor: pointer;
 }
 
-.size_wrapper span:hover {
-  background-color: rgba(255, 255, 255, .7);
+.product_size_wrapper ul {
+  flex-wrap: wrap;
+}
+
+.product_size_wrapper ul > li {
+  margin: 1%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_size_wrapper label {
+  border: 1px solid rgba(255, 255, 255, .4);
+  width: 100%;
+  text-align: center;
+  padding: 10%;
+  cursor: pointer;
+  border-radius: 1vw;
+}
+
+.product_size_wrapper label:hover {
+  border: 1px solid white;
+}
+
+.product_size_wrapper input[type="radio"] {
+  opacity: 0;
+  width: 0;
+}
+
+.product_size_wrapper input:checked + label {
+  background-color: white;
   color: var(--grey-text);
+}
+
+
+/* After Product CSS */
+.after_product {
+  background-color: white;
+  padding-bottom: 50%;
 }

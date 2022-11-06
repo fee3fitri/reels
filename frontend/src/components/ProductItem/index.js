@@ -9,7 +9,6 @@ import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import Cart from "../Cart";
 import './ProductItem.css'
-import ProfileModal from "../Navigation/ProfileModal";
 
 const ProductItem = () => {
   const dispatch = useDispatch();
@@ -115,3 +114,15 @@ const ProductItem = () => {
 }
 
 export default ProductItem;
+
+
+{/* <div classname="after_product flex-col">
+  <p>DESIGN PROCESS</p>
+  <h2>Designed to Precision<i className="fa-regular fa-circle"></i></h2>
+  <div className="flex-row">
+    <picture>
+      <img src="https://cld.accentuate.io/14684618806/1657676159606/derby-1.png?v=0&options=w_630" alt="shoes skeleton" />
+      <p>A classic reimagined. Heavy and rigid, the traditional Derby required some breaking in — and the process was not pleasant. </p>
+    </picture>
+  </div>
+</div> */}

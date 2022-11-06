@@ -2,6 +2,9 @@ import csrfFetch from "./csrf";
 
 const GET_PRODUCTS = 'products/GET_PRODUCTS';
 const GET_PRODUCT = 'products/GET_PRODUCT';
+const TOGGLE_COLOR = 'products/TOGGLE_COLOR';
+const TOGGLE_SIZE = 'products/TOGGLE_SIZE';
+
 
 export const getProducts = products => ({
   type: GET_PRODUCTS,
@@ -12,6 +15,16 @@ export const getProduct = product => ({
   type: GET_PRODUCT,
   product
 })
+
+export const toggleColor = productId =>({
+  type: TOGGLE_COLOR,
+  productId
+})
+
+export const toggleSize = productId =>({
+  type: TOGGLE_SIZE,
+  productId
+}) 
 
 export const loadProducts = state => {
   return state.products ? Object.values(state.products) : [];
@@ -58,6 +71,20 @@ const productsReducer = (state = {}, action) => {
       return action.products;
     case GET_PRODUCT:
       return {...state, [action.product.id]: action.product};
+    case TOGGLE_COLOR:
+      return {...state,
+        [action.productId]: {
+          ...state[action.productId],
+          color: state[action.productId].color
+        }
+      }
+    case TOGGLE_SIZE:
+      return {...state,
+        [action.productId]: {
+          ...state[action.productId],
+          size: state[action.productId].size
+        }
+      }
     default:
       return state;
   }
