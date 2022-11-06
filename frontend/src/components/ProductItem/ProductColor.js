@@ -9,8 +9,8 @@ const ProductColor = () => {
   const {productId} = useParams();
   const dispatch = useDispatch();
   const product = useSelector(loadProduct(productId));
-  const [color, setColor] = useState();
   const colors = product.color.split(' ');
+  const [color, setColor] = useState();
   const productName = product.name.toLowerCase().split(' ');
   const productFile = productName.join('_');
   const name = productName[0];
@@ -31,7 +31,6 @@ const ProductColor = () => {
       <h3>Colours</h3>
       <ul className="flex-row">
         {colors.map(color => {
-          debugger
           <li>
             <Link to="/products/productId">
               <input type="radio"

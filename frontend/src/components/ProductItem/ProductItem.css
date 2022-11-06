@@ -114,9 +114,36 @@
   color: var(--grey-text);
 }
 
+/* Product Size Modal CSS */
+.size_modal {
+  width: 50vw;
+  padding: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw
+}
 
-/* After Product CSS */
-.after_product {
-  background-color: white;
-  padding-bottom: 50%;
+.size_modal h1 {
+  font-size: 1.6vw;
+  margin-bottom: 5vh;
+  font-weight: 600;
+}
+
+.size_modal table {
+  text-align: center;
+  width: 100%;
+}
+
+
+.size_modal table th {
+  color: white;
+  background-color: #1a1a1a;
+}
+
+.size_modal table th,
+.size_modal table td {
+  padding: 1.5vh;
+}
+
+.size_modal table tr:nth-child(odd) {
+  background-color: #e1e1e1;
 }
