@@ -1,23 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import Menu from '@mui/material/Menu';
 import AccountModal from './AccountModal';
 import './Navigation.css';
 
 const Navigation = () => {
-  const [isHovering, setIsHovering] = useState('false');
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = e => {
-    setAnchorEl(e.currentTarget);
-  }
-  
   return (
     <header className='header_navigation flex-row justify-between align-center'>
-      <div className='left_nav flex-row' >
-        <Link to="/collections/womens">Women</Link>
-        <Link to="/collections/mens">Men</Link>
+      <div className='left_nav flex-row align' >
+        <Link to="/collections/womens"
+          className='collections flex-col align-center'>
+          Women
+        </Link>
+        <Link 
+          to="/collections/mens"
+          className='flex-col align-center'
+          >
+          Men
+        </Link>
       </div>
 
       <div className='center_nav text-center'>
@@ -31,15 +30,13 @@ const Navigation = () => {
         <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
           <i className="fa-brands fa-linkedin"></i>
         </Link>
-        <div className='account_menu' onClick={handleClick}>
+        <div className='account_menu'>
           <i className="fa-solid fa-circle-user"></i>
+          <div className='account_content'>
+            <AccountModal />
+          </div>
         </div>
         <i className="fa-solid fa-cart-shopping"></i>
-
-
-        {isHovering && (
-          <AccountModal />
-        )}
       </div>
     </header>
   );

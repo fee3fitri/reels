@@ -57,7 +57,7 @@
   font-size: 13vw;
   font-weight: 600;
   letter-spacing: -1vw;
-  animation: marquee 10s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 
 
@@ -77,10 +77,6 @@
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-
   100% {
     transform: translateX(-100%);
   }
@@ -244,7 +240,7 @@
 
 /* Video Modal CSS */
 .video_modal {
-  width: 50vw;
+  width: 70vw;
   background-color: white;
 }
 

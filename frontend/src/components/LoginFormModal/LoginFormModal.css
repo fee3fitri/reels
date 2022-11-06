@@ -6,8 +6,8 @@
   border-radius: var(--border-radius);
   opacity: 90%;
   position: absolute;
-  right: calc(var(--horizontal-edge) + 2.5vw);
-  top: calc(var(--vertical-edge) + 3em)
+  right: calc(var(--horizontal-edge) + 4.5vw);
+  top: calc(var(--vertical-edge) + 5vh)
 }
 
 .account_modal > * {
@@ -16,6 +16,12 @@
   font-size: 1vw;
   font-weight: 600;
   font-family: var(--body-font);
+  padding: 5%;
+  border-radius: 10%;
+}
+
+.account_modal > *:hover {
+  color: var(--black-text);
 }
 
 

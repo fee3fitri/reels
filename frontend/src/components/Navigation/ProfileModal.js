@@ -5,7 +5,6 @@ import '../../context/Modal.css'
 
 const ProfileModal = ({user}) => {
   const dispatch = useDispatch();
-  const [hideAccount, setHideAccount] = useState(false);
  
   const logout = e => {
     e.preventDefault();
@@ -13,14 +12,10 @@ const ProfileModal = ({user}) => {
   };
 
   return (
-    <div className={`profile_modal_container ${hideAccount ? 'hide-modal' : ''}`}>
+    <div className="profile_modal_container">
       <div className="profile_content">
         <div className="title_area flex-row justify-between align-center">
           <h2>Profile</h2>
-          <i 
-            className="fa-solid fa-x"
-            onClick={() => setHideAccount(true)}>  
-          </i>
         </div>
         <form className="login_form flex-col">
           <label className="flex-col">

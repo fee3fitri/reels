@@ -59,7 +59,7 @@ table {
   --horizontal-edge: 3vw;
   --vertical-edge: 8vh;
   --grey-text: #808080;
-  --black-text: ##1a1a1a;
+  --black-text: #1a1a1a;
   --body-font: 'Poppins', sans-serif;
   --purple: #8C9DCC;
   --reels-font: 'Pacifico', cursive;
@@ -156,7 +156,8 @@ a {
   font-weight: 600;
   padding: 2.5vh 2vw;
   border-radius: var(--border-radius);
-  color: var(--grey-text)
+  color: var(--grey-text);
+  transition: 1s
 }
 
 .btn:hover {
