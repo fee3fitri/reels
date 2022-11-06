@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import Marquee from 'react-fast-marquee';
 import Hero from './Hero';
 import Category from './Category';
 import Video from './Video';

@@ -15,9 +15,13 @@ const LoginFormModal = () => {
       </button>
 
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
-        </Modal>
+        <div className="video_modal_wrapper">
+          <Modal 
+            onClose={() => setShowModal(false)}>
+            <LoginForm />
+          </Modal>
+        </div>
+        
       )}
     </>
   );

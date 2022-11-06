@@ -25,7 +25,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.11"
+    "@mui/material": "^5.10.12"
   },
   "devDependencies": {
     "file-loader": "^6.2.0"

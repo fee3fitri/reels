@@ -1,9 +1,15 @@
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
+import { Modal } from '../../context/Modal';
+import VideoModal from './VideoModal';
 import "./Splash.css"
 
 const Pitch = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <section className="splash_pitch flex-row">
+    <>
+      <section className="splash_pitch flex-row">
         <div className="pic_content flex-col">
           <div className="pic_container">
             <img src="https://cdn.shopify.com/s/files/1/0146/8461/8806/files/highlight-1_232x.jpg?v=1657255470" 
@@ -32,7 +38,9 @@ const Pitch = () => {
             We believe that looking good and feeling good aren’t mutually exclusive so we reimagined the everyday shoe.
           </p>
           <div className="button_section flex-row">
-            <button className="btn flex-row">
+            <button 
+              className="btn flex-row"
+              onClick={() => setShowModal(true)}>
               <i className="fa-solid fa-play"></i>
               Watch film
             </button>
@@ -43,7 +51,13 @@ const Pitch = () => {
         </div>
       </section>
 
-  )
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <VideoModal />
+        </Modal>
+      )}
+    </>
+  );
 }
 
 export default Pitch;

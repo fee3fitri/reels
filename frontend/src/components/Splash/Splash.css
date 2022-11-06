@@ -240,3 +240,21 @@
   line-height: 1.4;
   padding: 5vh 0;
 }
+
+
+/* Video Modal CSS */
+.video_modal {
+  width: 50vw;
+  background-color: white;
+}
+
+.video_modal button {
+  background: transparent;
+  border: none;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.video_modal video {
+  width: 100%;
+}
