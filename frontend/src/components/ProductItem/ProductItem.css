@@ -64,9 +64,35 @@
 }
 
 
+/* Product Color CSS */
+.product_color_wrapper h3 {
+  margin-bottom: 3vh;
+}
+
+.product_color_wrapper li {
+  width: 6vw;
+}
+
+.product_color_wrapper img {
+  cursor: pointer;
+  border-radius: 10%;
+  position: relative;
+  max-width: 80%;
+}
+
+.product_color_wrapper img:hover {
+  transform: scale(.9);
+  transition: .1s ease-in;
+}
+
+.product_color_wrapper input:checked + label {
+  border: 1px solid rgba(255, 255, 255);
+}
+
+
 /* Product Size CSS */
 .product_size_wrapper {
-  margin-top: 3vh;
+  margin-top: 7vh;
 }
 
 .product_size_wrapper > div {
@@ -105,7 +131,8 @@
   border: 1px solid white;
 }
 
-.product_size_wrapper input[type="radio"] {
+.product_size_wrapper input[type="radio"],
+.product_color_wrapper input[type="radio"] {
   opacity: 0;
   width: 0;
 }
