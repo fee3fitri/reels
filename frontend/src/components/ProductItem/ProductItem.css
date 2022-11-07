@@ -87,6 +87,7 @@
 
 .product_color_wrapper img:selected {
   border: 1px solid rgba(255, 255, 255);
+  /* padding: 2px; */
 }
 
 

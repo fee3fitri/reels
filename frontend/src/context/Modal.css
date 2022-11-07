@@ -16,6 +16,7 @@
   right: 0;
   left: 0;
   bottom: 0;
+  animation: hidden 3s ease-in;
 }
 
 .modal_background:hover {
@@ -27,16 +28,19 @@
   background-color:white;
   padding: 2%;
   border-radius: var(--border-radius);
+  height: 70vh;
 }
 
 .hide-modal {
   transform: translateY(100%);
   overflow: hidden;
-  animation: hidden 3s ease-in;
 }
 
 @keyframes hidden {
-  100% {
-    transform: translateY(100%);
-  }
+  from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
 }

@@ -1,23 +1,18 @@
 .cart {
-  position: absolute;
-  width: 40%;
-  background-color: white;
-  right: var(--horizontal-edge);
-  top: var(--vertical-edge);
   border-radius: var(--border-radius);
   padding: 3%;
   font-size: 1.1vw;
   overflow-y: auto;
-  max-height: 40vh;
 }
 
 .cart h1 {
   font-size: 1.5vw;
   font-weight: 600;
+  margin-bottom: 5vh;
 }
 
 .cart ul {
-  width: 100%;
+  width: 30vw;
 }
 
 .cart picture {
@@ -102,4 +97,26 @@ color: var(--grey-text);
 .cart {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+.empty_cart {
+  width: 20vw;
+}
+
+.empty_cart > * {
+  margin: 4vh 0;
+}
+
+.empty_cart h1,
+.empty_cart p {
+  font-weight: 600;
+}
+
+.empty_cart p {
+  font-size: 1.75vw;
+}
+
+.empty_cart .btn {
+  background-color: var(--purple);
+  color: white;
 }

@@ -16,16 +16,6 @@ export const getProduct = product => ({
   product
 })
 
-export const toggleColor = productId =>({
-  type: TOGGLE_COLOR,
-  productId
-})
-
-export const toggleSize = productId =>({
-  type: TOGGLE_SIZE,
-  productId
-}) 
-
 export const loadProducts = state => {
   return state.products ? Object.values(state.products) : [];
 }

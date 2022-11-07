@@ -13,6 +13,7 @@ const ProductColor = () => {
   const [color, setColor] = useState();
   const [isActive, setIsActive] = useState(false);
   const productName = product.name.toLowerCase().split(' ');
+  // const colorUpper = color.charAt(0).toUpperCase() + color.slice(1);
   const name = productName[0];
 
   
@@ -32,7 +33,7 @@ const ProductColor = () => {
 
   return (
     <div className="product_color_wrapper">
-      <h3>Colours</h3>
+      <h3>Colour {color}</h3>
       <ul className="flex-row">
         {colors.map(color =>
         <li>
