@@ -85,7 +85,7 @@
   transition: .1s ease-in;
 }
 
-.product_color_wrapper input:checked + label {
+.product_color_wrapper img:selected {
   border: 1px solid rgba(255, 255, 255);
 }
 

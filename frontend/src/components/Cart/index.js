@@ -5,9 +5,11 @@ import CartItem from "./CartItem";
 import "./Cart.css"
 
 const Cart = () => {
+  let sessionCart;
   const dispatch = useDispatch();
   const [hideCart, setHideCart] = useState(false);
   const cartItems = useSelector(loadCartItems);
+  const sessionUser = useSelector(state => state.session.user);
 
   if (!cartItems || !cartItems.length) {
     return (
@@ -15,6 +17,8 @@ const Cart = () => {
         No items in the cart.
       </div>
     )
+  } else if (!cartItems || !cartItems.length) {
+    
   }
 
   return (

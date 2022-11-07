@@ -123,3 +123,24 @@
   color: white;
   background-color: var(--grey-text);
 }
+
+/* Cart Modal */
+
+.cart_modal_login > * {
+  margin: 3vh;
+  text-align: center;
+}
+
+.cart_modal_login h1 {
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+.cart_modal_login .account_button {
+  background-color: var(--purple);
+  color: white;
+  padding: 5%;
+  font-size: 1.1vw;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+}

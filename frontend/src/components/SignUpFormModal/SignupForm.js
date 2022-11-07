@@ -34,6 +34,14 @@ const SignUpForm = () => {
     });
   };
 
+  const handleDemoLogin = e => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({
+      email: 'demo@user.com',
+      password: 'password'
+    }))
+  }
+
   return (
     <div className="account_form_modal">
       <h1>Sign Up</h1>
@@ -72,6 +80,13 @@ const SignUpForm = () => {
           className="modal_button block"
           type="submit">
           Signup
+        </button>
+        <p className="or">OR</p>
+        <button 
+          className="modal_button"
+          type="submit"
+          onClick={handleDemoLogin}>
+          Use Demo Login
         </button>
       </form>
     </div>

@@ -21,7 +21,6 @@ const LoginFormModal = () => {
             <LoginForm />
           </Modal>
         </div>
-        
       )}
     </>
   );

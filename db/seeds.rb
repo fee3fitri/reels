@@ -29,7 +29,7 @@ demo_user = User.create!(
 
 # Crate all products
 weekender_candy = Product.create!(
-  name: "Weekender Candy ", 
+  name: "Weekender Candy", 
   product_preview: "Experience the new wave of Australian sneaker design and world-class innovation. Get insanely comfortable with NitroBounce™ micro air bubble midsoles. Enjoy good weekend vibes, any day of the week.", 
   description: "Nitrobounce™ soles Get uplifted floating above thousands of micro air bubbles. Extra padding across the tongue and back collar for feel-good wears. Orthotic-friendly removable footbed Swap in your own insoles for that perfect fit. 3M Reflective Strip Jump on your bike and be seen after dark. Australian designed using cutting-edge innovation, originality and extreme attention to detail", 
   category: "Women", 

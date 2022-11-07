@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { Modal } from "../../context/Modal"
+import { useParams } from "react-router-dom";
 import { createCartItem, updateCartItem, loadCartItem, fetchCartItems } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
+import { Modal } from '../../context/Modal';
 import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import ProductAccordion from "./ProductAccordion";
 import Cart from "../Cart";
 import './ProductItem.css'
+import LoginFormModal from "../LoginFormModal";
 
 const ProductItem = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const ProductItem = () => {
   const cartItem = useSelector(loadCartItem(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  let cart;
+  let sessionCart;
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
@@ -31,13 +32,17 @@ const ProductItem = () => {
     }
   }, [dispatch, productId, user]);
 
+  
   if (!product) return null;
+
 
   const addToCart = e => {
     e.preventDefault();
 
-    if (!user) return;
     const userId = user.id;
+
+    if (!user) return null;
+    
     if (!cartItem) { 
       const newItem = {
         cart_item: {
@@ -61,6 +66,9 @@ const ProductItem = () => {
     }
   }
 
+  const openCart = () => {
+    <Cart />
+  }
 
   return (
     <>
@@ -78,8 +86,10 @@ const ProductItem = () => {
           <div className="atc_area flex-col">
             <button 
               className="btn"
-              onClick={addToCart}
-            >
+              onClick={()=> {
+                addToCart();
+                openCart();
+              }}>
               Add to Cart
             </button>
             <p className="flex-row align-center justify-center">
@@ -108,7 +118,6 @@ const ProductItem = () => {
           <ProductAccordion />
         </div>
       </div>
-      <Cart />
     </div>
 
     </>
@@ -116,15 +125,3 @@ const ProductItem = () => {
 }
 
 export default ProductItem;
-
-
-{/* <div classname="after_product flex-col">
-  <p>DESIGN PROCESS</p>
-  <h2>Designed to Precision<i className="fa-regular fa-circle"></i></h2>
-  <div className="flex-row">
-    <picture>
-      <img src="https://cld.accentuate.io/14684618806/1657676159606/derby-1.png?v=0&options=w_630" alt="shoes skeleton" />
-      <p>A classic reimagined. Heavy and rigid, the traditional Derby required some breaking in — and the process was not pleasant. </p>
-    </picture>
-  </div>
-</div> */}

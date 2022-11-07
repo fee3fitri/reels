@@ -1,3 +1,4 @@
+import { Divider } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
@@ -28,6 +29,14 @@ const LoginForm = () => {
         else setErrors([res.statusText]);
       });
   };
+
+  const handleDemoLogin = e => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({
+      email: 'demo@user.com',
+      password: 'password'
+    }))
+  }
 
   return (
     <div className="account_form_modal">
@@ -60,6 +69,13 @@ const LoginForm = () => {
           className="modal_button"
           type="submit">
           Login
+        </button>
+        <p className="or">OR</p>
+        <button 
+          className="modal_button"
+          type="submit"
+          onClick={handleDemoLogin}>
+          Use Demo Login
         </button>
       </form>
     </div>
