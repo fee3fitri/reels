@@ -7,6 +7,7 @@ import { fetchProduct, loadProduct } from "../../store/products";
 import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
+import ProductAccordion from "./ProductAccordion";
 import Cart from "../Cart";
 import './ProductItem.css'
 
@@ -104,6 +105,7 @@ const ProductItem = () => {
               </svg>
             </p>
           </div>
+          <ProductAccordion />
         </div>
       </div>
       <Cart />

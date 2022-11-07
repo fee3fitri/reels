@@ -55,6 +55,7 @@
   width: 55vw;
   grid-template-columns: repeat(2, 1fr);
   gap: 2vw;
+  max-height: 1300px;
 }
 
 .product_img_gallery .image_wrapper img {
@@ -146,4 +147,45 @@
 
 .size_modal table tr:nth-child(odd) {
   background-color: #e1e1e1;
+}
+
+
+/* Product Accordion CSS */
+.product_accordion {
+  width: 30vw;
+  margin-top: 7vh;
+}
+
+.product_accordion > div {
+  background: transparent;
+  height: 50%;
+  box-shadow: none;
+  border-top:1px solid rgba(255, 255, 255, .2);
+  border-bottom:1px solid rgba(255, 255, 255, .2);
+  color: white;
+}
+
+.product_accordion svg {
+  color: white;
+}
+
+.product_accordion .accordion_title {
+  margin-bottom: 0;
+  padding: 2vh 0;
+  font-size: 1.3vw;
+}
+
+.product_accordion .accordion_details {
+  display: inline;
+}
+
+.product_accordion .accordion_details > * {
+  margin: 3vh 0;
+  overflow: hidden;
+  transition: height 0.66s ease-out;
+}
+
+.product_accordion .accordion_details em {
+  font-size: 1.2vw;
+  margin-bottom: 1vh;
 }

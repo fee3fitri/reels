@@ -10,9 +10,9 @@ const ProductSize = () => {
   const {productId} = useParams();
   const dispatch = useDispatch();
   const product = useSelector(loadProduct(productId));
+  const sizes = product.size.split(' ');
   const [size, setSize] = useState();
   const [showModal, setShowModal] = useState(false);
-  const sizes = product.size.split(' ');
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
