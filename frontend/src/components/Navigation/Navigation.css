@@ -148,6 +148,6 @@
 p.cart_number{
   background-color: white;
   color: var(--grey-text);
-  padding: 2% 3%;
+  padding: 2% 3.3%;
   border-radius: 50%;
 }

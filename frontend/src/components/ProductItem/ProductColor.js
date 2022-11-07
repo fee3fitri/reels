@@ -45,7 +45,7 @@ const ProductColor = () => {
           />
           <label for={`color ${color}`}>
             <img 
-              src={`https://reels-dev.s3.us-west-1.amazonaws.com/${name}/${name}_${color}_color.webp`}
+              src={`https://reels-2-dev.s3.us-west-1.amazonaws.com/colors/${name}/${name}_${color}_color.webp`}
               alt={`${name} ${color}`}
               style={{
                 border: isActive ? '1px solid white' : ''

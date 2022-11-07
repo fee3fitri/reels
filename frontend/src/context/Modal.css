@@ -29,6 +29,14 @@
   padding: 2%;
   border-radius: var(--border-radius);
   height: 70vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.modal_content::-webkit-scrollbar {
+  display: none;
 }
 
 .hide-modal {

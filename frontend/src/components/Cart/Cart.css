@@ -2,7 +2,6 @@
   border-radius: var(--border-radius);
   padding: 3%;
   font-size: 1.1vw;
-  overflow-y: auto;
 }
 
 .cart h1 {
@@ -41,7 +40,7 @@
 }
 
 .cart_item_wrapper {
-  padding-bottom: 5%;
+  padding: 5%;
 }
 
 .cart_item_wrapper > * {

@@ -8,7 +8,6 @@ import { removeCartItem, updateCount } from "../../store/cart_item";
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector(state => state.session.user);
   const {productId, quantity} = cartItem;
   
   const product = useSelector(loadProduct(productId));
@@ -40,6 +39,7 @@ const CartItem = ({cartItem}) => {
           </div>
           <p className="cart_category">{category} Shoes</p>
           <p className="cart_color">Size {cartItem.size}</p>
+          
           <p className="cart_color">Amount {count}</p>
           <div className="quantity_price flex-row justify-between">
             <div className="quantity_button flex-row">

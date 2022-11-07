@@ -407,6 +407,9 @@ weekender_m_cobalt = Product.create!(
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/cobalt/weekender_cobalt_clash_1.webp"), filename: "weekender_cobalt_clash_1.webp"},
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/cobalt/weekender_cobalt_clash_2.webp"), filename: "weekender_cobalt_clash_2.webp"},
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/cobalt/weekender_cobalt_clash_3.webp"), filename: "weekender_cobalt_clash_3.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/women/weekender/cobalt/weekender_cobalt_3.webp"), filename: "weekender_cobalt_3.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/women/weekender/cobalt/weekender_cobalt_4.webp"), filename: "weekender_cobalt_4.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/women/weekender/cobalt/weekender_cobalt_5.webp"), filename: "weekender_cobalt_5.webp"},
   ])
 
 weekender_m_mint = Product.create!(
@@ -423,6 +426,9 @@ weekender_m_mint = Product.create!(
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_1.webp"), filename: "weekender_mint_1.webp"},
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_2.webp"), filename: "weekender_mint_2.webp"},
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_3.webp"), filename: "weekender_mint_3.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_4.webp"), filename: "weekender_mint_4.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_5.webp"), filename: "weekender_mint_5.webp"},
+    {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_6.webp"), filename: "weekender_mint_6.webp"},
   ])
 
 puts "Done!"
