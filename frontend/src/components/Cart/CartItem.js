@@ -47,9 +47,9 @@ const CartItem = ({cartItem}) => {
               <input 
                 className="cart_item_quantity"
                 type="text"
-                value={count}
+                value={Number(count)}
                 onChange={handleChange}
-                onBlur={dispatch(updateCount(productId, count))} />
+                onBlur={() => dispatch(updateCount(productId, count))} />
               <button onClick={() =>setCount(parseInt(count) + 1)}> + </button>
             </div>
             <p className="cart_subprice">{`$${(price * count).toFixed(2)}`}</p>

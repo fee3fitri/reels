@@ -15,13 +15,19 @@ const Navigation = () => {
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
+  const [itemsNum, setItemsNum] = useState(0);
 
   useEffect(() => {
     if (user) dispatch(fetchCartItems(user));
     dispatch(fetchProducts());
-  }, [dispatch, cartItems.length]);
+    setItemsNum(calculateItemsNum());
+  }, [dispatch]);
 
-  const itemsNum = () => {
+  useEffect(() => {
+    dispatch(fetchCartItems);
+  }, [cartItems])
+
+  const calculateItemsNum = () => {
     let total = 0;
     if (!user) return total;
 
@@ -67,7 +73,7 @@ const Navigation = () => {
           </div>
             <i className="fa-solid fa-cart-shopping"
               onClick={() => setShowModal(true)}></i>
-            <p className='cart_number'>{itemsNum()}</p>
+            <p className='cart_number'>{itemsNum}</p>
         </div>
       </header>
 

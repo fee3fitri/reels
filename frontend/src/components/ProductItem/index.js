@@ -45,18 +45,18 @@ const ProductItem = () => {
         cart_item: {
           userId: user.id,
           productId: productId,
-          quantity: count
+          quantity: Number(count)
         }
       }
       return dispatch(createCartItem(newItem));
     } else if (cartItem) {
-      setCount(count + 1)
+      setCount(Number(count) + 1);
       const updatedItem = {
         cart_item: {
           id: cartItem.id,
           userId: user.id,
           productId: productId,
-          quantity: count
+          quantity: Number(count)
         }
       }
       return dispatch(updateCartItem(updatedItem));
