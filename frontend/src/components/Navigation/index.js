@@ -15,28 +15,28 @@ const Navigation = () => {
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
-  const [itemsNum, setItemsNum] = useState(0);
+  // const [itemsNum, setItemsNum] = useState(0);
 
   useEffect(() => {
-    if (user) dispatch(fetchCartItems(user));
+    // if (user) dispatch(fetchCartItems(user));
     dispatch(fetchProducts());
-    setItemsNum(calculateItemsNum());
+    // setItemsNum(calculateItemsNum());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchCartItems);
-  }, [cartItems])
+  // useEffect(() => {
+  //   dispatch(fetchCartItems());
+  // }, [cartItems])
 
-  const calculateItemsNum = () => {
-    let total = 0;
-    if (!user) return total;
+  // const calculateItemsNum = () => {
+  //   let total = 0;
+  //   if (!user) return total;
 
-    cartItems.map(cartItem => {
-      total += Number(cartItem.quantity);
-    })
+  //   cartItems.map(cartItem => {
+  //     total += Number(cartItem.quantity);
+  //   })
 
-    return total;
-  }
+  //   return total;
+  // }
 
   return (
     <>
@@ -73,7 +73,8 @@ const Navigation = () => {
           </div>
             <i className="fa-solid fa-cart-shopping"
               onClick={() => setShowModal(true)}></i>
-            <p className='cart_number'>{itemsNum}</p>
+            {/* <p className='cart_number'>{itemsNum}</p> */}
+            <p className='cart_number'>0</p>
         </div>
       </header>
 

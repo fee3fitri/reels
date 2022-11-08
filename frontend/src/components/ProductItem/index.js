@@ -26,11 +26,12 @@ const ProductItem = () => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
-  useEffect(() => {
-    if (user) {
-      dispatch(fetchCartItems(user.id));
-    }
-  }, [dispatch, productId, user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     console.log();
+  //     dispatch(fetchCartItems(user.id));
+  //   }
+  // }, [dispatch, productId, user]);
 
   
   if (!product) return null;

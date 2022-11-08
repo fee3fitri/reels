@@ -29,6 +29,7 @@ export const reset = () => {
 
 // SELECTORS
 export const loadCartItems = state => {
+  // debugger
   return state.cartItems ? Object.values(state.cartItems) : [];
 }
 
@@ -75,24 +76,23 @@ export const updateCartItem = cartData => async dispatch => {
   dispatch(addItem(updatedCartItem));
 }
 
-export const removeCartItem = (cartItemId, productId) => async dispatch => {
+export const removeCartItem = (cartItemId) => async dispatch => {
   const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
     method: 'DELETE',
   });
 
-  dispatch(removeItem(productId));
+  dispatch(removeItem(cartItemId));
 }
 
 
 // REDUCERS
-const cartReducer = (state = {}, action) => {
+const cartItemReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
     case ADD_ITEMS:
       return action.items
     case ADD_ITEM:
-      // debugger
       const {id} = action.item;
       return {...state, [id]: action.item};
       
@@ -107,4 +107,4 @@ const cartReducer = (state = {}, action) => {
   }
 }
 
-export default cartReducer;
+export default cartItemReducer;

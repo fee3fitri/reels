@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { loadCartItems } from "../../store/cart_item";
+import { fetchCartItems, loadCartItems } from "../../store/cart_item";
 import CartItem from "./CartItem";
 import "./Cart.css"
 
@@ -11,6 +11,11 @@ const Cart = () => {
   const [hideCart, setHideCart] = useState(false);
   const cartItems = useSelector(loadCartItems);
   const sessionUser = useSelector(state => state.session.user);
+
+  useEffect(() => {
+    dispatch(fetchCartItems(sessionUser.id));
+    console.log(cartItems);
+  }, [cartItems, sessionUser.id]);
 
   if (!cartItems || !cartItems.length) {
     return (
@@ -24,7 +29,7 @@ const Cart = () => {
         <Link 
           to="/collections/mens"
           className='btn flex-col align-center'
-          >
+        >
           Men
         </Link>
       </div>

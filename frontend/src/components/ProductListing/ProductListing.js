@@ -6,8 +6,7 @@ import 'swiper/css/navigation';
 import './ProductListing.css';
 
 const ProductListing = ({product}) => {
-  const {id, name, price, imageUrl} = product
-  // const images = imageUrl.split(' ');
+  const {id, name, price} = product
   const images = product.imgUrls;
   const image = images[0];
   const rand = Math.floor(Math.random() * images.length);

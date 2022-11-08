@@ -10,7 +10,6 @@ class Api::CartItemsController < ApplicationController
 
   def update
     @cart_item = CartItem.find_by(id: params[:id])
-    # debugger
     
     if @cart_item && @cart_item.update(cart_items_params)
       render :show
