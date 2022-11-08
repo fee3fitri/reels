@@ -9,6 +9,7 @@ class Api::CartItemsController < ApplicationController
   end
 
   def update
+    # debugger
     @cart_item = CartItem.find_by(id: params[:id])
     
     if @cart_item && @cart_item.update(cart_items_params)
@@ -17,14 +18,25 @@ class Api::CartItemsController < ApplicationController
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
   end
-
+  
   def create
+    # debugger
     @cart_item = CartItem.new(cart_items_params)
-    if @cart_item.save
-      render :show
+    old_item = CartItem.find_by(product_id: params[:cart_item][:product_id])
+    if old_item 
+      old_item.update(cart_items_params)
+      @cart_item = old_item
     else
+      if !@cart_item.save 
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
+      end
     end
+    render :show
+    # if @cart_item.save
+    #   render :show
+    # else
+    #   render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
+    # end
   end
 
   def destroy

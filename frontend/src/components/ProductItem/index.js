@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { createCartItem, updateCartItem, loadCartItem, fetchCartItems } from "../../store/cart_item";
+import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
 import { Modal } from '../../context/Modal';
 import ProductColor from "./ProductColor";
@@ -17,7 +17,7 @@ const ProductItem = () => {
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   const product = useSelector(loadProduct(productId));
-  const cartItem = useSelector(loadCartItem(productId));
+  // const cartItem = useSelector(loadCartItem(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
   let sessionCart;
@@ -41,28 +41,37 @@ const ProductItem = () => {
     // debugger
     if (!user) return null;
     
-    if (!cartItem) { 
-      const newItem = {
-        cart_item: {
-          userId: user.id,
-          productId: productId,
-          quantity: Number(count)
+    // if (!cartItem) { 
+    //   const newItem = {
+    //     cart_item: {
+    //       userId: user.id,
+    //       productId: productId,
+    //       quantity: Number(count)
+    //     }
+    //   }
+    //   return dispatch(createCartItem(newItem));
+    // } else if (cartItem) {
+    //   setCount(Number(count) + 1);
+    //   const updatedItem = {
+    //     cart_item: {
+    //       // id: cartItem.id,
+    //       // userId: user.id,
+    //       // productId: productId,
+    //       ...cartItem,
+    //       quantity: Number(count)
+    //     }
+    //   }
+    //   return dispatch(updateCartItem(updatedItem));
+    // }
+
+    const newItem = {
+          cart_item: {
+            userId: user.id,
+            productId: productId,
+            quantity: Number(count)
+          }
         }
-      }
-      return dispatch(createCartItem(newItem));
-    } else if (cartItem) {
-      setCount(Number(count) + 1);
-      const updatedItem = {
-        cart_item: {
-          // id: cartItem.id,
-          // userId: user.id,
-          // productId: productId,
-          ...cartItem,
-          quantity: Number(count)
-        }
-      }
-      return dispatch(updateCartItem(updatedItem));
-    }
+        return dispatch(createCartItem(newItem));
   }
 
   return (

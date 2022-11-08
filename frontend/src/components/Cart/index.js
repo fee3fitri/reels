@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { fetchCartItems, loadCartItems } from "../../store/cart_item";
+import { fetchCartItems } from "../../store/cart_item";
 import CartItem from "./CartItem";
 import "./Cart.css"
 
@@ -9,7 +9,9 @@ const Cart = () => {
   let sessionCart;
   const dispatch = useDispatch();
   const [hideCart, setHideCart] = useState(false);
-  const cartItems = useSelector(loadCartItems);
+  // const cartItems = useSelector(loadCartItems);
+  const cartItems = useSelector(state => Object.values(state.cartItems));
+  
   const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ const Cart = () => {
     <div className={`cart flex-col align-center justify-center ${hideCart ? 'hide-modal' : ''}`}>
       <h1>Your Cart</h1>
       <ul className="flex-col">
-        {cartItems.map(cartItem => <CartItem key={cartItem.id} cartItem={cartItem} />)}
+        {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
       </ul>
     </div>
   )

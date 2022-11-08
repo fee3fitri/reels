@@ -33,9 +33,9 @@ export const loadCartItems = state => {
   return state.cartItems ? Object.values(state.cartItems) : [];
 }
 
-export const loadCartItem = productId => state => {
-  return state.cartItems ? state.cartItems[productId] : null;
-}
+// export const loadCartItem = productId => state => {
+//   return state.cartItems ? state.cartItems[productId] : null;
+// }
 
 export const getCartOrder = state => state.cart.order; 
 
@@ -69,7 +69,7 @@ export const updateCartItem = cartData => async dispatch => {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: JSON.stringify(cartData)
+    body: JSON.stringify({cartItem: cartData})
   });
 
   const updatedCartItem = await res.json();
@@ -93,6 +93,7 @@ const cartItemReducer = (state = {}, action) => {
     case ADD_ITEMS:
       return action.items
     case ADD_ITEM:
+      // debugger
       const {id} = action.item;
       return {...state, [id]: action.item};
       
