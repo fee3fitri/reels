@@ -28,8 +28,11 @@ class Api:ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
+    # Might need to add the corresponds user to delete the reviews
 
     if @review.destroy
+      # Might need to add all the reviews
+      # @reviews = Review.all
       render json: {messsage: "Review is successfully removed"}
     end
   end

@@ -2,9 +2,7 @@ import csrfFetch from "./csrf";
 
 const GET_PRODUCTS = 'products/GET_PRODUCTS';
 const GET_PRODUCT = 'products/GET_PRODUCT';
-const TOGGLE_COLOR = 'products/TOGGLE_COLOR';
 const TOGGLE_SIZE = 'products/TOGGLE_SIZE';
-
 
 export const getProducts = products => ({
   type: GET_PRODUCTS,
@@ -61,13 +59,6 @@ const productsReducer = (state = {}, action) => {
       return action.products;
     case GET_PRODUCT:
       return {...state, [action.product.id]: action.product};
-    case TOGGLE_COLOR:
-      return {...state,
-        [action.productId]: {
-          ...state[action.productId],
-          color: state[action.productId].color
-        }
-      }
     case TOGGLE_SIZE:
       return {...state,
         [action.productId]: {

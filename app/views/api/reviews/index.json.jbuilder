@@ -8,6 +8,6 @@
       :body,
       :rating
 
-      json.name review.user.name
+      json.name  review.user.name
   end
 end
