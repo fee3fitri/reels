@@ -38,6 +38,7 @@ const ProductItem = () => {
 
 
   const addToCart = e => {
+    // debugger
     if (!user) return null;
     
     if (!cartItem) { 
@@ -53,9 +54,10 @@ const ProductItem = () => {
       setCount(Number(count) + 1);
       const updatedItem = {
         cart_item: {
-          id: cartItem.id,
-          userId: user.id,
-          productId: productId,
+          // id: cartItem.id,
+          // userId: user.id,
+          // productId: productId,
+          ...cartItem,
           quantity: Number(count)
         }
       }

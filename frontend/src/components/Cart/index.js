@@ -15,7 +15,7 @@ const Cart = () => {
   useEffect(() => {
     dispatch(fetchCartItems(sessionUser.id));
     console.log(cartItems);
-  }, [cartItems, sessionUser.id]);
+  }, [sessionUser.id]);
 
   if (!cartItems || !cartItems.length) {
     return (
