@@ -3,7 +3,6 @@ import csrfFetch from "./csrf";
 const ADD_ITEMS = 'cartItem/ADD_ITEMS';
 const ADD_ITEM = 'cartItem/ADD_ITEM';
 const REMOVE_ITEM = 'cartItem/REMOVE_ITEM';
-const UPDATE_COUNT = 'cartItem/UPDATE_COUNT';
 const RESET = 'cartItem/RESET';
 
 // ACTIONS
@@ -21,12 +20,6 @@ export const removeItem = itemId => ({
   type: REMOVE_ITEM,
   itemId
 })
-
-export const updateCount = (itemId, count) => ({
-  type: updateCount,
-  itemId,
-  count
-}) 
 
 export const reset = () => {
   return {
@@ -68,7 +61,8 @@ export const createCartItem = cartData => async dispatch => {
 }
 
 export const updateCartItem = cartData => async dispatch => {
-  const res = await csrfFetch(`/api/cart_items/${cartData.cart_item.id}`, {
+  const {id} = cartData;
+  const res = await csrfFetch(`/api/cart_items/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -98,23 +92,14 @@ const cartReducer = (state = {}, action) => {
     case ADD_ITEMS:
       return action.items
     case ADD_ITEM:
-      return {...state, ...action.item}
+      // debugger
+      const {id} = action.item;
+      return {...state, [id]: action.item};
+      
     case REMOVE_ITEM:
-      const nextState = {
-        ...state, 
-        items: { ...state.items }
-      }
-      delete nextState.items[action.itemId];
+      const nextState = {...state}
+      delete nextState[action.itemId];
       return nextState;
-    case UPDATE_COUNT:
-      return {
-        ...state, 
-        items: {
-          [action.itemId]: {
-            ...state[action.itemId],
-            count: action.count
-          }
-        }}
     case RESET:
       return state;
     default:

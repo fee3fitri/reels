@@ -90,8 +90,8 @@
   width: 20vw;
   padding: 2vw;
   position: absolute;
-  right: var(--horizontal-edge);
-  top: var(--vertical-edge + 50px);
+  right: 6vw;
+  top: 13vh;
   font-family: var(--body-font);
   border-radius: var(--border-radius);
 }

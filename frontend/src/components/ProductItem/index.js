@@ -37,7 +37,6 @@ const ProductItem = () => {
 
 
   const addToCart = e => {
-    // e.preventDefault();
     if (!user) return null;
     
     if (!cartItem) { 

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import { loadProduct } from "../../store/products";
-import { removeCartItem, updateCount } from "../../store/cart_item";
+import { removeCartItem, updateCartItem, updateCount } from "../../store/cart_item";
 
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
@@ -12,8 +12,12 @@ const CartItem = ({cartItem}) => {
   
   const product = useSelector(loadProduct(productId));
   const [count, setCount] = useState(quantity);
-  if (!product) return null;
   
+  useEffect (() => {
+    dispatch(updateCartItem({...cartItem, quantity: count}))
+  }, [count]);
+  
+  if (!product) return null;
   const images = product.imgUrls;
   const img = images[0];
   const {name, category, size, price} = product;
@@ -49,7 +53,7 @@ const CartItem = ({cartItem}) => {
                 type="text"
                 value={Number(count)}
                 onChange={handleChange}
-                onBlur={() => dispatch(updateCount(productId, count))} />
+                onBlur={() => dispatch(updateCartItem(productId, count))} />
               <button onClick={() =>setCount(parseInt(count) + 1)}> + </button>
             </div>
             <p className="cart_subprice">{`$${(price * count).toFixed(2)}`}</p>

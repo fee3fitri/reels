@@ -6,7 +6,7 @@
   border-radius: var(--border-radius);
   opacity: 90%;
   position: absolute;
-  right: calc(var(--horizontal-edge) + 2vw);
+  right: calc(var(--horizontal-edge) + 9vw);
   top: calc(var(--vertical-edge) + 5vh);
   width: 10vw;
 }

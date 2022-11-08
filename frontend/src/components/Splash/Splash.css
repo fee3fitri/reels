@@ -240,7 +240,7 @@
 
 /* Video Modal CSS */
 .video_modal {
-  width: 70vw;
+  width: 59vw;
   background-color: white;
 }
 
@@ -253,4 +253,5 @@
 
 .video_modal video {
   width: 100%;
+  border-radius: var(--border-radius);
 }

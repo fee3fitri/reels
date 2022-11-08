@@ -27,6 +27,36 @@ demo_user = User.create!(
   password: 'password'
 )
 
+user_1 = User.create!(
+  email: 'not_a@user.com', 
+  name: 'Useria', 
+  password: 'password'
+)
+
+user_2 = User.create!(
+  email: 'resu@somemail.com', 
+  name: 'Resu', 
+  password: 'password'
+)
+
+user_3 = User.create!(
+  email: 'liam@mail.com', 
+  name: 'Liam', 
+  password: 'password'
+)
+
+user_4 = User.create!(
+  email: 'sword@pass.com', 
+  name: 'Rowd P', 
+  password: 'password'
+)
+
+user_5 = User.create!(
+  email: 'realname@mmail.com', 
+  name: 'Andrea', 
+  password: 'password'
+)
+
 # Crate all products
 weekender_candy = Product.create!(
   name: "Weekender Candy", 

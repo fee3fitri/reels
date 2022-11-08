@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import '../../context/Modal.css'
+import './Navigation.css'
 
 const ProfileModal = ({user}) => {
   const dispatch = useDispatch();
