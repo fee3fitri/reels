@@ -71,7 +71,9 @@ export const signup = ({email, name, password}) => async (dispatch) => {
   return response;
 }
 
-const initialState = { user: null };
+const initialState = {
+  user: JSON.parse(sessionStorage.getItem("currentUser"))
+};
 
 const sessionReducer = (state = initialState, action) => {
   switch(action.type) {
