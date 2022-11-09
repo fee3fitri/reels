@@ -8,6 +8,7 @@ const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
   const {productId, quantity, productName, price, imageUrl, size} = cartItem;
   const [count, setCount] = useState(quantity);
+  const totalPricePerItem = (price * count).toFixed(2);
   
   useEffect (() => {
     dispatch(updateCartItem({...cartItem, quantity: count}))
@@ -15,7 +16,6 @@ const CartItem = ({cartItem}) => {
   
   if (!cartItem) return null;
   const images = cartItem.imageUrl;
-  // const img = images[0];
 
   const handleChange = e => {
     let input = parseInt(e.target.value)
@@ -51,7 +51,7 @@ const CartItem = ({cartItem}) => {
                 onBlur={() => dispatch(updateCartItem(productId, count))} />
               <button onClick={() =>setCount(parseInt(count) + 1)}> + </button>
             </div>
-            <p className="cart_subprice">{`$${(price * count).toFixed(2)}`}</p>
+            <p className="cart_subprice">{`$${totalPricePerItem}`}</p>
           </div>
         </div>
       </li>

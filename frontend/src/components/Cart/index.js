@@ -15,6 +15,9 @@ const Cart = () => {
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const sessionUser = useSelector(state => state.session.user);
 
+  const priceQuantity = cartItems.map(item => item.price * item.quantity);
+  const subtotal = priceQuantity.reduce((a, b) => a + b).toFixed(2);
+
   useEffect(() => {
     dispatch(fetchCartItems(sessionUser.id));
   }, [sessionUser.id]);
@@ -48,7 +51,7 @@ const Cart = () => {
       </div>
 
       <div className="cart_total text-center">
-        <h2>Subtotal: ${}</h2>
+        <h2>Subtotal: ${subtotal}</h2>
         <p>&#91;&#34;Free express shipping on all shoe orders&#34;&#93;</p>
         <button 
           className="btn"
