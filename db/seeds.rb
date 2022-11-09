@@ -19,7 +19,7 @@ ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('products')
 
 
-puts "Creating users and products..."
+puts "Creating users, products, and reviews..."
 # Create one user with an easy to remember name, email, and password:
 demo_user = User.create!(
   email: 'demo@user.com', 
@@ -461,4 +461,131 @@ weekender_m_mint = Product.create!(
     {io: URI.open("https://reels-2-dev.s3.us-west-1.amazonaws.com/men/weekender/mint/weekender_mint_6.webp"), filename: "weekender_mint_6.webp"},
   ])
 
+  review_1 = Review.create!(
+    user_id: 2,
+    product_id: 11,
+    rating: 5,
+    title: "Love these shoes",
+    body: "Was a little nervous ordering shoes on line, as i didn't want the hassle of having to return if necessary. I love the colour and had a few comments on the statement they make when entering a room Shoes were a perfect fit and I wore them all day with no problems at all. They are as described on website. Thank you"
+  )
+
+  review_2 = Review.create!(
+    user_id: 5,
+    product_id: 11,
+    rating: 4,
+    title: "Comfy and classy",
+    body: "I love the look and feel of my Derby Black Dream shoes. It is actually my third pair of this shoe in the same print I love it so much. :) Lightweight for travel and they look great for both work and play. What's not to love"
+  )
+
+  review_3 = Review.create!(
+    user_id: 1,
+    product_id: 11,
+    rating: 5,
+    title: "The best!",
+    body: "These shoes saved my feet around Tokyo! Do light and comfy, and go with anything! ❤️"
+  )
+
+  review_4 = Review.create!(
+    user_id: 1,
+    product_id: 1,
+    rating: 5,
+    title: "The best!",
+    body: "These shoes saved my feet around Tokyo! Do light and comfy, and go with anything! ❤️"
+  )
+
+  review_5 = Review.create!(
+    user_id: 6,
+    product_id: 1,
+    rating: 4,
+    title: "Comfy and classy",
+    body: "I love the look and feel of my Derby Black Dream shoes. It is actually my third pair of this shoe in the same print I love it so much. :) Lightweight for travel and they look great for both work and play. What's not to love"
+  )
+
+  review_6 = Review.create!(
+    user_id: 3,
+    product_id: 1,
+    rating: 5,
+    title: "Love these shoes",
+    body: "Was a little nervous ordering shoes on line, as i didn't want the hassle of having to return if necessary. I love the colour and had a few comments on the statement they make when entering a room Shoes were a perfect fit and I wore them all day with no problems at all. They are as described on website. Thank you"
+  )
+
+  review_7 = Review.create!(
+    user_id: 1,
+    product_id: 2,
+    rating: 5,
+    title: "The Best Shoes",
+    body: "Absolutely love these so much! They are soooo comfortable and love the colour"
+  )
+
+  review_8 = Review.create!(
+    user_id: 1,
+    product_id: 3,
+    rating: 5,
+    title: "TPerfect addition to my wardrobe",
+    body: "This is a very versatile shoe. It looks good worn with casual clothes, but easily levels up to look right with a trouser suit or structured skirt. Comfort is beyond measure, as with all Derby shoes.My only problem with Derby is that I really, seriously want (but do NOT need) a pair in every single colour."
+  )
+
+  review_8 = Review.create!(
+    user_id: 2,
+    product_id: 4,
+    rating: 4,
+    title: "stylish and simple",
+    body: "casual, sporty feel that pairs with lots of outfits .. they just work !!"
+  )
+
+  review_9 = Review.create!(
+    user_id: 2,
+    product_id: 5,
+    rating: 4,
+    title: "Amazing shoes",
+    body: "I absolutely love these shoes!!! They are so comfortable and the colour is amazing"
+  )
+
+  review_10 = Review.create!(
+    user_id: 3,
+    product_id: 21,
+    rating: 4,
+    title: "Another great pair of Reels",
+    body: "All Rollies are super comfortable, and I've had lots of compliments on the design This is my 10th pair of Reels. That says it all! 😀"
+  )
+
+  review_11 = Review.create!(
+    user_id: 4,
+    product_id: 19,
+    rating: 5,
+    title: "Another great pair of Reels",
+    body: "All Rollies are super comfortable, and I've had lots of compliments on the design This is my 10th pair of Reels. That says it all! 😀"
+  )
+
+  review_12 = Review.create!(
+    user_id: 5,
+    product_id: 17,
+    rating: 4,
+    title: "Awesome Shoe",
+    body: "I have multiple derby shoes. I know I can't go wrong with the comfort of these shoes. I stand most of the day at work and these shoes keep my feet comfortable all day long. I was so excited to get the midnight zebra design. They are a little shinier then expected but still happy with them, I received so many complements. I will definitely be purchasing more designs."
+  )
+
+  review_13 = Review.create!(
+    user_id: 6,
+    product_id: 15,
+    rating: 3,
+    title: "Good Shoes for Work",
+    body: "These are fantastic; They're very comfortable, blister free, all day work shoes! They come with shoe protector bags, and a spare pair of black shoe laces. I only wish I could buy them with black soles instead of white."
+  )
+
+  review_14 = Review.create!(
+    user_id: 1,
+    product_id: 18,
+    rating: 4,
+    title: "Joy-making shoes!",
+    body: "I pre-ordered these shoes, so had to wait a while to get them....totally worth that wait. They are stunning in real life, as well as super comfy (of course). I've had so many comments from people asking about them - they just make me (and others) smile. Best purchase ever!"
+  )
+  
+  review_14 = Review.create!(
+    user_id: 1,
+    product_id: 20,
+    rating: 4,
+    title: "Wow",
+    body: "These are SO soft and SO light!!"
+  )
 puts "Done!"
