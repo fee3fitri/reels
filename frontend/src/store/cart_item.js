@@ -29,7 +29,6 @@ export const reset = () => {
 
 // SELECTORS
 export const loadCartItems = state => {
-  // debugger
   return state.cartItems ? Object.values(state.cartItems) : [];
 }
 

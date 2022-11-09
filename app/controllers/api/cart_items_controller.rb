@@ -9,7 +9,6 @@ class Api::CartItemsController < ApplicationController
   end
 
   def update
-    # debugger
     @cart_item = CartItem.find_by(id: params[:id])
     
     if @cart_item && @cart_item.update(cart_items_params)
