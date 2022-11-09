@@ -8,70 +8,40 @@ import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import ProductAccordion from "./ProductAccordion";
-import Cart from "../Cart";
-import './ProductItem.css'
 import LoginFormModal from "../LoginFormModal";
+import Cart from "../Cart";
+import Review from "../Reviews";
+import './ProductItem.css'
+
 
 const ProductItem = () => {
   const dispatch = useDispatch();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   const product = useSelector(loadProduct(productId));
-  // const cartItem = useSelector(loadCartItem(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  let sessionCart;
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
-
-  // useEffect(() => {
-  //   if (user) {
-  //     console.log();
-  //     dispatch(fetchCartItems(user.id));
-  //   }
-  // }, [dispatch, productId, user]);
-
   
   if (!product) return null;
 
-
   const addToCart = e => {
-    // debugger
     if (!user) return null;
-    
-    // if (!cartItem) { 
-    //   const newItem = {
-    //     cart_item: {
-    //       userId: user.id,
-    //       productId: productId,
-    //       quantity: Number(count)
-    //     }
-    //   }
-    //   return dispatch(createCartItem(newItem));
-    // } else if (cartItem) {
-    //   setCount(Number(count) + 1);
-    //   const updatedItem = {
-    //     cart_item: {
-    //       // id: cartItem.id,
-    //       // userId: user.id,
-    //       // productId: productId,
-    //       ...cartItem,
-    //       quantity: Number(count)
-    //     }
-    //   }
-    //   return dispatch(updateCartItem(updatedItem));
-    // }
-
     const newItem = {
-          cart_item: {
-            userId: user.id,
-            productId: productId,
-            quantity: Number(count)
-          }
-        }
-        return dispatch(createCartItem(newItem));
+      cart_item: {            
+        userId: user.id,
+        productId: productId,
+        productName: product.name,
+        quantity: Number(count),
+        imageUrl: product.imgUrls[0],
+        price: product.price,
+        size: '5'
+      }
+    }
+    return dispatch(createCartItem(newItem));
   }
 
   return (
@@ -85,7 +55,7 @@ const ProductItem = () => {
             <h1>{product.name}</h1>
             <h2>{`$${product.price}`}</h2>
             <p>{product.productPreview}</p>
-            <ProductColor />
+            {/* <ProductColor /> */}
             <ProductSize />
             <div className="atc_area flex-col">
               <button 
@@ -122,17 +92,19 @@ const ProductItem = () => {
             <ProductAccordion />
           </div>
         </div>
+        <Review />
       </div>
       
+      
+
       {showModal && (
         <div className="cart_modal_wrapper">
-          <Modal
-            onClose={() => setShowModal(false)}>
+          <Modal onClose={() => setShowModal(false)}>
             {user ? <Cart /> : (
               <div className='cart_modal_login flex-col'>
                 <h1>Your cart</h1>
                 <p>Login to see your cart items</p>
-                <LoginFormModal />
+                <LoginFormModal/>
               </div>
             )}
           </Modal>

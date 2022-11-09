@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { fetchCartItems } from "../../store/cart_item";
+import { Modal } from "../../context/Modal";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 import "./Cart.css"
 
 const Cart = () => {
-  let sessionCart;
   const dispatch = useDispatch();
   const [hideCart, setHideCart] = useState(false);
-  // const cartItems = useSelector(loadCartItems);
-  const cartItems = useSelector(state => Object.values(state.cartItems));
+  const [showModal, setShowModal] = useState(false);
   
+  const cartItems = useSelector(state => Object.values(state.cartItems));
   const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
@@ -39,12 +40,33 @@ const Cart = () => {
   }
 
   return (
-    <div className={`cart flex-col align-center justify-center ${hideCart ? 'hide-modal' : ''}`}>
+    <>
+      <div className={`cart flex-col align-center ${hideCart ? 'hide-modal' : ''}`}>
       <h1>Your Cart</h1>
       <ul className="flex-col">
         {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
       </ul>
-    </div>
+      </div>
+
+      <div className="cart_total text-center">
+        <h2>Subtotal: ${}</h2>
+        <p>&#91;&#34;Free express shipping on all shoe orders&#34;&#93;</p>
+        <button 
+          className="btn"
+          onClick={() => setShowModal(true)}
+        >
+          Checkout
+        </button>
+      </div>
+
+      {showModal && (
+        <div className="checkout_modal_wrapper">
+          <Modal onClose={() => setShowModal(false)}>
+            <Checkout />
+          </Modal>
+        </div>
+      )}
+    </>
   )
 }
 

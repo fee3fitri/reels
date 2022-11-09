@@ -12,7 +12,7 @@ const MenCollections = () => {
     dispatch(fetchCategory('mens'));
   }, [dispatch]);
 
-  if (!products) {return null};
+  if (!products) return null;
 
   return (
     <div className="page_wrapper flex-col align-center">

@@ -154,7 +154,7 @@ a {
   font-family: var(--body-font);
   font-size: 1.1vw;
   font-weight: 600;
-  padding: 2.5vh 2vw;
+  padding: 3vh 2vw;
   border-radius: var(--border-radius);
   color: var(--grey-text);
   transition: 1s
@@ -174,7 +174,7 @@ a {
 
 .modal_button {
   background-color: var(--purple);
-  padding: 2%;
+  padding: 2vh;
   margin-top: 5%;
   border-radius: 10px;
   color: white;

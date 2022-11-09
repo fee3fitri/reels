@@ -4,7 +4,10 @@
       :id,
       :user_id,
       :product_id,
-      :quantity
-    
+      :product_name,
+      :size,
+      :price,
+      :quantity,
+      :image_url
   end
 end

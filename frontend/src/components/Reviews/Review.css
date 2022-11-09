@@ -1,0 +1,25 @@
+.review_wrapper {
+  margin:20vh auto;
+  width: 80vw;
+}
+
+.review_wrapper h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 2vw;
+  margin-bottom: 5vh;
+}
+
+.review_wrapper h3 {
+  font-weight: 600;
+  font-size: 2vw;
+  margin-right: .5vw;
+}
+
+.review_wrapper .review_stars {
+  color: #f79900;
+}
+
+.review_wrapper.review_index {
+  
+}

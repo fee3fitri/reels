@@ -20,27 +20,22 @@ class Api::CartItemsController < ApplicationController
   end
   
   def create
-    # debugger
     @cart_item = CartItem.new(cart_items_params)
     old_item = CartItem.find_by(product_id: params[:cart_item][:product_id])
-    if old_item 
-      old_item.update(cart_items_params)
+    
+    if old_item
+      new_items_params = cart_items_params
+      new_items_params['quantity'] += 1
+      old_item.update(new_items_params)
       @cart_item = old_item
+    elsif @cart_item.save
     else
-      if !@cart_item.save 
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
-      end
     end
     render :show
-    # if @cart_item.save
-    #   render :show
-    # else
-    #   render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
-    # end
   end
 
   def destroy
-    # debugger
     @cart_item = current_user.cart_items.find_by(id: params[:id])
     
     if @cart_item.destroy
@@ -57,7 +52,11 @@ class Api::CartItemsController < ApplicationController
       :id,
       :user_id,
       :product_id,
-      :quantity
+      :quantity,
+      :image_url,
+      :price,
+      :product_name,
+      :size
     )
   end
 end
