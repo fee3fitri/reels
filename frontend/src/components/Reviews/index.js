@@ -25,24 +25,29 @@ const Review = () => {
     <>
       <div className="review_wrapper flex-col align-center">
         <h2>Reviews</h2>
-        <div className="flex-row align-center">
-          <div className="review-index flex-row align-center">
-            <h3>4.3</h3>
-            <div className="review_stars">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
+        <div className="review_items flex-row align-center justify-between">
+          <div className="flex-col">
+            <div className="review_index flex-row align-center">
+              <h3>4.3</h3>
+              <div className="review_stars">
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+              </div>
             </div>
+            <p>Based on {} reviews</p>
           </div>
+          
           <button 
-            className="review_button btn"
+            className="review_button"
             onClick={() => setShowModal(true)}>
             Write a review
           </button>
         </div>
-        <div className="review_item">
+
+        <div className="review_item_wrapper">
           {reviews.map(review => (
             <ReviewListing 
               key={review.id}

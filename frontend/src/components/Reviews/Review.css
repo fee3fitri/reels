@@ -6,7 +6,7 @@
 .review_wrapper h2 {
   color: white;
   font-weight: 600;
-  font-size: 2vw;
+  font-size: 2.5vw;
   margin-bottom: 5vh;
 }
 
@@ -16,10 +16,100 @@
   margin-right: .5vw;
 }
 
+.review_wrapper .review_button {
+  background-color: var(--black-text);
+  border: none;
+  color: white;
+  padding: 2vh 1.5vw;
+  font-size: 1.1vw;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+
+.review_wrapper .review_items {
+  background-color: white;
+  width: 80%;
+  padding: 4vh 4vw;
+  border-radius: var(--border-radius);
+}
+
+.review_wrapper .review_items p {
+  margin-top: 1vh;
+  font-size: 600;
+  color: var(--grey-text)
+}
+
 .review_wrapper .review_stars {
   color: #f79900;
 }
 
-.review_wrapper.review_index {
-  
+
+/* Review Modal CSS */
+.review_modal {
+  padding: 3vh 3vw;
+  width: 40vw;
+}
+
+.review_modal form > * {
+  margin: 1vh 0;
+}
+
+.review_modal h1,
+.review_modal_login h1 {
+  font-size: 2vw;
+  font-weight: 600;
+  margin-bottom: 3vh;
+}
+
+.review_modal i {
+  color: var(--grey-text);
+}
+
+
+.review_modal form label {
+  font-size: 1.3vw;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+.review_modal form input,
+.review_modal form textarea {
+  margin-top: 1vh;
+  font-size: 1.1vw;
+  padding: 1vh;
+}
+
+.review_modal form input[type="submit"] {
+  margin-top: 3vh;
+  border: none;
+  background-color: var(--black-text);
+  color: white;
+  padding: 2vh;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Review Login Modal */
+.review_modal_login {
+  padding: 3vh 0;
+  width: 70%;
+  margin: 0 auto
+}
+
+.review_modal_login {
+  text-align: center;
+}
+
+.review_modal_login  > * {
+  margin: 3vh 0;
+}
+
+.review_modal_login .account_button {
+  background-color: var(--black-text);
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 600;
+  padding: 2vh 3vw;
+  border-radius: var(--border-radius);
 }

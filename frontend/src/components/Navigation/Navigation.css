@@ -137,7 +137,7 @@
 }
 
 .cart_modal_login .account_button {
-  background-color: var(--purple);
+  background-color: var(--black-text);
   color: white;
   padding: 5%;
   font-size: 1.1vw;

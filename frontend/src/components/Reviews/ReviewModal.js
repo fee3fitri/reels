@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
+import "./Review.css"
 
 const ReviewModal = () => {
   const dispatch = useDispatch();
@@ -62,12 +63,13 @@ const ReviewModal = () => {
 
   return (
     <div className={`review_modal ${hideReview ? 'hide-modal' : ''}`}>
-      <form onSubmit={handleSubmit}>
-        <h1>{formType}</h1>
-        <h2></h2>
+      <form 
+        onSubmit={handleSubmit}
+        className="flex-col">
+        <h1 className="text-center">{formType}</h1>
         <label>
           Overall rating
-          <div className="star-buttons">
+          <div className="star-buttons flex-row">
             {stars()}
           </div>
         </label>

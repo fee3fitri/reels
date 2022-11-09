@@ -136,13 +136,14 @@ color: var(--grey-text);
 }
 
 .empty_cart .btn {
-  background-color: var(--purple);
+  background-color: var(--black-text);
   color: white;
 }
 
 /* Checkout Modal */
 .checkout_modal {
-  width:40vw;
+  width: 40vw;
+  padding: 5vh 0;
 }
 
 .checkout_modal h1 {
