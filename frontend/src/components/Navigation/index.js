@@ -15,17 +15,15 @@ const Navigation = () => {
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
-  const [itemsNum, setItemsNum] = useState(0);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // if (user) dispatch(fetchCartItems(user));
     dispatch(fetchProducts());
-    // setItemsNum(calculateItemsNum());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(fetchCartItems());
-  // }, [cartItems])
+  const handleOpen = () => {
+    setOpen(!open);
+  }
 
   const calculateItemsNum = () => {
     let total = 0;
@@ -48,7 +46,7 @@ const Navigation = () => {
           </Link>
           <Link 
             to="/collections/mens"
-            className='flex-col align-center'
+            className='collections flex-col align-center'
             >
             Men
           </Link>
@@ -65,10 +63,12 @@ const Navigation = () => {
           <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </Link>
-          <div className='account_menu'>
+          <div 
+            className="account_menu"
+            onClick={handleOpen}>
             <i className="fa-solid fa-circle-user"></i>
             <div className='account_content'>
-              <AccountModal />
+              {open ? <AccountModal /> : null}
             </div>
           </div>
             <i className="fa-solid fa-cart-shopping"

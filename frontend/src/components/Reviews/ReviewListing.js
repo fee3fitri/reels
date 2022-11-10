@@ -17,8 +17,11 @@ const ReviewListing = ({review}) => {
   }
 
   return (
-    <div className="review_listing_wrapper flex-row">
-      <p className="review_writer text-center">{name}</p>
+    <div className="review_listing_wrapper grid">
+      <div className="review_writer text-center">
+        <p>{name}</p>
+        <p className="verified">Verified buyer</p>
+      </div>
       <div className="review_content">
         <div className="review_rating">
           {star()}

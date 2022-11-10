@@ -94,8 +94,6 @@ const ProductItem = () => {
         </div>
         <Review />
       </div>
-      
-      
 
       {showModal && (
         <div className="cart_modal_wrapper">
