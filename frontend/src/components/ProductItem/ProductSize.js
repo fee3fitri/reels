@@ -6,12 +6,11 @@ import { Modal } from "../../context/Modal";
 import SizeModal from "./SizeModal";
 import './ProductItem.css'
 
-const ProductSize = () => {
+const ProductSize = ({setSize, size}) => {
   const {productId} = useParams();
   const dispatch = useDispatch();
   const product = useSelector(loadProduct(productId));
   const sizes = product.size.split(' ');
-  const [size, setSize] = useState();
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -19,6 +18,7 @@ const ProductSize = () => {
   }, [dispatch, productId]);
 
   const handleSize = e => {
+    console.log(e.target.value);
     setSize(e.target.value);
   }
 
@@ -41,7 +41,7 @@ const ProductSize = () => {
                 value={size}
                 id={`size ${size}`}
                 className="flex-row justify-center"
-                onChange={handleSize}
+                onClick={handleSize}
               />
               <label for={`size ${size}`}>
                 {size}

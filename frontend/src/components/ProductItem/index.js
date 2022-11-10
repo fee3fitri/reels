@@ -12,6 +12,7 @@ import LoginFormModal from "../LoginFormModal";
 import Cart from "../Cart";
 import Review from "../Reviews";
 import './ProductItem.css'
+import '../Reviews/Review.css'
 
 
 const ProductItem = () => {
@@ -21,6 +22,8 @@ const ProductItem = () => {
   const product = useSelector(loadProduct(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const [size, setSize] = useState('');
+
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
@@ -38,7 +41,7 @@ const ProductItem = () => {
         quantity: Number(count),
         imageUrl: product.imgUrls[0],
         price: product.price,
-        size: '5'
+        size: size
       }
     }
     return dispatch(createCartItem(newItem));
@@ -56,7 +59,7 @@ const ProductItem = () => {
             <h2>{`$${product.price}`}</h2>
             <p>{product.productPreview}</p>
             {/* <ProductColor /> */}
-            <ProductSize />
+            <ProductSize setSize={setSize} size={size} />
             <div className="atc_area flex-col">
               <button 
                 className="btn"
@@ -92,10 +95,10 @@ const ProductItem = () => {
             <ProductAccordion />
           </div>
         </div>
-        <Review />
+        <div className="review_wrapper flex-col align-center">
+          <Review />
+        </div>
       </div>
-      
-      
 
       {showModal && (
         <div className="cart_modal_wrapper">

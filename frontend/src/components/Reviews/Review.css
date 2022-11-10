@@ -1,6 +1,7 @@
 .review_wrapper {
   margin: 20vh auto;
   width: 80vw;
+  opacity: .85;
 }
 
 .review_wrapper h1 {

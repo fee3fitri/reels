@@ -84,7 +84,9 @@ const ReviewModal = () => {
             onChange={e => setBody(e.target.value)}
           />
         </label>
-        <input type="submit" value={formType} />
+        <input 
+          type="submit" 
+          value={formType} />
       </form>
     </div>
     
