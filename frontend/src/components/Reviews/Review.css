@@ -1,5 +1,5 @@
 .review_wrapper {
-  margin: 20vh auto;
+  margin: 10vh auto;
   width: 80vw;
   opacity: .85;
 }
@@ -151,12 +151,12 @@
   grid-template-columns: 25% 70%;
 }
 
-.review_listing_wrapper > * {
-  margin: 0 3vw;
-}
-
 .review_listing_wrapper p {
   font-weight: 600;
+}
+
+.review_listing_wrapper button {
+  cursor: pointer;
 }
 
 .review_listing_wrapper .review_author .verified {
@@ -179,4 +179,20 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 1.2vw;
+}
+
+.review_listing_wrapper .review_content .update_review_wrapper {
+  margin-top: 1vh;
+}
+
+.review_listing_wrapper .review_content .update_review_wrapper > * {
+  margin: 0 5px;
+}
+
+.review_listing_wrapper .review_content .update_review {
+  border: none;
+  background-color: var(--black-text);
+  color: white;
+  padding: .5vw;
+  border-radius: .5vw;
 }

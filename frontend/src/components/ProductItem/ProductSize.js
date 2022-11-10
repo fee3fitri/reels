@@ -18,7 +18,6 @@ const ProductSize = ({setSize, size}) => {
   }, [dispatch, productId]);
 
   const handleSize = e => {
-    console.log(e.target.value);
     setSize(e.target.value);
   }
 
