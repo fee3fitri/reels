@@ -9,7 +9,7 @@ const ReviewListing = ({review}) => {
   const star = () => {
     const stars = [];
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= rating; i++) {
       stars.push(<i class="fa-solid fa-star"></i>)
     }
 
@@ -17,8 +17,11 @@ const ReviewListing = ({review}) => {
   }
 
   return (
-    <div className="review_listing_wrapper flex-row">
-      <p className="review_writer text-center">{name}</p>
+    <div className="review_listing_wrapper grid">
+      <div className="review_author">
+        <p>{name}</p>
+        <p className="verified">Verified buyer</p>
+      </div>
       <div className="review_content">
         <div className="review_rating">
           {star()}

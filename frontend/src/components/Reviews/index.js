@@ -44,7 +44,7 @@ const Review = () => {
   return (
     <>
       <div className="review_wrapper flex-col align-center">
-        <h2>Reviews</h2>
+        <h1>Reviews</h1>
         <div className="review_items flex-row align-center justify-between">
           <div className="flex-col">
             <div className="review_index flex-row align-center">
