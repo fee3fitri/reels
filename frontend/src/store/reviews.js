@@ -37,17 +37,17 @@ export const getReview = productId => state => {
 export const fetchReviews = productId => async dispatch => {
 const res = await csrfFetch(`/api/products/${productId}/reviews`);
 const reviews = await res.json();
-dispatch(getReviews(reviews));
+dispatch(receiveReviews(reviews));
 }
 
-export const createReview = review => async dispatch => {
+export const createReview = currentReview => async dispatch => {
 const res = await csrfFetch(`/api/reviews`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
   },
-  body: JSON.stringify(review)
+  body: JSON.stringify({review: currentReview})
   });
 
   if (res.ok) {

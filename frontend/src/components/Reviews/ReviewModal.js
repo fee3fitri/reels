@@ -42,23 +42,8 @@ const ReviewModal = () => {
       dispatch(updateReview(review));
   }
 
-  const stars = () => {
-    return [...Array(5)].map((star, idx) => {
-      const rating = idx + 1;
-
-      return(
-        <div
-          key={rating}
-          value={rating}
-          className={rating <= (rating || hover) ? "starOn" : "starOff"}
-          onClick={() => setRating(rating)}
-          onMouseEnter={() => setHover(rating)}
-          onMouseOut={() => setHover(rating)}
-        >
-          <i className="fa-solid fa-star"></i>
-        </div>
-      )
-    })
+  const handleRating = e => {
+    setRating(e.target.value);
   }
 
   return (
@@ -69,8 +54,17 @@ const ReviewModal = () => {
         <h1 className="text-center">{formType}</h1>
         <label>
           Overall rating
-          <div className="star-buttons flex-row">
-            {stars()}
+          <div class="rating">
+            <input type="radio" id="star5" name="rating" value={Number("2")} onChange={e => setRating(e.target.value)} />
+            <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+            <input type="radio" id="star4" name="rating" value={Number("3")} onChange={e => setRating(e.target.value)} />
+            <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+            <input type="radio" id="star3" name="rating" value={Number("4")} onChange={e => setRating(e.target.value)} />
+            <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+            <input type="radio" id="star2" name="rating" value={Number("5")} onChange={e => setRating(e.target.value)} />
+            <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+            <input type="radio" id="star1" name="rating" value={Number("1")} onChange={e => setRating(e.target.value)} />
+            <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
           </div>
         </label>
         <label>

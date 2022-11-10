@@ -13,13 +13,33 @@ const Review = () => {
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   const reviews = useSelector(getReviews);
+  const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
+  
+  const reviewAvg = () => {
+    if (reviews) {
+      return (ratings.reduce((a, b) => a + b) / reviews.length).toFixed(1);
+    } else {
+      return 0.0;
+    }
+  }
+
+  const reviewStars = () => {
+    const roundedRating = Math.round(reviewAvg());
+    const stars = [];
+
+    for (let i = 0; i < roundedRating; i++) {
+      stars.push(<i class="fa-solid fa-star"></i>)
+    }
+
+    return stars;
+  }
 
   useEffect(() => {
     dispatch(fetchReviews(productId));
   }, [productId]);
 
-  if (!reviews) return null;
+  if (reviews.length === 0) return null;
 
   return (
     <>
@@ -28,16 +48,12 @@ const Review = () => {
         <div className="review_items flex-row align-center justify-between">
           <div className="flex-col">
             <div className="review_index flex-row align-center">
-              <h3>4.3</h3>
+              <h3>{reviewAvg()}</h3>
               <div className="review_stars">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
+                {reviewStars()}
               </div>
             </div>
-            <p>Based on {} reviews</p>
+            <p>Based on {reviews.length} reviews</p>
           </div>
           
           <button 
@@ -48,12 +64,11 @@ const Review = () => {
         </div>
 
         <div className="review_item_wrapper">
-          {reviews.map(review => (
+          {reviews ? reviews.map(review => (
             <ReviewListing 
               key={review.id}
-              review={getReviews}
-            />
-          ))}
+              review={review}/>
+          )) : <div className="empty_reviews">There is no review for this product.</div>}
         </div>
       </div>
 

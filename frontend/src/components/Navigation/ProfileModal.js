@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import '../../context/Modal.css'
 import './Navigation.css'
@@ -15,31 +16,23 @@ const ProfileModal = ({user}) => {
   return (
     <div className="profile_modal_container">
       <div className="profile_content">
-        <div className="title_area flex-row justify-between align-center">
-          <h2>Profile</h2>
-        </div>
-        <form className="login_form flex-col">
-          <label className="flex-col">
-            Email
-            <input
-              type="email"
-              value={user.email}
-            />
-          </label>
-          <label className="flex-col">
-            Name
-            <input
-              type="text"
-              value={user.name}
-            />
-          </label>
-          <button 
-            onClick={logout}
-            className="btn"
-          >
-            Log Out
-          </button>
-        </form>
+        <h2>Hi, {user.name}!</h2>
+        <p className="text-center">Click here to start shopping</p>
+        <Link to="/collections/womens"
+          className='btn flex-col align-center'>
+          Women
+        </Link>
+        <Link 
+          to="/collections/mens"
+          className='btn flex-col align-center'
+        >
+          Men
+        </Link>
+        <button 
+          onClick={logout}
+          className="btn">
+          Log Out
+        </button>
       </div>
     </div>
   );

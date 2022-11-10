@@ -89,6 +89,10 @@ a {
   font-size: 25%;
 }
 
+.fa-star {
+  color: #FECE31;
+}
+
 
 /* Display CSS */
 .flex-row {

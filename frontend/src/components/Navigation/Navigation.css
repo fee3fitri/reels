@@ -87,10 +87,10 @@
 .profile_modal_container .profile_content {
   background-color: white;
   color: black;
-  width: 20vw;
+  width: 15vw;
   padding: 2vw;
   position: absolute;
-  right: 6vw;
+  right: 9vw;
   top: 13vh;
   font-family: var(--body-font);
   border-radius: var(--border-radius);
@@ -99,6 +99,11 @@
 .profile_modal_container .profile_content h2 {
   font-size: 1.6vw;
   font-weight: 600;
+  margin-bottom: 2vh;
+}
+
+.profile_modal_container .profile_content p {
+  margin-bottom: 2vh;
 }
 
 .profile_modal_container .profile_content .fa-solid {
@@ -121,7 +126,8 @@
 
 .profile_modal_container .profile_content .btn{
   color: white;
-  background-color: var(--grey-text);
+  background-color: var(--black-text);
+  margin-bottom: 2vh;
 }
 
 /* Cart Modal */
@@ -150,4 +156,8 @@ p.cart_number{
   color: var(--grey-text);
   padding: 2% 3.3%;
   border-radius: 50%;
+}
+
+.profile_content:hover {
+  transform: none;
 }
