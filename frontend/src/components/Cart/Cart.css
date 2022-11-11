@@ -158,7 +158,6 @@ color: var(--grey-text);
   font-size: 1.5vw;
   font-weight: 600;
   letter-spacing: 0;
-  margin-bottom: 10vh;
 }
 
 .checkout_modal h2 {
@@ -174,4 +173,19 @@ color: var(--grey-text);
 .checkout_modal i {
   font-size: 3vw;
   margin-right: 1vw;
+}
+
+.checkout_modal a {
+  opacity: .8;
+}
+
+.checkout_modal a:hover {
+  opacity: 1;
+}
+
+.checkout_modal .go_main {
+  margin-top: 10vh;
+  font-size: 1.3vw;
+  font-weight: 600;
+  color: var(--purple)
 }
