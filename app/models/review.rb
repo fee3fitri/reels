@@ -1,4 +1,4 @@
-q# == Schema Information
+# == Schema Information
 #
 # Table name: reviews
 #
