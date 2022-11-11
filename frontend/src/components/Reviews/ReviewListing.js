@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "../../context/Modal";
-import { deleteReview, updateReview } from "../../store/reviews";
+import { deleteReview, fetchReview, updateReview } from "../../store/reviews";
 import ReviewModal from "./ReviewModal";
 
 const ReviewListing = ({review}) => {
@@ -17,11 +17,11 @@ const ReviewListing = ({review}) => {
 
   const [showModal, setShowModal] = useState(false);
 
-  if (user.id === userId) {
+  if (user && user.id === userId) {
     updateBtn = <button 
       className="update_review"
       onClick={() => {
-        dispatch(updateReview(review));
+        dispatch(fetchReview(id));
         setShowModal(true);
       }}>
       Update Review
@@ -42,11 +42,11 @@ const ReviewListing = ({review}) => {
   }
 
   return (
-    <div className="review_listing_wrapper flex-row">
-      <p className="review_writer text-center">{name}</p>
-      <div className="review_content">
-        <div className="review_rating">
-          {star()}
+    <>
+      <div className="review_listing_wrapper grid">
+        <div className="review_author">
+          <p>{name}</p>
+          <p className="verified">Verified buyer</p>
         </div>
         <div className="review_content">
           <div className="review_header flex-row justify-between ">

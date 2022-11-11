@@ -144,14 +144,34 @@ color: var(--grey-text);
 .checkout_modal {
   width: 40vw;
   padding: 5vh 0;
+  text-align: left !important;
 }
 
 .checkout_modal h1 {
-  font-size: 2vw;
+  font-size: 7vw;
   font-weight: 600;
+  font-family: var(--reels-font);
+  margin-bottom: 5vh;
+}
+
+.checkout_modal .checkout {
+  font-size: 1.5vw;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 10vh;
 }
 
 .checkout_modal h2 {
   font-size: 1.75vw;
   font-weight: 600;
+}
+
+.checkout_modal p {
+  font-size: 1.5vw;
+  margin-bottom: 5vh;
+}
+
+.checkout_modal i {
+  font-size: 3vw;
+  margin-right: 1vw;
 }

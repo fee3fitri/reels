@@ -34,7 +34,7 @@
   animation: bigger_logo 1s ease-in;
 }
 
-.header_navigation a:hover, 
+.header_navigation .collections:hover, 
 .header_navigation .fa-brands:hover,
 .header_navigation .fa-solid:hover {
   transform: scale(1.3);
@@ -74,14 +74,13 @@
 }
 
 /* Account Menu */
-/* .account_content {
+.account_content {
   display: none;
-} */
+}
 
-/* .account_menu:hover .account_content {
+.account_menu:hover .account_content {
   display: block;
-} */
-
+}
 
 
 /* Profile Modal */
@@ -92,26 +91,9 @@
   padding: 2vw;
   position: absolute;
   right: 9vw;
+  top: 13vh;
   font-family: var(--body-font);
   border-radius: var(--border-radius);
-  transform: translateY(5%);
-  opacity: 1;
-  animation: slide .2s linear;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateY(-10%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0%);
-    opacity: 0.1;
-  }
-  100% {
-    transform: translateY(5%);
-    opacity: 1;
-  }
 }
 
 .profile_modal_container .profile_content h2 {
@@ -148,6 +130,10 @@
   margin-bottom: 2vh;
 }
 
+.profile_modal_container .profile_content button {
+  width: 100%;
+}
+
 /* Cart Modal */
 
 .cart_modal_login > * {
@@ -174,8 +160,4 @@ p.cart_number{
   color: var(--grey-text);
   padding: 2% 3.3%;
   border-radius: 50%;
-}
-
-.profile_content:hover {
-  transform: none;
 }

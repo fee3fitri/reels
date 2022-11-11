@@ -1,0 +1,114 @@
+[33mcommit 525686f9aacf25ea659a5e759d9e488a43bbcbdb[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 17:50:40 2022 -0800
+
+    Before merge
+
+[33mcommit 032c2bce25ed4b44c59c5f78c69fcce95df0249c[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 16:42:24 2022 -0800
+
+    merge
+
+[33mcommit ecc673ea3935f6e795577dcb8d4fadddc670aecc[m
+Merge: 6fb5d3b c4daa63
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 16:39:49 2022 -0800
+
+    Merge branch 'detached' into main
+
+[33mcommit c4daa63223cc52593a1ff3ffcade5c54d198b72b[m[33m ([m[1;31morigin/detached[m[33m, [m[1;32mdetached[m[33m)[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 16:33:39 2022 -0800
+
+    add detached head
+
+[33mcommit bd983d72969975024682e7d5622ae285b9a24ee6[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 14:01:28 2022 -0800
+
+    Delete review
+
+[33mcommit 7eb92d709162141705a0b32b11cac776c9851f61[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 11:43:24 2022 -0800
+
+    Fix cart size
+
+[33mcommit 3ebc7176e2a494f096e71a67dc65c6fd3fa035ea[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 10:37:10 2022 -0800
+
+    Revert navigation and stars
+
+[33mcommit 6fb5d3bce69ebe9dc60842fc3ee009a69d5482ab[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 07:29:07 2022 -0800
+
+    Fixing Account Menu
+
+[33mcommit e63d4a7f68096550eaef1631b485a3ff2d7e7435[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Thu Nov 10 06:45:02 2022 -0800
+
+    Multiply the stars rating
+
+[33mcommit 66ed8ec6fd06d607f1c016683d125b18cd2385ad[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 14:07:27 2022 -0800
+
+    Add some review seeds
+
+[33mcommit c6d0f5e57e1dafed5868912038f79b0e51445051[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 13:11:07 2022 -0800
+
+    Makes subtotal works
+
+[33mcommit fc41ff426c9f2cb5d24e44586cffb43986c09f20[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 12:28:29 2022 -0800
+
+    Fixing styles
+
+[33mcommit c6ceab3741c403680d2912d057ea9f61b2cc82e5[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 10:49:45 2022 -0800
+
+    Remove generateValue from render.yaml
+
+[33mcommit edadd485151ef9ac06d0185e3ac8b302052ce1c6[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 10:38:34 2022 -0800
+
+    Remove generateValue from render.yaml
+
+[33mcommit 2e7787db92ce39755486222e8a843a5582d97d45[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 10:14:37 2022 -0800
+
+    Fix user auth bug
+
+[33mcommit a97acc0d8237ac99bf98b6c0116e79e0fa5d1fc5[m[33m ([m[1;31morigin/refactor_cart[m[33m, [m[1;32mrefactor_cart[m[33m)[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Wed Nov 9 10:00:25 2022 -0800
+
+    Add reviews
+
+[33mcommit da56802aed0900608545f606931329475e9f4833[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Tue Nov 8 15:22:49 2022 -0800
+
+    before creating new branch
+
+[33mcommit 849aecb397f4f5b8b891baa8fd8b0e31a7a7c635[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Tue Nov 8 14:07:52 2022 -0800
+
+    Fixing cart
+
+[33mcommit 5bad2342b38d43c365cda05b82087d0cd2657caa[m
+Author: fee3fitri <safitri.shelton@gmail.com>
+Date:   Tue Nov 8 12:24:40 2022 -0800
+
+    Fixing delete and update bug

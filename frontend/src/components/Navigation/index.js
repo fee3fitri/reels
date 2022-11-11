@@ -10,20 +10,24 @@ import { fetchProducts } from '../../store/products';
 import Cart from '../Cart';
 import './Navigation.css';
 
+// random comment
+
 const Navigation = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [itemsNum, setItemsNum] = useState(0);
 
   useEffect(() => {
+    // if (user) dispatch(fetchCartItems(user));
     dispatch(fetchProducts());
+    // setItemsNum(calculateItemsNum());
   }, [dispatch]);
 
-  const handleOpen = () => {
-    setOpen(!open);
-  }
+  // useEffect(() => {
+  //   dispatch(fetchCartItems());
+  // }, [cartItems])
 
   const calculateItemsNum = () => {
     let total = 0;
@@ -63,12 +67,10 @@ const Navigation = () => {
           <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </Link>
-          <div 
-            className="account_menu"
-            onClick={handleOpen}>
+          <div className='account_menu'>
             <i className="fa-solid fa-circle-user"></i>
             <div className='account_content'>
-              {open ? <AccountModal /> : null}
+              <AccountModal />
             </div>
           </div>
             <i className="fa-solid fa-cart-shopping"

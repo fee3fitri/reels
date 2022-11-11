@@ -4,11 +4,11 @@
   opacity: .85;
 }
 
-.review_wrapper h2 {
+.review_wrapper h1 {
   color: white;
   font-weight: 600;
   font-size: 2.5vw;
-  margin-bottom: 2vh;
+  margin-bottom: 5vh;
 }
 
 .review_wrapper h3 {
@@ -148,23 +148,21 @@
   width: 66vw;
   border-radius: var(--border-radius);
   padding: 5vh 3vw;
-}
-
-.review_listing_wrapper > * {
-  margin: 0 3vw;
+  grid-template-columns: 25% 70%;
 }
 
 .review_listing_wrapper p {
   font-weight: 600;
-  margin-bottom: 1vh;
 }
 
-.review_listing_wrapper .verified {
-  color: var(--grey-text)
+.review_listing_wrapper button {
+  cursor: pointer;
 }
 
-.review_listing_wrapper .review_writer {
+.review_listing_wrapper .review_author .verified {
+  color: var(--grey-text);
   margin-top: 1vh;
+  font-size: 1.2vw;
 }
 
 .review_listing_wrapper .review_content h2 {
