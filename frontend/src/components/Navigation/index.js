@@ -67,7 +67,7 @@ const Navigation = () => {
           <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </Link>
-          <div className='account_menu'>
+          <div className='account_menu flex-row align-center'>
             <i className="fa-solid fa-circle-user"></i>
             <div className='account_content'>
               <AccountModal />

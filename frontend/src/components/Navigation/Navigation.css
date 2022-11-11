@@ -74,6 +74,10 @@
 }
 
 /* Account Menu */
+.account_menu {
+  height: 20vh;
+}
+
 .account_content {
   display: none;
 }
@@ -84,6 +88,8 @@
 
 
 /* Profile Modal */
+
+
 .profile_modal_container .profile_content {
   background-color: white;
   color: black;
@@ -91,9 +97,22 @@
   padding: 2vw;
   position: absolute;
   right: 9vw;
-  top: 13vh;
   font-family: var(--body-font);
   border-radius: var(--border-radius);
+  transform: translateY(10%);
+  opacity: 1;
+  animation: show-down .2s ease-out;
+}
+
+@keyframes show-down {
+  0% {
+    transform: translateY(0%);
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
 }
 
 .profile_modal_container .profile_content h2 {
