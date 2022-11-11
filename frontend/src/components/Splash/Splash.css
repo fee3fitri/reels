@@ -124,7 +124,7 @@
 .splash_category .category_images .btn {
   position: absolute;
   left: 3vw;
-  transform: translateY(650%);
+  transform: translateY(550%);
   font-size: 1.5vw;
 }
 

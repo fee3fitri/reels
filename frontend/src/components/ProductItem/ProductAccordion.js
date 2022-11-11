@@ -13,7 +13,6 @@ const ProductAccordion = () => {
   const dispatch = useDispatch;
   const product = useSelector(loadProduct(productId));
 
-
   if (!product) return null;
 
   return (

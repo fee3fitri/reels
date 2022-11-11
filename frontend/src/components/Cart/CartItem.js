@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import Divider from "@mui/material/Divider";
-import { removeCartItem, updateCartItem, updateCount } from "../../store/cart_item";
+import { removeCartItem, updateCartItem } from "../../store/cart_item";
 
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
-  const {productId, quantity, productName, price, imageUrl, size} = cartItem;
+  const {productId, quantity, productName, price, size} = cartItem;
   const [count, setCount] = useState(quantity);
   const totalPricePerItem = (price * count).toFixed(2);
   
@@ -36,7 +36,6 @@ const CartItem = ({cartItem}) => {
               <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
-          {/* <p className="cart_category">{category} Shoes</p> */}
           <p className="cart_color">Size {cartItem.size}</p>
           
           <p className="cart_color">Amount {count}</p>

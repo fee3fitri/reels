@@ -1,16 +1,11 @@
 .review_wrapper {
-  margin: 20vh auto;
+  margin: 10vh auto;
   width: 80vw;
-}
-
-.review_wrapper h1 {
-  color: white;
-  font-weight: 600;
-  font-size: 2.5vw;
-  margin-bottom: 8vh;
+  opacity: .85;
 }
 
 .review_wrapper h2 {
+  color: white;
   font-weight: 600;
   font-size: 2.5vw;
   margin-bottom: 2vh;
@@ -153,7 +148,10 @@
   width: 66vw;
   border-radius: var(--border-radius);
   padding: 5vh 3vw;
-  grid-template-columns: 25% 75%;
+}
+
+.review_listing_wrapper > * {
+  margin: 0 3vw;
 }
 
 .review_listing_wrapper p {
@@ -166,14 +164,15 @@
 }
 
 .review_listing_wrapper .review_writer {
-  margin-top: 2vh;
-  width: 15vw;
+  margin-top: 1vh;
 }
 
 .review_listing_wrapper .review_content h2 {
   color: var(--black-text);
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin-top: 1vh;
+  margin-bottom: 3vh;
+  font-weight: 600;
 }
 
 .review_listing_wrapper .review_content p {
@@ -181,4 +180,21 @@
   margin-bottom: 1vh;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.2vw;
+}
+
+.review_listing_wrapper .review_content .update_review_wrapper {
+  margin-top: 1vh;
+}
+
+.review_listing_wrapper .review_content .update_review_wrapper > * {
+  margin: 0 5px;
+}
+
+.review_listing_wrapper .review_content .update_review {
+  border: none;
+  background-color: var(--black-text);
+  color: white;
+  padding: .5vw;
+  border-radius: .5vw;
 }
