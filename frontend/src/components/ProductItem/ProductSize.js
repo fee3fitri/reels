@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchProduct, loadProduct, toggleSize } from "../../store/products";
+import { fetchProduct, loadProduct } from "../../store/products";
 import { Modal } from "../../context/Modal";
 import SizeModal from "./SizeModal";
 import './ProductItem.css'

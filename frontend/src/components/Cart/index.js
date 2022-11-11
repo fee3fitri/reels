@@ -9,7 +9,7 @@ import "./Cart.css"
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const [hideCart, setHideCart] = useState(false);
+  const [hideCart] = useState(false);
   const [showModal, setShowModal] = useState(false);
   
   const cartItems = useSelector(state => Object.values(state.cartItems));
@@ -17,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(fetchCartItems(sessionUser.id));
-  }, [sessionUser.id]);
+  }, [dispatch, sessionUser.id]);
 
   const subtotal = () => {
     if (cartItems) {

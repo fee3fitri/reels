@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { useHistory } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import { removeCartItem, updateCartItem } from "../../store/cart_item";
 
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
-  const {productId, quantity, productName, price, size} = cartItem;
+  const {productId, quantity, productName, price} = cartItem;
   const [count, setCount] = useState(quantity);
   const totalPricePerItem = (price * count).toFixed(2);
   
   useEffect (() => {
     dispatch(updateCartItem({...cartItem, quantity: count}))
-  }, [count]);
+  }, [dispatch, cartItem, count]);
   
   if (!cartItem) return null;
   const images = cartItem.imageUrl;

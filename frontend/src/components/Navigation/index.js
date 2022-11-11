@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
-import * as sessionActions from "../../store/session";
 import { Modal } from '../../context/Modal';
 import AccountModal from './AccountModal';
 import LoginFormModal from '../LoginFormModal/';
-import { fetchCartItems, getCartOrder, loadCartItems } from '../../store/cart_item';
+import { loadCartItems } from '../../store/cart_item';
 import { fetchProducts } from '../../store/products';
 import Cart from '../Cart';
 import './Navigation.css';
@@ -17,17 +16,10 @@ const Navigation = () => {
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
-  const [itemsNum, setItemsNum] = useState(0);
 
   useEffect(() => {
-    // if (user) dispatch(fetchCartItems(user));
     dispatch(fetchProducts());
-    // setItemsNum(calculateItemsNum());
   }, [dispatch]);
-
-  // useEffect(() => {
-  //   dispatch(fetchCartItems());
-  // }, [cartItems])
 
   const calculateItemsNum = () => {
     let total = 0;

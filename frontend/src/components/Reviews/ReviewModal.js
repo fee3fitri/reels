@@ -22,8 +22,7 @@ const ReviewModal = () => {
   const [rating, setRating] = useState(review.rating);
   const [title, setTitle] = useState(review.title);
   const [body, setBody] = useState(review.body);
-  const [hover, setHover] = useState(null);
-  const [hideReview, setHideReview] = useState(false);
+  const [hideReview] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -40,10 +39,6 @@ const ReviewModal = () => {
     formType === 'Create Review' ?
       dispatch(createReview(review)) :
       dispatch(updateReview(review));
-  }
-
-  const handleRating = e => {
-    setRating(e.target.value);
   }
 
   return (

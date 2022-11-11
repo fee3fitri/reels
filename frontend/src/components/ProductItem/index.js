@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
+import { createCartItem } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
 import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
-import ProductColor from "./ProductColor";
+// import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import ProductAccordion from "./ProductAccordion";
@@ -21,14 +21,14 @@ const ProductItem = () => {
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   const product = useSelector(loadProduct(productId));
-  const [count, setCount] = useState(1);
+  const [count] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const reviews = useSelector(getReviews);
   const ratings = reviews.map(review => review.rating);
   const [size, setSize] = useState('');
 
   const reviewAvg = () => {
-    if (reviews) {
+    if (reviews.length) {
       return (ratings.reduce((a, b) => a + b) / reviews.length).toFixed(1);
     } else {
       return 0.0;

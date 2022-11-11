@@ -13,7 +13,7 @@ const ReviewListing = ({review}) => {
   
   useEffect(() => {
     dispatch(updateReview({...review, title, body, rating}))
-  }, [title, body, rating]);
+  }, [dispatch, review, title, body, rating]);
 
   const [showModal, setShowModal] = useState(false);
 

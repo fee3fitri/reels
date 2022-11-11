@@ -37,7 +37,7 @@ const Review = () => {
 
   useEffect(() => {
     dispatch(fetchReviews(productId));
-  }, [productId]);
+  }, [dispatch, productId]);
 
   if (reviews.length === 0) return null;
 

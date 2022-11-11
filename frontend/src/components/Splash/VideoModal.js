@@ -3,7 +3,7 @@ import './Splash.css';
 
 const VideoModal = ({ onClose }) => {
   const videoEl = useRef(null);
-  const [hideVideo, setHideVideo] = useState(false);
+  const [hideVideo] = useState(false);
 
   const attemptPlay = () => {
     videoEl &&

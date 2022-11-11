@@ -7,7 +7,7 @@ import './ProductItem.css';
 const SizeModal = () => {
   const {productId} = useParams();
   const product = useSelector(loadProduct(productId));
-  const [hideSize, setHideSize] = useState(false);
+  const [hideSize] = useState(false);
 
   return (
     <div className={`size_modal ${hideSize ? 'hide-modal' : ''}`}>

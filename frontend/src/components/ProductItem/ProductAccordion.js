@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchProduct, loadProduct } from "../../store/products";
+import { loadProduct } from "../../store/products";
 import { Accordion, AccordionDetails } from "@mui/material/";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -10,7 +9,6 @@ import Divider from "@mui/material/Divider";
 
 const ProductAccordion = () => {
   const {productId} = useParams();
-  const dispatch = useDispatch;
   const product = useSelector(loadProduct(productId));
 
   if (!product) return null;
