@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
 import { fetchProduct, loadProduct } from "../../store/products";
+import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
 import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
@@ -22,8 +23,28 @@ const ProductItem = () => {
   const product = useSelector(loadProduct(productId));
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const reviews = useSelector(getReviews);
+  const ratings = reviews.map(review => review.rating);
   const [size, setSize] = useState('');
 
+  const reviewAvg = () => {
+    if (reviews) {
+      return (ratings.reduce((a, b) => a + b) / reviews.length).toFixed(1);
+    } else {
+      return 0.0;
+    }
+  }
+
+  const reviewStars = () => {
+    const roundedRating = Math.round(reviewAvg());
+    const stars = [];
+
+    for (let i = 0; i < roundedRating; i++) {
+      stars.push(<i class="fa-solid fa-star"></i>)
+    }
+
+    return stars;
+  }
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
@@ -55,6 +76,9 @@ const ProductItem = () => {
             <ProductImages />
           </div>
           <div className="product_details_wrapper">
+            <div className="review_stars">
+              {reviewStars()}
+            </div>
             <h1>{product.name}</h1>
             <h2>{`$${product.price}`}</h2>
             <p>{product.productPreview}</p>
