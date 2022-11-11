@@ -63,7 +63,7 @@ const ProductItem = () => {
             <div className="atc_area flex-col">
               <button 
                 className="btn"
-                onClick={()=> {
+                onClick={() => {
                   addToCart();
                   setShowModal(true);
                 }}>
