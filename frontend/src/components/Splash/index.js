@@ -3,8 +3,8 @@ import Hero from './Hero';
 import Category from './Category';
 import Video from './Video';
 import Pitch from './Pitch';
-import Footer from '../Footer';
-import './Splash.css'
+import Footer from '../Footer/index';
+import './Splash.css';
 
 const Splash = () => {
   return (
