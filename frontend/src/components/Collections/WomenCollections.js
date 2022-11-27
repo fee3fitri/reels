@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory, loadProducts } from "../../store/products";
-import ProductListing from "../ProductListing/";
+import ProductListing from "../ProductListing/index";
 import './Collections.css'
 
 const WomenCollections = () => {
