@@ -3,6 +3,7 @@ import Hero from './Hero';
 import Category from './Category';
 import Video from './Video';
 import Pitch from './Pitch';
+import Footer from '../Footer';
 import './Splash.css'
 
 const Splash = () => {
@@ -12,6 +13,7 @@ const Splash = () => {
       <Category />
       <Video />
       <Pitch />
+      <Footer />
     </section>
   )
 }

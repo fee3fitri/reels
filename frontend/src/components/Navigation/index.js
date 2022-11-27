@@ -9,7 +9,6 @@ import { fetchProducts } from '../../store/products';
 import Cart from '../Cart';
 import './Navigation.css';
 
-// random comment
 
 const Navigation = () => {
   const dispatch = useDispatch();

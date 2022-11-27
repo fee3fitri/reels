@@ -48,13 +48,6 @@
   transform: rotate(-10deg);
 }
 
-.header_navigation h1 {
-  font-family: var(--reels-font);
-  color: white;
-  font-size: 5vw;
-  transform: rotate(-10deg);
-}
-
 @keyframes bigger_logo {
   50% {
     transform: scale(1.05);
