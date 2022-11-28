@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory, loadProducts } from "../../store/products";
+import Footer from "../Footer";
 import ProductListing from "../ProductListing/index";
 import './Collections.css'
 
@@ -31,6 +32,7 @@ const WomenCollections = () => {
           />
         ))}
       </div>
+      <Footer />
     </div>
   )  
 }

@@ -14,6 +14,7 @@ import Cart from "../Cart";
 import Review from "../Reviews";
 import './ProductItem.css'
 import '../Reviews/Review.css'
+import Footer from "../Footer";
 
 
 const ProductItem = () => {
@@ -24,6 +25,7 @@ const ProductItem = () => {
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const reviews = useSelector(getReviews);
+  console.log(reviews);
   const ratings = reviews.map(review => review.rating);
   const [size, setSize] = useState('');
 
@@ -43,7 +45,7 @@ const ProductItem = () => {
       stars.push(<i class="fa-solid fa-star"></i>)
     }
 
-    return stars;
+    return stars ;
   }
 
   useEffect(() => {
@@ -76,8 +78,9 @@ const ProductItem = () => {
             <ProductImages />
           </div>
           <div className="product_details_wrapper">
-            <div className="review_stars">
+            <div className="review_stars flex-row">
               {reviewStars()}
+              <p>{reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}</p>
             </div>
             <h1>{product.name}</h1>
             <h2>{`$${product.price}`}</h2>
@@ -122,6 +125,7 @@ const ProductItem = () => {
         <div className="review_wrapper flex-col align-center">
           <Review />
         </div>
+        <Footer />
       </div>
 
       {showModal && (

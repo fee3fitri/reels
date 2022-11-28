@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { loadProduct } from "../../store/products";
 import { Accordion, AccordionDetails } from "@mui/material/";

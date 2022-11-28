@@ -3,7 +3,8 @@ import "./Footer.css"
 
 const Footer = () => {
   return (
-    <footer className="flex-row justify-between align-center">
+    <footer>
+      <div className="footer_content flex-row justify-between align-center">
         <div className="footer_logo">
           <NavLink exact to="/"><h1>Reels</h1></NavLink>
         </div>
@@ -37,6 +38,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+      </div>
     </footer>
   );
 }

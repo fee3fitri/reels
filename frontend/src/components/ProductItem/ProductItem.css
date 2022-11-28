@@ -35,6 +35,11 @@
   margin-top: 8vh;
 }
 
+.product_details_wrapper .review_stars p {
+  margin-left: 1vw;
+  opacity: .75;
+}
+
 .product_details_wrapper .atc_area p {
   font-weight: 200;
   font-size: 1vw;
