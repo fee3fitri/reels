@@ -9,18 +9,22 @@ Reels is heavily focused on front-end animation and UI/UX design to mimic the or
 - Leave ratings and reviews on products
 
 ## Technologies
-###Frontend
+
+### Frontend
 - JavaScript
 - React
 - Redux
 - Node.js
 - Swiper.js
-###Backend
+
+### Backend
 - Ruby on Rails
 - PostgreSQL
 - jBuilder
-###Cloud Storage Service
+
+### Cloud Storage Service
 - Render
 - AWS S3
-###Module Bundler
+
+### Module Bundler
 - Webpack
