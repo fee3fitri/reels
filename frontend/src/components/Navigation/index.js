@@ -52,7 +52,7 @@ const Navigation = () => {
         </div>
 
         <div className='right_nav flex-row justify-end align-center'>
-          <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
+          <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
             <i className="fa-brands fa-github"></i>
           </Link>
           <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
