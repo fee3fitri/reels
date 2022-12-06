@@ -6,32 +6,27 @@ import ReviewModal from "./ReviewModal";
 
 const ReviewListing = ({review}) => {
   const dispatch = useDispatch();
-  const {id, userId, name, rating, title, body} = review;
+  const {name, rating, title, body} = review;
   const user = useSelector(state => state.session.user);
   const body_content = body.split('.');
-  let updateBtn, deleteBtn;
-  
-  useEffect(() => {
-    dispatch(updateReview({...review, title, body, rating}))
-  }, [title, body, rating]);
-
   const [showModal, setShowModal] = useState(false);
+  let updateBtn, deleteBtn;
 
-  if (user && user.id === userId) {
-    updateBtn = <button 
-      className="update_review"
-      onClick={() => {
-        dispatch(fetchReview(id));
-        setShowModal(true);
-      }}>
-      Update Review
-    </button>
-    deleteBtn = <button 
-      className="update_review"
-      onClick={() => dispatch(deleteReview(id))}>
-      Delete Review
-    </button>
-  }
+  // if (user?.id === userId) {
+  //   updateBtn = <button 
+  //     className="update_review"
+  //     onClick={() => {
+  //       dispatch(fetchReview(id));
+  //       setShowModal(true);
+  //     }}>
+  //     Update Review
+  //   </button>
+  //   deleteBtn = <button 
+  //     className="update_review"
+  //     onClick={() => dispatch(deleteReview(id))}>
+  //     Delete Review
+  //   </button>
+  // }
 
   const star = () => {
     const stars = [];
@@ -54,10 +49,10 @@ const ReviewListing = ({review}) => {
               {star()}
               <h2>{title}</h2>
             </div>
-            <div className="update_review_wrapper">
+            {/* <div className="update_review_wrapper">
               {updateBtn}
               {deleteBtn}
-            </div>
+            </div> */}
             
           </div>
           <div className="review_body">

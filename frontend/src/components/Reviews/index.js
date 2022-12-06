@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchReviews, getReviews } from "../../store/reviews";
+import { fetchReviews, fetchReview, getReviews, deleteReview, updateReview } from "../../store/reviews";
 import { Modal } from "../../context/Modal";
 import ReviewModal from "./ReviewModal";
 import ReviewListing from "./ReviewListing";
@@ -15,6 +15,10 @@ const Review = () => {
   const reviews = useSelector(getReviews);
   const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchReviews(productId));
+  }, [dispatch, productId]);
   
   const reviewAvg = () => {
     if (reviews) {
@@ -27,17 +31,47 @@ const Review = () => {
   const reviewStars = () => {
     const roundedRating = Math.round(reviewAvg());
     const stars = [];
-
     for (let i = 0; i < roundedRating; i++) {
       stars.push(<i class="fa-solid fa-star"></i>)
     }
-
     return stars;
   }
 
-  useEffect(() => {
-    dispatch(fetchReviews(productId));
-  }, [dispatch, productId]);
+  const reviewButton = () => {
+    const existingReview = reviews.find(review => review?.userId === user?.id);
+
+    if (existingReview) {
+      return (
+        <div className="review_button_area flex-row">
+          <button 
+            className="review_button"
+            onClick={() => {
+              dispatch(fetchReview(existingReview.id));
+              setShowModal(true);
+            }}>
+            Update Review
+          </button>
+          <button 
+            className="review_button"
+            onClick={() => {
+              if (window.confirm('Are you sure? Deleting a review is irreversible.')) {
+                dispatch(deleteReview(existingReview.id))
+              }
+            }}>
+            Delete Review
+          </button>
+        </div>
+      )
+    }
+
+    return (
+      <button 
+        className="review_button"
+        onClick={() => setShowModal(true)}>
+        Write a review
+      </button>
+    )
+  }
 
   if (reviews.length === 0) return null;
 
@@ -56,11 +90,7 @@ const Review = () => {
             <p>Based on {reviews.length} reviews</p>
           </div>
           
-          <button 
-            className="review_button"
-            onClick={() => setShowModal(true)}>
-            Write a review
-          </button>
+          {reviewButton()}
         </div>
 
         <div className="review_item_wrapper">

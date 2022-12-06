@@ -71,15 +71,17 @@ const ReviewModal = ({setShowModal}) => {
           <input 
             type="text" 
             value={title}
+            placeholder='Write the review title'
             onChange={e => setTitle(e.target.value)}
           />
         </label>
         <label>
           Review
           <textarea
-            value={body}
             rows="4"
             cols="20"
+            value={body}
+            placeholder='Write your review here...'
             onChange={e => setBody(e.target.value)}
           />
         </label>
