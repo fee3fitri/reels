@@ -25,7 +25,6 @@ const ProductItem = () => {
   const [count, setCount] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const reviews = useSelector(getReviews);
-  console.log(reviews);
   const ratings = reviews.map(review => review.rating);
   const [size, setSize] = useState('');
 
@@ -56,6 +55,7 @@ const ProductItem = () => {
 
   const addToCart = e => {
     if (!user) return null;
+
     const newItem = {
       cart_item: {            
         userId: user.id,
@@ -67,6 +67,7 @@ const ProductItem = () => {
         size: size
       }
     }
+
     return dispatch(createCartItem(newItem));
   }
 

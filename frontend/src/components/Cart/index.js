@@ -17,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(fetchCartItems(sessionUser.id));
-  }, [dispatch, sessionUser.id]);
+  }, [dispatch, cartItems.length, sessionUser.id]);
 
   const subtotal = () => {
     if (cartItems) {
@@ -26,7 +26,6 @@ const Cart = () => {
     }
   }
 
- 
   if (!cartItems || !cartItems.length) {
     return (
       <div className="empty_cart text-center">
@@ -46,13 +45,14 @@ const Cart = () => {
     )
   }
 
+
   return (
     <>
       <div className={`cart flex-col align-center ${hideCart ? 'hide-modal' : ''}`}>
-      <h1>Your Cart</h1>
-      <ul className="flex-col">
-        {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
-      </ul>
+        <h1>Your Cart</h1>
+        <ul className="flex-col">
+          {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
+        </ul>
       </div>
 
       <div className="cart_total text-center">
