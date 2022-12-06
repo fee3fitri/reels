@@ -12,7 +12,7 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   let review = useSelector(getReview(productId));
   // (review?.userId === user?.id) ? setFormType('Update Review') : setFormType('Create Review');
   
-  console.log(formType);
+  // console.log(formType);
 
   if (formType === 'Create Review') {
     review = {
@@ -40,6 +40,15 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
 
     review = {
       ...review,
+      userId: user.id,
+      productId: productId,
+      rating: rating,
+      title: title,
+      body: body
+    };
+
+    existingReview = {
+      ...existingReview,
       userId: user.id,
       productId: productId,
       rating: rating,

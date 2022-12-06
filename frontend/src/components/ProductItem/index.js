@@ -18,7 +18,7 @@ import Footer from "../Footer";
 
 const ProductItem = () => {
   const dispatch = useDispatch();
-  const { productId } = useParams();
+  const productId = Number(useParams().productId);
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const product = useSelector(loadProduct(productId));
@@ -56,24 +56,29 @@ const ProductItem = () => {
         userId: user?.id,
         productId: productId,
         productName: product?.name,
-        quantity: Number(count),
+        quantity: count,
         imageUrl: product?.imgUrls[0],
         price: product?.price,
         size: size
       }
     }
+
+    console.log(size)
     
-    // const existingItem = cartItems.find(cartItem => cartItem.productId === productId && cartItem.size === size);
-    
-    // if (existingItem) {
-    //   dispatch(updateCartItem({
-    //     ...existingItem, 
-    //     quantity: existingItem.quantity += 1, 
-    //     size: newItem.cart_item.size
-    //   }))
-    // }
-    
-    dispatch(createCartItem(newItem));
+    let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
+
+    // console.log(existingItem)
+    if (existingItem) {
+      console.log(existingItem.size)
+      existingItem.quantity += 1;
+      dispatch(updateCartItem({
+        ...existingItem, 
+        quantity: existingItem.quantity, 
+        size: newItem.cart_item.size
+      }))
+    } else {
+      dispatch(createCartItem(newItem));
+    }
   }
   
   if (!product) return null;

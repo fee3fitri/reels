@@ -96,8 +96,8 @@ const cartItemReducer = (state = {}, action) => {
     case ADD_ITEMS:
       return action.items
     case ADD_ITEM:
-      const {id} = action.item;
-      return {...state, [id]: action.item};
+      // const {id} = action.item;
+      return {...state, [action.item.id]: action.item};
     case REMOVE_ITEM:
       const nextState = {...state}
       delete nextState[action.itemId];

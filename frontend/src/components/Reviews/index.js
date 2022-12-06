@@ -42,7 +42,7 @@ const Review = () => {
   
   const reviewButton = () => {
     if (existingReview) {
-      console.log(existingReview);
+      // console.log(existingReview);
       return (
         <div className="review_button_area flex-row">
           <button 
