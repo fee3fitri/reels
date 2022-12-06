@@ -7,10 +7,10 @@ import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import "./Cart.css"
 
-const Cart = () => {
+const Cart = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const [hideCart] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const sessionUser = useSelector(state => state.session.user);
@@ -24,13 +24,6 @@ const Cart = () => {
       const priceQuantity = cartItems.map(item => (item.price) * (item.quantity));
       return priceQuantity.reduce((a, b) => a + b).toFixed(2);
     }
-  }
-
-  const removeAfterCheckout = () => {
-    const timer = setTimeout(() => {
-      cartItems.map(cartItem => dispatch(removeCartItem(cartItem.id)));
-    }, 4000);
-    return () => clearTimeout(timer);
   }
 
   if (!cartItems || !cartItems.length) {
@@ -70,7 +63,6 @@ const Cart = () => {
           className="btn"
           onClick={() => {
             setShowModal(true);
-            removeAfterCheckout();
           }}>
           Checkout
         </button>

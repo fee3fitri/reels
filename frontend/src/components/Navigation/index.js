@@ -69,7 +69,7 @@ const Navigation = () => {
         <div className="cart_modal_wrapper">
           <Modal 
             onClose={() => setShowModal(false)}>
-            {user ? <Cart /> : (
+            {user ? <Cart showModal={showModal} setShowModal={setShowModal} /> : (
               <div className='cart_modal_login flex-col'>
                 <h1>Your cart</h1>
                 <p>Login to see your cart items</p>

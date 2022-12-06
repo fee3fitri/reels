@@ -187,5 +187,6 @@ color: var(--grey-text);
   margin-top: 10vh;
   font-size: 1.3vw;
   font-weight: 600;
-  color: var(--purple)
+  color: var(--purple);
+  cursor: pointer;
 }
