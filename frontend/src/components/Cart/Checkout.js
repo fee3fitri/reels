@@ -1,7 +1,18 @@
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { removeCartItem } from '../../store/cart_item';
 import './Cart.css'
 
 const Checkout = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const cartItems = useSelector(state => Object.values(state.cartItems));
+
+  const emptyCart = () => {
+    history.push('/');
+    cartItems.map(cartItem => dispatch(removeCartItem(cartItem.id)));
+  }
+
   return (
     <div className="checkout_modal flex-col align-center">
       <h1>Thank you</h1>
@@ -15,9 +26,10 @@ const Checkout = () => {
           <i className="fa-brands fa-linkedin"></i>
         </Link>
       </div>
-      <Link to="/">
-        <p className='go_main'>Go to the main page</p>
-      </Link>
+      <p className='go_main'
+          onClick={emptyCart}>
+          Go to the main page
+        </p>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { fetchCartItems } from "../../store/cart_item";
+import { fetchCartItems, removeCartItem } from "../../store/cart_item";
 import { Modal } from "../../context/Modal";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
@@ -24,6 +24,13 @@ const Cart = () => {
       const priceQuantity = cartItems.map(item => (item.price) * (item.quantity));
       return priceQuantity.reduce((a, b) => a + b).toFixed(2);
     }
+  }
+
+  const removeAfterCheckout = () => {
+    const timer = setTimeout(() => {
+      cartItems.map(cartItem => dispatch(removeCartItem(cartItem.id)));
+    }, 4000);
+    return () => clearTimeout(timer);
   }
 
   if (!cartItems || !cartItems.length) {
@@ -60,8 +67,10 @@ const Cart = () => {
         <p>&#91;&#34;Free express shipping on all shoe orders&#34;&#93;</p>
         <button 
           className="btn"
-          onClick={() => setShowModal(true)}
-        >
+          onClick={() => {
+            setShowModal(true);
+            removeAfterCheckout();
+          }}>
           Checkout
         </button>
       </div>

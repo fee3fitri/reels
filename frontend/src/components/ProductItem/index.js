@@ -55,7 +55,7 @@ const ProductItem = () => {
   
   const addToCart = e => {
     if (!user) return null;
-    const existingItem = cartItems.find(cartItem => cartItem.productId === productId);
+    
     const newItem = {
       cart_item: {
         userId: user?.id,
@@ -68,17 +68,18 @@ const ProductItem = () => {
       }
     }
     
+    const existingItem = cartItems.find(cartItem => cartItem.productId === productId && cartItem.size === size);
+    
     if (existingItem) {
-      if (existingItem.size !== newItem.size) {
-        dispatch(createCartItem(newItem));
-      } else if (existingItem.size === newItem.size) {
-        dispatch(updateCartItem({...existingItem, quantity: existingItem.quantity += 1}));
-      }
+      dispatch(updateCartItem({
+        ...existingItem, 
+        quantity: existingItem.quantity += 1, 
+        size: newItem.cart_item.size
+      }))
     }
     
     dispatch(createCartItem(newItem));
   }
-  
   
   if (!product) return null;
   
