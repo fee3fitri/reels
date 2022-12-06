@@ -40,6 +40,10 @@
   color: var(--grey-text)
 }
 
+.review_wrapper .review_items .review_button_area > * {
+  margin: 0 .5vw;
+}
+
 /* Review Modal CSS */
 .review_modal {
   padding: 3vh 3vw;

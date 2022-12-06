@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
-const ReviewModal = () => {
+const ReviewModal = ({setShowModal}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const {productId} = useParams();
@@ -42,7 +42,7 @@ const ReviewModal = () => {
       dispatch(updateReview(review));
 
     history.push(`/products/${productId}`);
-    hideReview();
+    setShowModal(false);
   }
 
   return (
@@ -71,15 +71,17 @@ const ReviewModal = () => {
           <input 
             type="text" 
             value={title}
+            placeholder='Write the review title'
             onChange={e => setTitle(e.target.value)}
           />
         </label>
         <label>
           Review
           <textarea
-            value={body}
             rows="4"
             cols="20"
+            value={body}
+            placeholder='Write your review here...'
             onChange={e => setBody(e.target.value)}
           />
         </label>

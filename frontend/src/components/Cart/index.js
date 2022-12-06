@@ -10,7 +10,6 @@ import "./Cart.css"
 const Cart = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const [hideCart] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
   
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const sessionUser = useSelector(state => state.session.user);
