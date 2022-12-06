@@ -4,13 +4,15 @@ import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
-const ReviewModal = ({showModal, setShowModal, formType, existingReview}) => {
+const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   let review = useSelector(getReview(productId));
-  formType = (review?.userId === user?.id) ? 'Update Review' : 'Create Review';
+  // (review?.userId === user?.id) ? setFormType('Update Review') : setFormType('Create Review');
+  
+  console.log(formType);
 
   if (formType === 'Create Review') {
     review = {
@@ -21,12 +23,16 @@ const ReviewModal = ({showModal, setShowModal, formType, existingReview}) => {
   }
 
   if (formType === 'Update Review') {
-    review = {...existingReview}
+    existingReview = {
+      rating: existingReview?.rating,
+      title: existingReview?.title,
+      body: existingReview?.body
+    }
   }
 
-  const [rating, setRating] = useState(review.rating);
-  const [title, setTitle] = useState(review.title);
-  const [body, setBody] = useState(review.body);
+  const [rating, setRating] = useState(existingReview?.rating);
+  const [title, setTitle] = useState(existingReview?.title);
+  const [body, setBody] = useState(existingReview?.body);
   const [hideReview] = useState(false);
 
   const handleSubmit = e => {
@@ -43,7 +49,7 @@ const ReviewModal = ({showModal, setShowModal, formType, existingReview}) => {
 
     formType === 'Create Review' ?
       dispatch(createReview(review)) :
-      dispatch(updateReview(review));
+      dispatch(updateReview(existingReview));
 
     history.push(`/products/${productId}`);
     setShowModal(false);
