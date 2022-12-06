@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchReviews, fetchReview, getReviews, deleteReview, updateReview } from "../../store/reviews";
+import { fetchReviews, fetchReview, getReviews, deleteReview} from "../../store/reviews";
 import { Modal } from "../../context/Modal";
 import ReviewModal from "./ReviewModal";
 import ReviewListing from "./ReviewListing";
@@ -16,10 +16,11 @@ const Review = () => {
   const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
   let formType;
-
   useEffect(() => {
     dispatch(fetchReviews(productId));
   }, [dispatch, productId]);
+  
+  const existingReview = reviews.find(review => review?.userId === user?.id);
   
   const reviewAvg = () => {
     if (reviews) {
@@ -28,7 +29,7 @@ const Review = () => {
       return 0.0;
     }
   }
-
+  
   const reviewStars = () => {
     const roundedRating = Math.round(reviewAvg());
     const stars = [];
@@ -37,10 +38,8 @@ const Review = () => {
     }
     return stars;
   }
-
+  
   const reviewButton = () => {
-    const existingReview = reviews.find(review => review?.userId === user?.id);
-
     if (existingReview) {
       return (
         <div className="review_button_area flex-row">
@@ -65,7 +64,9 @@ const Review = () => {
         </div>
       )
     }
-
+    
+    console.log(formType);
+    
     return (
       <button 
         className="review_button"
@@ -107,7 +108,7 @@ const Review = () => {
       {showModal && (
         <div className="review_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            {user ? <ReviewModal showModal={showModal} setShowModal={setShowModal} formType={formType} /> : (
+            {user ? <ReviewModal showModal={showModal} setShowModal={setShowModal} existingReview={existingReview} formType={formType} /> : (
               <div className="review_modal_login flex-col">
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>

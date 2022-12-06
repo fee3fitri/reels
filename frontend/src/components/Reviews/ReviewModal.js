@@ -4,13 +4,13 @@ import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
-const ReviewModal = ({showModal, setShowModal, formType}) => {
+const ReviewModal = ({showModal, setShowModal, formType, existingReview}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   let review = useSelector(getReview(productId));
-  formType = review ? 'Update Review' : 'Create Review';
+  formType = (review?.userId === user?.id) ? 'Update Review' : 'Create Review';
 
   if (formType === 'Create Review') {
     review = {
@@ -21,11 +21,7 @@ const ReviewModal = ({showModal, setShowModal, formType}) => {
   }
 
   if (formType === 'Update Review') {
-    review = {
-      rating: review.rating,
-      title: review.title,
-      body: review.body
-    }
+    review = {...existingReview}
   }
 
   const [rating, setRating] = useState(review.rating);
