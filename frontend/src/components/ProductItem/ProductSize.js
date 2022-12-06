@@ -8,14 +8,9 @@ import './ProductItem.css'
 
 const ProductSize = ({setSize, size}) => {
   const {productId} = useParams();
-  const dispatch = useDispatch();
   const product = useSelector(loadProduct(productId));
   const sizes = product.size.split(' ');
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    dispatch(fetchProduct(productId));
-  }, [dispatch, productId]);
 
   const handleSize = e => {
     setSize(e.target.value);
