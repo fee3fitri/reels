@@ -68,15 +68,15 @@ const ProductItem = () => {
       }
     }
     
-    const existingItem = cartItems.find(cartItem => cartItem.productId === productId && cartItem.size === size);
+    // const existingItem = cartItems.find(cartItem => cartItem.productId === productId && cartItem.size === size);
     
-    if (existingItem) {
-      dispatch(updateCartItem({
-        ...existingItem, 
-        quantity: existingItem.quantity += 1, 
-        size: newItem.cart_item.size
-      }))
-    }
+    // if (existingItem) {
+    //   dispatch(updateCartItem({
+    //     ...existingItem, 
+    //     quantity: existingItem.quantity += 1, 
+    //     size: newItem.cart_item.size
+    //   }))
+    // }
     
     dispatch(createCartItem(newItem));
   }

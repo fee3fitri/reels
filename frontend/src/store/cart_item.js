@@ -3,7 +3,6 @@ import csrfFetch from "./csrf";
 const ADD_ITEMS = 'cartItem/ADD_ITEMS';
 const ADD_ITEM = 'cartItem/ADD_ITEM';
 const REMOVE_ITEM = 'cartItem/REMOVE_ITEM';
-const RESET = 'cartItem/RESET';
 
 // ACTIONS
 export const addItems = items => ({
@@ -21,22 +20,10 @@ export const removeItem = itemId => ({
   itemId
 })
 
-export const reset = () => {
-  return {
-    type: RESET
-  };
-};
-
 // SELECTORS
 export const loadCartItems = state => {
   return state.cartItems ? Object.values(state.cartItems) : [];
 }
-
-// export const loadCartItem = productId => state => {
-//   return state.cartItems ? state.cartItems[productId] : null;
-// }
-
-export const getCartOrder = state => state.cart.order; 
 
 
 // THUNK
@@ -115,8 +102,6 @@ const cartItemReducer = (state = {}, action) => {
       const nextState = {...state}
       delete nextState[action.itemId];
       return nextState;
-    case RESET:
-      return state;
     default:
       return state;
   }

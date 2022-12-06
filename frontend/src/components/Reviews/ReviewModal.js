@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
 const ReviewModal = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   let review = useSelector(getReview(productId));
@@ -39,6 +40,9 @@ const ReviewModal = () => {
     formType === 'Create Review' ?
       dispatch(createReview(review)) :
       dispatch(updateReview(review));
+
+    history.push(`/products/${productId}`);
+    hideReview();
   }
 
   return (
@@ -81,7 +85,8 @@ const ReviewModal = () => {
         </label>
         <input 
           type="submit" 
-          value={formType} />
+          value={formType}
+        />
       </form>
     </div>
     

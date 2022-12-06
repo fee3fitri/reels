@@ -38,14 +38,15 @@ const Cart = () => {
       <div className="empty_cart text-center">
         <h1>Your Cart</h1>
         <p>Your cart is empty!</p>
-        <Link to="/collections/womens"
-          className='btn flex-col align-center'>
+        <Link onClick={() => setShowModal(false)}
+          to="/collections/womens"
+          className={`btn flex-col align-center`}>
           Women
         </Link>
         <Link 
           to="/collections/mens"
-          className='btn flex-col align-center'
-        >
+          onClick={() => setShowModal(false)}
+          className={`btn flex-col align-center`}>
           Men
         </Link>
       </div>
