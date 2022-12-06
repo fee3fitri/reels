@@ -7,10 +7,9 @@ import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import "./Cart.css"
 
-const Cart = () => {
+const Cart = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const [hideCart] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const sessionUser = useSelector(state => state.session.user);

@@ -75,7 +75,7 @@ const Review = () => {
       {showModal && (
         <div className="review_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            {user ? <ReviewModal/> : (
+            {user ? <ReviewModal setShowModal={setShowModal}/> : (
               <div className="review_modal_login flex-col">
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>

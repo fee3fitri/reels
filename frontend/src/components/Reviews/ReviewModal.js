@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
-const ReviewModal = () => {
+const ReviewModal = ({setShowModal}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const {productId} = useParams();
@@ -42,7 +42,7 @@ const ReviewModal = () => {
       dispatch(updateReview(review));
 
     history.push(`/products/${productId}`);
-    hideReview();
+    setShowModal(false);
   }
 
   return (
