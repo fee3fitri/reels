@@ -9,6 +9,7 @@ import "./Cart.css"
 
 const Cart = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
+  const [showCheckout, setShowCheckout] = useState(false);
   const [hideCart] = useState(false);
   
   const cartItems = useSelector(state => Object.values(state.cartItems));
@@ -61,15 +62,15 @@ const Cart = ({showModal, setShowModal}) => {
         <button 
           className="btn"
           onClick={() => {
-            setShowModal(true);
+            setShowCheckout(true);
           }}>
           Checkout
         </button>
       </div>
 
-      {showModal && (
+      {showCheckout && (
         <div className="checkout_modal_wrapper">
-          <Modal onClose={() => setShowModal(false)}>
+          <Modal onClose={() => setShowCheckout(false)}>
             <Checkout />
           </Modal>
         </div>
