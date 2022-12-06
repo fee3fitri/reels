@@ -11,14 +11,9 @@ import './Navigation.css';
 
 
 const Navigation = () => {
-  const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const cartItems = useSelector(loadCartItems);
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
 
   const calculateItemsNum = () => {
     let total = 0;
