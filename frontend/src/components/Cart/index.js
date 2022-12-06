@@ -71,7 +71,7 @@ const Cart = ({showModal, setShowModal}) => {
       {showCheckout && (
         <div className="checkout_modal_wrapper">
           <Modal onClose={() => setShowCheckout(false)}>
-            <Checkout />
+            <Checkout showModal={showModal} setShowModal={setShowModal} />
           </Modal>
         </div>
       )}

@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { removeCartItem } from '../../store/cart_item';
 import './Cart.css'
 
-const Checkout = () => {
+const Checkout = ({showModal, setShowModal}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const cartItems = useSelector(state => Object.values(state.cartItems));
@@ -11,6 +11,7 @@ const Checkout = () => {
   const emptyCart = () => {
     history.push('/');
     cartItems.map(cartItem => dispatch(removeCartItem(cartItem.id)));
+    setShowModal(false);
   }
 
   return (
