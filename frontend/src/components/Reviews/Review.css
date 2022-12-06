@@ -111,7 +111,8 @@
   padding: 1vh;
 }
 
-.review_modal form input[type="submit"] {
+.review_modal form input[type="submit"],
+.review_modal form .btn {
   margin-top: 3vh;
   border: none;
   background-color: var(--black-text);
@@ -119,6 +120,11 @@
   padding: 2vh;
   border-radius: var(--border-radius);
   cursor: pointer;
+}
+
+.review_modal form .btn {
+  font-weight: normal;
+  margin-left: .5vw;
 }
 
 /* Review Login Modal */

@@ -4,19 +4,27 @@ import { useHistory, useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
 import "./Review.css"
 
-const ReviewModal = ({setShowModal}) => {
+const ReviewModal = ({showModal, setShowModal, formType}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   let review = useSelector(getReview(productId));
-  const formType = review ? 'Update Review' : 'Create Review';
+  formType = review ? 'Update Review' : 'Create Review';
 
   if (formType === 'Create Review') {
     review = {
       rating: '',
       title: '',
       body: ''
+    }
+  }
+
+  if (formType === 'Update Review') {
+    review = {
+      rating: review.rating,
+      title: review.title,
+      body: review.body
     }
   }
 
@@ -85,10 +93,16 @@ const ReviewModal = ({setShowModal}) => {
             onChange={e => setBody(e.target.value)}
           />
         </label>
-        <input 
-          type="submit" 
-          value={formType}
-        />
+        <div className="flex-row">
+          <input 
+            type="submit" 
+            value={formType}
+          />
+          <button className="btn"
+            onClick={() => setShowModal(false)}>
+            Cancel Review
+          </button>
+        </div>
       </form>
     </div>
     

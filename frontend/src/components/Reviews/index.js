@@ -15,6 +15,7 @@ const Review = () => {
   const reviews = useSelector(getReviews);
   const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
+  let formType;
 
   useEffect(() => {
     dispatch(fetchReviews(productId));
@@ -48,6 +49,7 @@ const Review = () => {
             onClick={() => {
               dispatch(fetchReview(existingReview.id));
               setShowModal(true);
+              formType = 'Update Review'
             }}>
             Update Review
           </button>
@@ -105,7 +107,7 @@ const Review = () => {
       {showModal && (
         <div className="review_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            {user ? <ReviewModal setShowModal={setShowModal}/> : (
+            {user ? <ReviewModal showModal={showModal} setShowModal={setShowModal} formType={formType} /> : (
               <div className="review_modal_login flex-col">
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>
