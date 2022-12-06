@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import { removeCartItem, updateCartItem } from "../../store/cart_item";
 
@@ -11,10 +10,6 @@ const CartItem = ({cartItem}) => {
   const totalPricePerItem = (price * quantity).toFixed(2);
   const images = cartItem.imageUrl;
 
-  useEffect(() => {
-    setCount(quantity);
-  }, [quantity]);
-  
   const addQuantity = () => {
     dispatch(updateCartItem({...cartItem, quantity: quantity += 1}));
   }
@@ -47,7 +42,7 @@ const CartItem = ({cartItem}) => {
               <input 
                 className="cart_item_quantity"
                 type="text"
-                value={Number(count)}
+                value={Number(quantity)}
                 onChange={e => setCount(e.target.value)}
                 onBlur={() => dispatch(updateCartItem({...cartItem, quantity: count}))}
               />

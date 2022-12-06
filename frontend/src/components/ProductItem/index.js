@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
-import { fetchProduct, loadProduct } from "../../store/products";
+import { loadProduct } from "../../store/products";
 import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
-import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import ProductAccordion from "./ProductAccordion";
@@ -56,20 +55,20 @@ const ProductItem = () => {
         userId: user?.id,
         productId: productId,
         productName: product?.name,
-        quantity: count,
+        quantity: Number(count),
         imageUrl: product?.imgUrls[0],
         price: product?.price,
         size: size
       }
     }
 
-    console.log(size)
-    
     let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
 
-    // console.log(existingItem)
+    console.log('size:', size)
+    console.log(existingItem);
+
     if (existingItem) {
-      console.log(existingItem.size)
+      console.log('existingItem.size:', existingItem.size)
       existingItem.quantity += 1;
       dispatch(updateCartItem({
         ...existingItem, 
@@ -98,7 +97,6 @@ const ProductItem = () => {
             <h1>{product?.name}</h1>
             <h2>{`$${product?.price}`}</h2>
             <p>{product?.productPreview}</p>
-            {/* <ProductColor /> */}
             <ProductSize setSize={setSize} size={size} />
             <div className="atc_area flex-col">
               <button
