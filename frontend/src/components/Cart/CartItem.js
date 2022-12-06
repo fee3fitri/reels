@@ -6,7 +6,7 @@ import { removeCartItem, updateCartItem } from "../../store/cart_item";
 
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
-  let {productId, quantity, productName, price} = cartItem;
+  let {quantity, productName, price} = cartItem;
   let [count, setCount] = useState(quantity);
   const totalPricePerItem = (price * quantity).toFixed(2);
   const images = cartItem.imageUrl;

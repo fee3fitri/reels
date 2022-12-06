@@ -33,7 +33,7 @@ const ProductSize = ({setSize, size}) => {
           </p>
         </div>
         <ul className="flex-row">
-          {sizes.map(size => (
+          {sizes.map((size, index) => (
             <li>
               <input type="radio"
                 name="size"
@@ -41,6 +41,7 @@ const ProductSize = ({setSize, size}) => {
                 id={`size ${size}`}
                 className="flex-row justify-center"
                 onClick={handleSize}
+                defaultChecked={index === 0}
               />
               <label for={`size ${size}`}>
                 {size}
