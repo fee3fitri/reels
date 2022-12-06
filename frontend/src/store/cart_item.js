@@ -42,8 +42,13 @@ export const getCartOrder = state => state.cart.order;
 // THUNK
 export const fetchCartItems = (userId) => async dispatch => {
   const res = await csrfFetch(`/api/cart_items?userId=${userId}`);
-  const cartItems = await res.json();
-  dispatch(addItems(cartItems));
+
+  if (res.ok) {
+    const cartItems = await res.json();
+    dispatch(addItems(cartItems));
+  }
+
+  return res;
 }
 
 export const createCartItem = cartData => async dispatch => {
@@ -55,9 +60,13 @@ export const createCartItem = cartData => async dispatch => {
     },
     body: JSON.stringify(cartData)
   });
-  
-  const newCartItem = await res.json();
-  dispatch(addItem(newCartItem));
+
+  if (res.ok) {
+    const newCartItem = await res.json();
+    dispatch(addItem(newCartItem));
+  }
+
+  return res;
 }
 
 export const updateCartItem = cartData => async dispatch => {
@@ -71,8 +80,12 @@ export const updateCartItem = cartData => async dispatch => {
     body: JSON.stringify({cartItem: cartData})
   });
 
-  const updatedCartItem = await res.json();
-  dispatch(addItem(updatedCartItem));
+  if (res.ok) {
+    const updatedCartItem = await res.json();
+    dispatch(addItem(updatedCartItem));
+  }
+
+  return res;
 }
 
 export const removeCartItem = (cartItemId) => async dispatch => {
@@ -80,7 +93,11 @@ export const removeCartItem = (cartItemId) => async dispatch => {
     method: 'DELETE',
   });
 
-  dispatch(removeItem(cartItemId));
+  if (res.ok) {
+    dispatch(removeItem(cartItemId));
+  }
+
+  return res;
 }
 
 

@@ -25,11 +25,6 @@ const CartItem = ({cartItem}) => {
       dispatch(updateCartItem({...cartItem, quantity: quantity -= 1}));
   }
   
-  // const handleChange = e => {
-  //   let input = parseInt(e.target.value);
-  //   return count > 0 ? setCount(input) : setCount('');
-  // }
-
   if (!cartItem) return null;
 
   return (
@@ -52,9 +47,9 @@ const CartItem = ({cartItem}) => {
               <input 
                 className="cart_item_quantity"
                 type="text"
-                value={Number(quantity)}
+                value={Number(count)}
                 onChange={e => setCount(e.target.value)}
-                onBlur={() => dispatch(updateCartItem(productId, Number(count)))} 
+                onBlur={() => dispatch(updateCartItem({...cartItem, quantity: count}))}
               />
               <button onClick={addQuantity}> + </button>
             </div>
