@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
+import { loadCartItems } from '../../store/cart_item';
 import { Modal } from '../../context/Modal';
 import AccountModal from './AccountModal';
 import LoginFormModal from '../LoginFormModal/';
-import { loadCartItems } from '../../store/cart_item';
-import { fetchProducts } from '../../store/products';
+import SearchBar from '../Search/SearchBar';
 import Cart from '../Cart';
 import './Navigation.css';
 
@@ -29,7 +29,7 @@ const Navigation = () => {
   return (
     <>
       <header className='header_navigation flex-row justify-between align-center'>
-        <div className='left_nav flex-row align' >
+        <div className='left_nav flex-row align-center' >
           <Link to="/collections/womens"
             className='collections flex-col align-center'>
             Women
@@ -40,6 +40,7 @@ const Navigation = () => {
             >
             Men
           </Link>
+          <SearchBar />
         </div>
 
         <div className='center_nav text-center'>
@@ -47,12 +48,12 @@ const Navigation = () => {
         </div>
 
         <div className='right_nav flex-row justify-end align-center'>
-          <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
+          {/* <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
             <i className="fa-brands fa-github"></i>
           </Link>
           <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
             <i className="fa-brands fa-linkedin"></i>
-          </Link>
+          </Link> */}
           <div className='account_menu flex-row align-center'>
             <i className="fa-solid fa-circle-user"></i>
             <div className='account_content'>

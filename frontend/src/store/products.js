@@ -2,7 +2,6 @@ import csrfFetch from "./csrf";
 
 const GET_PRODUCTS = 'products/GET_PRODUCTS';
 const GET_PRODUCT = 'products/GET_PRODUCT';
-const TOGGLE_SIZE = 'products/TOGGLE_SIZE';
 
 export const getProducts = products => ({
   type: GET_PRODUCTS,
@@ -41,9 +40,8 @@ export const fetchCategory = category => async dispatch => {
   dispatch(getProducts(product));
 }
 
-export const searchProduct = query => async dispatch => {
+export const searchProducts = query => async dispatch => {
   const res = await csrfFetch(`/api/products/${query}`);
-  if (res.status >= 400) throw res;
 
   if (res.ok) {
     const products = await res.json();
@@ -59,13 +57,6 @@ const productsReducer = (state = {}, action) => {
       return action.products;
     case GET_PRODUCT:
       return {...state, [action.product.id]: action.product};
-    case TOGGLE_SIZE:
-      return {...state,
-        [action.productId]: {
-          ...state[action.productId],
-          size: state[action.productId].size
-        }
-      }
     default:
       return state;
   }
