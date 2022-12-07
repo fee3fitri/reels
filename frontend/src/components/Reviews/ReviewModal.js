@@ -8,7 +8,7 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const dispatch = useDispatch();
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
-  let review = useSelector(getReview(existingReview.id));
+  let review = useSelector(getReview(existingReview?.id));
   
   if (formType === 'Create Review') {
     review = {
