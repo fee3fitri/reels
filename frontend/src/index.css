@@ -65,8 +65,8 @@ table {
   --reels-font: 'Pacifico', cursive;
   --border-radius: 2vw;
   --background-img: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg);
+  overflow-x: hidden;
 }
-
 
 /* Universal styling */
 #root {
