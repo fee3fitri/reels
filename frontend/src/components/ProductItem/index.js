@@ -5,11 +5,12 @@ import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart
 import { fetchProduct, loadProduct } from "../../store/products";
 import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
-import ProductColor from "./ProductColor";
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
 import ProductAccordion from "./ProductAccordion";
 import LoginFormModal from "../LoginFormModal";
+import Marquee from "../Marquee/Marquee";
+import Suggestions from "../ProductSuggestions";
 import Cart from "../Cart";
 import Review from "../Reviews";
 import './ProductItem.css'
@@ -63,11 +64,8 @@ const ProductItem = () => {
       }
     }
 
-    console.log(size)
-    
     let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
 
-    // console.log(existingItem)
     if (existingItem) {
       console.log(existingItem.size)
       existingItem.quantity += 1;
@@ -135,6 +133,8 @@ const ProductItem = () => {
             <ProductAccordion />
           </div>
         </div>
+        <Suggestions />
+        <Marquee />
         <div className="review_wrapper flex-col align-center">
           <Review />
         </div>
