@@ -10,9 +10,6 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const {productId} = useParams();
   const user = useSelector(state => state.session.user);
   let review = useSelector(getReview(productId));
-  // (review?.userId === user?.id) ? setFormType('Update Review') : setFormType('Create Review');
-  
-  // console.log(formType);
 
   if (formType === 'Create Review') {
     review = {
@@ -34,6 +31,37 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const [title, setTitle] = useState(existingReview?.title);
   const [body, setBody] = useState(existingReview?.body);
   const [hideReview] = useState(false);
+
+  console.log(rating);
+  console.log(title);
+  console.log(body);
+
+  const starRating = () => {
+    const stars = [];
+    if (formType === 'Create Review') {
+      return (
+        <div className="rating">
+          <input type="radio" id="star2" name="rating" value={Number("5")} onChange={e => setRating(e.target.value)} />
+          <label className="star" for="star2" aria-hidden="true"></label>
+          <input type="radio" id="star3" name="rating" value={Number("4")} onChange={e => setRating(e.target.value)} />
+          <label className="star" for="star3" aria-hidden="true"></label>
+          <input type="radio" id="star4" name="rating" value={Number("3")} onChange={e => setRating(e.target.value)} />
+          <label className="star" for="star4" aria-hidden="true"></label>
+          <input type="radio" id="star5" name="rating" value={Number("2")} onChange={e => setRating(e.target.value)} />
+          <label className="star" for="star5" aria-hidden="true"></label>
+          <input type="radio" id="star1" name="rating" value={Number("1")} onChange={e => setRating(e.target.value)} />
+          <label className="star" for="star1" aria-hidden="true"></label>
+        </div>
+      )
+    } else {
+      return (
+
+        <div className="rating">
+          
+        </div>
+      )
+    }
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -72,18 +100,7 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
         <h1 className="text-center">{formType}</h1>
         <label>
           Overall rating
-          <div class="rating">
-            <input type="radio" id="star2" name="rating" value={Number("5")} onChange={e => setRating(e.target.value)} />
-            <label class="star" for="star2" aria-hidden="true"></label>
-            <input type="radio" id="star3" name="rating" value={Number("4")} onChange={e => setRating(e.target.value)} />
-            <label class="star" for="star3" aria-hidden="true"></label>
-            <input type="radio" id="star4" name="rating" value={Number("3")} onChange={e => setRating(e.target.value)} />
-            <label class="star" for="star4" aria-hidden="true"></label>
-            <input type="radio" id="star5" name="rating" value={Number("2")} onChange={e => setRating(e.target.value)} />
-            <label class="star" for="star5" aria-hidden="true"></label>
-            <input type="radio" id="star1" name="rating" value={Number("1")} onChange={e => setRating(e.target.value)} />
-            <label class="star" for="star1" aria-hidden="true"></label>
-          </div>
+          {starRating()}  
         </label>
         <label>
           Title

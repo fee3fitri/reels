@@ -20,18 +20,19 @@ class Api::CartItemsController < ApplicationController
   
   def create
     @cart_item = CartItem.new(cart_items_params)
-    old_item = CartItem.find_by(product_id: params[:cart_item][:product_id])
-    
-    if old_item
-      new_items_params = cart_items_params
-      new_items_params['quantity'] += 1
-      old_item.update(new_items_params)
-      @cart_item = old_item
-    elsif @cart_item.save
+    # old_item = CartItem.find_by(product_id: params[:cart_item][:product_id])
+
+    # if old_item && old_item.size == params[:cart_item][:size]
+    #   new_items_params = cart_items_params
+    #   new_items_params['quantity'] += 1
+    #   old_item.update(new_items_params)
+    #   @cart_item = old_item
+    if @cart_item.save
+      # debugger
+      render :show
     else
       render json: {errors: @cart_item.errors.full_messages}, status: :uprocessable_entity
     end
-    render :show
   end
 
   def destroy

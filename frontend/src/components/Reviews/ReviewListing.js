@@ -8,7 +8,7 @@ const ReviewListing = ({review}) => {
   const star = () => {
     const stars = [];
     for (let i = 1; i <= rating; i++) {
-      stars.push(<i class="fa-solid fa-star"></i>)
+      stars.push(<i className="fa-solid fa-star"></i>)
     }
     return stars;
   }

@@ -18,7 +18,7 @@ footer a {
 
 footer h1 {
   font-family: var(--reels-font);
-  font-size: 700%;
+  font-size: 500%;
   transform: rotate(-10deg);
   font-weight: bold;
 }

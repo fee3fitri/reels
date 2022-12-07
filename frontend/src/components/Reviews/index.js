@@ -35,7 +35,7 @@ const Review = () => {
     const roundedRating = Math.round(reviewAvg());
     const stars = [];
     for (let i = 0; i < roundedRating; i++) {
-      stars.push(<i class="fa-solid fa-star"></i>)
+      stars.push(<i className="fa-solid fa-star"></i>)
     }
     return stars;
   }

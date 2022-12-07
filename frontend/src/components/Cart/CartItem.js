@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Divider from "@mui/material/Divider";
 import { removeCartItem, updateCartItem } from "../../store/cart_item";

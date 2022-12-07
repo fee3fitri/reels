@@ -50,10 +50,10 @@ export const createCartItem = cartData => async dispatch => {
 
   if (res.ok) {
     const newCartItem = await res.json();
+    console.log(newCartItem, 'newCartItem');
     dispatch(addItem(newCartItem));
+    return res;
   }
-
-  return res;
 }
 
 export const updateCartItem = cartData => async dispatch => {
