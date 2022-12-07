@@ -18,8 +18,8 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = Review.find_by(id: params[:id])
-
-    if @review.update(review_params)
+    # debugger
+    if @review && @review.update(review_params)
       render :show
     else
       render json: {errors: @review.errors.full_messages}, status: :uprocessable_entity
@@ -28,11 +28,8 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    # Might need to add the corresponds user to delete the reviews
 
     if @review.destroy
-      # Might need to add all the reviews
-      # @reviews = Review.all
       render json: {messsage: "Review is successfully removed"}
     end
   end

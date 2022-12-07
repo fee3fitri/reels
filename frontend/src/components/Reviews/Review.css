@@ -75,7 +75,7 @@
 .rating > label {
   color: var(--grey-text);
   float: right;
-  transform: translateX(-25vw);
+  transform: translateX(-26vw);
   cursor: pointer;
 }
 

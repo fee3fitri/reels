@@ -58,14 +58,14 @@ const Review = () => {
             onClick={() => {
               if (window.confirm('Are you sure? Deleting a review is irreversible.')) {
                 dispatch(deleteReview(existingReview.id))
-              }
-            }}>
+              }}}
+              >
             Delete Review
           </button>
         </div>
       )
     }
-
+    
     return (
       <button 
         className="review_button"

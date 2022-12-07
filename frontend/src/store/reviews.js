@@ -28,8 +28,8 @@ export const getReviews = state => {
 }
 
 // Might need to pass productId instead of reviewId???
-export const getReview = productId => state => {
-  return state.reviews ? state.reviews[productId] : null;
+export const getReview = reviewId => state => {
+  return state.reviews ? state.reviews[reviewId] : null;
 }
 
 
@@ -63,18 +63,18 @@ const res = await csrfFetch(`/api/reviews`, {
 }
 
 export const updateReview = review => async dispatch => {
-const res = await csrfFetch(`/api/reviews/${review.id}`, {
-  method: 'PATCH',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-  body: JSON.stringify(review)
-});
+  const res = await csrfFetch(`/api/reviews/${review.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(review)
+  });
 
-if (res.ok) {
-  const updatedReview = await res.json();
-  dispatch(receiveReview(updatedReview));
+  if (res.ok) {
+    const updatedReview = await res.json();
+    dispatch(receiveReview(updatedReview));
   }
 }
 
@@ -96,12 +96,11 @@ const reviewsReducer = (state = {}, action) => {
 
   switch (action.type){
     case RECEIVE_REVIEWS:
-      // Check here if there is something wrong
-      return {...state, ...action.reviews};
+      return action.reviews;
     case RECEIVE_REVIEW:
       // Check here if there is something wrong
-      const review = action.review;
-      return {...state, [review.id]: review};
+      // const review = action.review;
+      return {...state, [action.review.id]: action.review};
     case REMOVE_REVIEW:
       const nextState = {...state};
       delete nextState[action.reviewId];
