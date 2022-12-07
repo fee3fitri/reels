@@ -11,6 +11,10 @@ const SuggestionItem = ({product}) => {
       <picture>
         <img src={image} alt={`${name}`} />
       </picture>
+      <div className="suggestion_detail flex-row justify-between">
+        <h2>{name}</h2>
+        <p>{`$${price}`}</p>
+      </div>
     </Link>
   )
 }

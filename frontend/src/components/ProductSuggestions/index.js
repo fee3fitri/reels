@@ -12,7 +12,7 @@ const Suggestions = () => {
 
   return (
     <div className="product_suggestion_wrapper">
-      <h1>You Might Also Like<i className="fa-regular fa-circle"></i></h1>
+      <h1>You Might Also Like<i className="fa-regular fa-circle text-center"></i></h1>
       <div className="suggestion_swiper">
         <Swiper 
           navigation={true} 

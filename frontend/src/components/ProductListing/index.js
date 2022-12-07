@@ -17,8 +17,7 @@ const ProductListing = ({product}) => {
       <Link to={`/products/${id}`}>
         <Swiper 
           navigation={true} 
-          modules={[Navigation]}
-        >
+          modules={[Navigation]}>
           <SwiperSlide className="swiper_listing">
             <picture>
               <img src={image} alt={`${name}`} />
