@@ -590,4 +590,68 @@ weekender_m_mint = Product.create!(
     title: "Wow",
     body: "These are SO soft and SO light!!"
   )
+
+  review_15 = Review.create!(
+    user_id: 3,
+    product_id: 7,
+    rating: 5,
+    title: "5 Star Fun",
+    body: "Been eying these for a while, and so glad I purchased a pair! Super cool style, love the chunky sole, light as anything, and the Bone colour matches everything! I ordered the same size as my Chelseas, and I do find these to be a bit bigger. I’ll just get a thick insole and should be ok."
+  )
+
+  review_15 = Review.create!(
+    user_id: 4,
+    product_id: 8,
+    rating: 4,
+    title: "Give me a bone!",
+    body: "These boots are gorgeous, but run big - I still haven’t had a chance to swap to a smaller size. Was told online they are true to size, but sadly no. Still very cool and worth a try."
+  )
+
+  review_16 = Review.create!(
+    user_id: 1,
+    product_id: 8,
+    rating: 5,
+    title: "Excellent!",
+    body: "This is my third pair of Reels and I'm still so impressed with how comfortable they are. No wearing in required, I've worn these boots every day since they arrived and I adore them. Suitable for work, weekend, and chasing after my toddler. 10/10 would recommend."
+  )
+
+  review_17 = Review.create!(
+    user_id: 2,
+    product_id: 9,
+    rating: 4,
+    title: "The perfect pair of stylish & comfortable work boots!",
+    body: "I love my new boots! I work as a artist, muralist and art teacher so I'm always on my feet, crouching, squatting, and getting up and down. These boots not only provide me with comfort and flexibility, they are also super stylish. Rollie you've don't it again!!"
+  )
+
+  review_18 = Review.create!(
+    user_id: 3,
+    product_id: 10,
+    rating: 5,
+    title: "Going the distance",
+    body: "Took my new Chelseas to New York for a quick weekend away. As you can imagine, it was perfect weather for testing these waterproof and slip resistant boots, and they did not disappoint! Toasty warm and dry, and plenty of traction. No break in required, total comfort, look great with every outfit. So happy with these!"
+  )
+
+  review_19 = Review.create!(
+    user_id: 4,
+    product_id: 12,
+    rating: 3,
+    title: "Please make colours",
+    body: "I LOVE these boots. Have them in white and mustard. Please, Rollie. make them in more colours!!!!"
+  )
+
+  review_20 = Review.create!(
+    user_id: 5,
+    product_id: 13,
+    rating: 5,
+    title: "Super Comfy!!",
+    body: "I love how comfy but also durable it is. Perfect to be worn rain or shine. I like the simple sleek style of the shoes."
+  )
+
+  review_21 = Review.create!(
+    user_id: 1,
+    product_id: 16,
+    rating: 5,
+    title: "So comfy and cool!",
+    body: "Comfy everyday wear!"
+  )
 puts "Done!"

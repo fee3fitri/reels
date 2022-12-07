@@ -109,6 +109,7 @@
   margin-top: 1vh;
   font-size: 1.1vw;
   padding: 1vh;
+  font-family: var(--body-font);
 }
 
 .review_modal form input[type="submit"],

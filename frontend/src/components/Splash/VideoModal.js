@@ -27,7 +27,7 @@ const VideoModal = ({ onClose }) => {
             muted 
             loop 
             controls
-            playsinline
+            playsInline
             alt="video pitch"
             src="https://cdn.shopify.com/videos/c/o/v/f1a614d1eeea4d359d47f5ae00889e0c.mp4" 
             type="video/mp4"

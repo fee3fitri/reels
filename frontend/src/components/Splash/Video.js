@@ -46,7 +46,7 @@ const Video = () => {
           <video 
             muted 
             loop 
-            playsinline
+            playsInline
             alt="video promotion"
             src="https://cdn.shopify.com/videos/c/o/v/c64935b2e92546cbacdd13170c55b6b3.mp4" 
             type="video/mp4"

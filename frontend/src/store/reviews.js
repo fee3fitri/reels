@@ -35,9 +35,9 @@ export const getReview = reviewId => state => {
 
 // THUNK
 export const fetchReviews = productId => async dispatch => {
-const res = await csrfFetch(`/api/products/${productId}/reviews`);
-const reviews = await res.json();
-dispatch(receiveReviews(reviews));
+  const res = await csrfFetch(`/api/products/${productId}/reviews`);
+  const reviews = await res.json();
+  dispatch(receiveReviews(reviews));
 }
 
 export const fetchReview = reviewId => async dispatch => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchReviews, fetchReview, getReviews, deleteReview} from "../../store/reviews";
+import { fetchReviews, fetchReview, getReviews, deleteReview, updateReview } from "../../store/reviews";
 import { Modal } from "../../context/Modal";
 import ReviewModal from "./ReviewModal";
 import ReviewListing from "./ReviewListing";
@@ -15,13 +15,10 @@ const Review = () => {
   const reviews = useSelector(getReviews);
   const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
-  const [formType, setFormType] = useState('Create Review');
-  
+
   useEffect(() => {
     dispatch(fetchReviews(productId));
   }, [dispatch, productId]);
-  
-  const existingReview = reviews.find(review => review?.userId === user?.id);
   
   const reviewAvg = () => {
     if (reviews) {
@@ -30,17 +27,19 @@ const Review = () => {
       return 0.0;
     }
   }
-  
+
   const reviewStars = () => {
     const roundedRating = Math.round(reviewAvg());
     const stars = [];
     for (let i = 0; i < roundedRating; i++) {
-      stars.push(<i className="fa-solid fa-star"></i>)
+      stars.push(<i class="fa-solid fa-star"></i>)
     }
     return stars;
   }
-  
+
   const reviewButton = () => {
+    const existingReview = reviews.find(review => review?.userId === user?.id);
+
     if (existingReview) {
       return (
         <div className="review_button_area flex-row">
@@ -49,7 +48,6 @@ const Review = () => {
             onClick={() => {
               dispatch(fetchReview(existingReview.id));
               setShowModal(true);
-              setFormType('Update Review');
             }}>
             Update Review
           </button>
@@ -58,14 +56,14 @@ const Review = () => {
             onClick={() => {
               if (window.confirm('Are you sure? Deleting a review is irreversible.')) {
                 dispatch(deleteReview(existingReview.id))
-              }}}
-              >
+              }
+            }}>
             Delete Review
           </button>
         </div>
       )
     }
-    
+
     return (
       <button 
         className="review_button"
@@ -107,7 +105,7 @@ const Review = () => {
       {showModal && (
         <div className="review_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            {user ? <ReviewModal setShowModal={setShowModal} formType={formType} existingReview={existingReview} /> : (
+            {user ? <ReviewModal setShowModal={setShowModal}/> : (
               <div className="review_modal_login flex-col">
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>
