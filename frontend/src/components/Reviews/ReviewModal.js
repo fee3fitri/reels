@@ -32,10 +32,6 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const [body, setBody] = useState(existingReview?.body);
   const [hideReview] = useState(false);
 
-  console.log(rating);
-  console.log(title);
-  console.log(body);
-
   const starRating = () => {
     const stars = [];
     if (formType === 'Create Review') {

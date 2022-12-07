@@ -62,27 +62,14 @@ const ProductItem = () => {
       }
     }
 
-    // let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
-    let existingItem
-    
-    for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].productId == productId && cartItems[i].size == size) {
-        // debugger
-        existingItem = cartItems[i];
-      }
-    }
-
-    console.log('size:', size)
-    console.log(existingItem);
+    let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
 
     if (existingItem) {
-      console.log('existingItem.size:', existingItem.size)
-      
-      setCount(count + 1)
+      // setCount(count + 1)
       existingItem.quantity = count;
       dispatch(updateCartItem({
         ...existingItem, 
-        quantity: existingItem.quantity, 
+        quantity: existingItem.quantity += 1, 
         size: newItem.cart_item.size
       }))
     } else {
