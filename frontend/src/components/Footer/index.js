@@ -15,7 +15,9 @@ const Footer = () => {
             <Link to="/collections/womens">Women</Link>
             <Link to="/collections/mens">Men</Link>
           </div>
+          </div>
 
+        <div className="footer_links">
           <p className="footer_title">My Other Works</p>
           <div className="flex-col">
             <Link to={{ pathname: "https://fee3fitri.github.io/gtrends_project/" }} target="_blank">

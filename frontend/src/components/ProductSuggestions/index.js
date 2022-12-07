@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { loadProducts } from "../../store/products";
 import SuggestionItem from "./SuggestionItem";
+import './Suggestion.css';
 
 const Suggestions = () => {
   const products = useSelector(loadProducts);
@@ -11,7 +12,7 @@ const Suggestions = () => {
 
   return (
     <div className="product_suggestion_wrapper">
-      <h1>You might also like<i className="fa-regular fa-circle"></i></h1>
+      <h1>You Might Also Like<i className="fa-regular fa-circle"></i></h1>
       <div className="suggestion_swiper">
         <Swiper 
           navigation={true} 

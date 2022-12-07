@@ -14,9 +14,7 @@
 
 .hero .hero_text h1,
 .hero .hero_text p,
-.hero .hero_text i,
-.hero .hero_marquee p,
-.hero .hero_marquee i {
+.hero .hero_text i {
   color: white;
 }
 
@@ -46,20 +44,8 @@
 
 .hero .hero_marquee {
   position: absolute;
-  overflow: hidden;
-  bottom: 4vh;
-  white-space: nowrap;
-  width: fit-content;
+  bottom: -13vh;
 }
-
-.hero .hero_marquee .marquee_text {
-  display: inline-block;
-  font-size: 13vw;
-  font-weight: 600;
-  letter-spacing: -1vw;
-  animation: marquee 50s linear infinite;
-}
-
 
 /* Hero Animation */
 @keyframes rotate {
@@ -75,13 +61,6 @@
     transform: rotate(20deg);
   }
 }
-
-@keyframes marquee {
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 
 /* Category CSS */
 .splash_category {

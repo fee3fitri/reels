@@ -1,0 +1,27 @@
+.hero_marquee p,
+.hero_marquee i {
+  color: white;
+}
+
+.hero_marquee {
+  position: absolute;
+  overflow: hidden;
+  bottom: 4vh;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.hero_marquee .marquee_text {
+  display: inline-block;
+  font-size: 13vw;
+  font-weight: 600;
+  letter-spacing: -1vw;
+  animation: marquee 50s linear infinite;
+}
+
+
+@keyframes marquee {
+  100% {
+    transform: translateX(-100%);
+  }
+}

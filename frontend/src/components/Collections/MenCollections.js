@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory, loadProducts } from "../../store/products";
-import Footer from "../Footer";
 import ProductListing from "../ProductListing/index";
+import Marquee from "../Marquee/Marquee";
+import Footer from "../Footer";
 import './Collections.css'
 
 const MenCollections = () => {
@@ -32,6 +33,7 @@ const MenCollections = () => {
           />
         ))}
       </div>
+      <Marquee />
       <Footer />
     </div>
   )  

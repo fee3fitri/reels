@@ -1,4 +1,5 @@
-import "./Splash.css"
+import Marquee from "../Marquee/Marquee";
+import "./Splash.css";
 
 const Hero = () => {
   return (
@@ -16,13 +17,7 @@ const Hero = () => {
         alt="hero_shoes" 
       />
     </div>
-
-    <div className="hero_marquee">
-      <p className="marquee_text">
-        Enemies of Gravity<i className="fa-regular fa-circle"></i> Enemies of Gravity<i className="fa-regular fa-circle"></i> Enemies of Gravity<i className="fa-regular fa-circle"></i> 
-        Enemies of Gravity<i className="fa-regular fa-circle"></i> Enemies of Gravity<i className="fa-regular fa-circle"></i> Enemies of Gravity<i className="fa-regular fa-circle"></i> 
-      </p>
-    </div>
+    <Marquee />
   </section>
   )
   

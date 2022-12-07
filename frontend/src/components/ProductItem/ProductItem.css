@@ -222,3 +222,8 @@
   font-size: 1.2vw;
   margin-bottom: 1vh;
 }
+
+/* Marquee CSS */
+.hero_marquee {
+  margin: 20vh 0;
+}

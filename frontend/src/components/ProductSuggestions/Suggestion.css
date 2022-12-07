@@ -1,0 +1,4 @@
+.product_suggestion_wrapper .suggestion_swiper {
+  width: 90vw;
+  overflow-x: scroll;
+}

@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
+import { createCartItem, updateCartItem } from "../../store/cart_item";
 import { loadProduct } from "../../store/products";
 import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
 import ProductImages from "./ProductImages";
 import ProductSize from "./ProductSize";
+import Suggestions from "../ProductSuggestions";
 import ProductAccordion from "./ProductAccordion";
 import LoginFormModal from "../LoginFormModal";
 import Cart from "../Cart";
 import Review from "../Reviews";
+import Footer from "../Footer";
+import Marquee from "../Marquee/Marquee";
 import './ProductItem.css'
 import '../Reviews/Review.css'
-import Footer from "../Footer";
 
 const ProductItem = () => {
   const dispatch = useDispatch();
@@ -130,6 +132,8 @@ const ProductItem = () => {
             <ProductAccordion />
           </div>
         </div>
+        <Suggestions />
+        <Marquee />
         <div className="review_wrapper flex-col align-center">
           <Review />
         </div>

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import './Suggestion.css';
 
 const SuggestionItem = ({product}) => {
-  const {id} = product;
+  const {id, name, price} = product;
   const images =  product.imgUrls;
   const image = images[0];
 
