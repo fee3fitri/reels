@@ -225,5 +225,6 @@
 
 /* Marquee CSS */
 .hero_marquee {
+  position: relative;
   margin: 10vh 0;
 }
