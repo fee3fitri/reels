@@ -123,7 +123,7 @@
 
 .review_modal form input[type="submit"],
 .review_modal form .btn {
-  margin-top: 3vh;
+  margin-top: 1vh;
   border: none;
   background-color: var(--black-text);
   color: white;
