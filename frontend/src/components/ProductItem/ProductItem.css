@@ -35,9 +35,15 @@
   margin-top: 8vh;
 }
 
+.product_details_wrapper .review_stars {
+  cursor: pointer;
+}
+
 .product_details_wrapper .review_stars p {
   margin-left: 1vw;
   opacity: .75;
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
 }
 
 .product_details_wrapper .atc_area p {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createCartItem, updateCartItem, fetchCartItems } from "../../store/cart_item";
-import { fetchProduct, loadProduct } from "../../store/products";
+import { loadProduct } from "../../store/products";
 import { getReviews } from "../../store/reviews";
 import { Modal } from '../../context/Modal';
 import ProductImages from "./ProductImages";
@@ -59,6 +59,12 @@ const ProductItem = () => {
     return stars;
   }
   
+  const goToReview = () => {
+    if (reviews) {
+      document.querySelector('.review_wrapper').scrollIntoView({behavior: "smooth"});
+    }
+  }
+
   const addToCart = e => {
     if (!user) return null;
     
@@ -98,7 +104,8 @@ const ProductItem = () => {
             <ProductImages />
           </div>
           <div className="product_details_wrapper">
-            <div className="review_stars flex-row">
+            <div className="review_stars flex-row"
+              onClick={goToReview}>
               {reviewStars()}
               <p>{reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}</p>
             </div>

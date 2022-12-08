@@ -79,7 +79,7 @@ const Review = () => {
 
   return (
     <>
-      <div className="review_wrapper flex-col align-center">
+      <section className="review_wrapper flex-col align-center">
         <h1>Reviews</h1>
         <div className="review_items flex-row align-center justify-between">
           <div className="flex-col">
@@ -102,7 +102,7 @@ const Review = () => {
               review={review}/>
           )) : <div className="empty_reviews">There is no review for this product.</div>}
         </div>
-      </div>
+      </section>
 
       {showModal && (
         <div className="review_modal_wrapper">
