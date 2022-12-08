@@ -5,7 +5,8 @@
 
 .search_component h1 {
   font-weight: bold;
-  letter-spacing: .5vw;
+  letter-spacing: .4vw;
+  font-size: 90%
 }
 
 .search_bar_wrapper form {
@@ -47,6 +48,23 @@
 
 
 /* Product Results */
-.results_item_container {
-  
+.results_content h2 {
+  margin: 3vh 0;
+  font-size: 3vw;
+  font-weight: bold;
+  color: rgba(255, 255, 255, .85);
+}
+
+.results_content p {
+  font-weight: bold;
+  color: rgba(255, 255, 255, .85);
+}
+
+.results_content .results_item_container {
+  margin-top: 15vh;
+  gap: 2vw;
+}
+
+.product_listing_wrapper {
+  display: inline-block;
 }

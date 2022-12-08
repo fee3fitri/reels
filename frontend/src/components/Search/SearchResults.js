@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { loadProducts, searchProducts } from '../../store/products';
 import Footer from '../Footer';
 import Marquee from '../Marquee/Marquee';
@@ -23,8 +23,8 @@ const SearchResults = () => {
   const results = () => {
     if (products.length === 0) {
       return (
-        <div className='results_content'>
-          <p>Oops, there is no search results for {query}</p>
+        <div className='results_content flex-col align-center'>
+          <h2>There is no search results for '{query}'</h2>
           <p>Want to explore our collections?</p>
           <div className='flex-row'>
             <Link to="/collections/womens"
@@ -41,9 +41,9 @@ const SearchResults = () => {
       )
     } else {
       return (
-        <div className='results_content'>
-          <h2>Search results for: <p>{query}</p></h2>
-
+        <div className='results_content flex-col align-center'>
+          <h2>Search results for: '{query}'</h2>
+          <p>{products.length} results have been found</p>
           <div className='results_item_container grid'>
             {products?.map(product => <ProductListing key={product.id} product={product} />)}
           </div>

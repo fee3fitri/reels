@@ -30,7 +30,7 @@ const ProductListing = ({product}) => {
           </SwiperSlide>
         </Swiper>
         <div className="product_listing_detail flex-row justify-between">
-          <h2>{name}</h2>
+          <p>{name}</p>
           <p>{`$${price}`}</p>
         </div>
       </Link>
