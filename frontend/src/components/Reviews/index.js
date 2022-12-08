@@ -127,7 +127,7 @@ const Review = () => {
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>
                 <div className="review_login_button">
-                  <LoginFormModal/>
+                  <LoginFormModal onClick={() => setShowModal(false)} />
                 </div>
               </div>
             )}
