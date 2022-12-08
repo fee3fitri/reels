@@ -3,10 +3,14 @@
   color: white;
 }
 
-.search_component h1 {
+.search_component h3 {
   font-weight: bold;
   letter-spacing: .4vw;
   font-size: 90%
+}
+
+.search_component .hero_marquee {
+  margin: 20vh 0;
 }
 
 .search_bar_wrapper form {
@@ -65,6 +69,24 @@
   gap: 2vw;
 }
 
-.product_listing_wrapper {
-  display: inline-block;
+/* Responsive Listings */
+@media (min-width: 600px) {
+  .results_item_container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (min-width: 900px) {
+  .results_item_container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+.search_buttons {
+  margin-top: 3vh;
+}
+
+.search_buttons > * {
+  width: 10vw;
+  margin: 0 1vw;
 }

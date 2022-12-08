@@ -5,7 +5,6 @@ import { loadProducts, searchProducts } from '../../store/products';
 import Footer from '../Footer';
 import Marquee from '../Marquee/Marquee';
 import ProductListing from '../ProductListing';
-import Suggestions from '../ProductSuggestions';
 import './Search.css';
 
 const SearchResults = () => {
@@ -26,7 +25,7 @@ const SearchResults = () => {
         <div className='results_content flex-col align-center'>
           <h2>There is no search results for '{query}'</h2>
           <p>Want to explore our collections?</p>
-          <div className='flex-row'>
+          <div className='search_buttons flex-row'>
             <Link to="/collections/womens"
               className='btn flex-col align-center'>
               Women
@@ -55,10 +54,10 @@ const SearchResults = () => {
   return (
     <section className='page_wrapper'>
       <div className='search_component'>
-        <h1 className='text-center'>SEARCH RESULTS</h1>
+        <h3 className='text-center'>SEARCH RESULTS</h3>
         {results()}
-        {/* <Marquee /> */}
-        <Suggestions />
+        <Marquee />
+        {/* <Suggestions /> */}
         <Footer />
       </div>
     </section>

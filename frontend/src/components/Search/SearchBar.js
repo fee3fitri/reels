@@ -3,13 +3,13 @@ import { useHistory, Link } from 'react-router-dom';
 import './Search.css';
 
 const SearchBar = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const [query, setQuery] = useState('');
-
-  // const handleSearch = e => {
+  
+  // const handleSubmit = e => {
   //   e.preventDefault();
-  //   history.push(`/search/${query}`);
-  //   setQuery('');
+  //   history.push('/search-results');
+  //   setQuery(query);
   // }
 
   return (
@@ -21,7 +21,7 @@ const SearchBar = () => {
           onChange={e => setQuery(e.target.value)} />
         <Link to={{
           pathname: '/search-results', 
-          state: {query, fromApp: true}
+          state: {query}
         }}>
           <i className="fa-solid fa-magnifying-glass"></i>
         </Link>
