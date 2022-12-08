@@ -24,7 +24,7 @@ const ProductItem = () => {
   const cartItems = useSelector(state => Object.values(state.cartItems));
   const product = useSelector(loadProduct(productId));
   const reviews = useSelector(getReviews);
-  const ratings = reviews.map(review => review.rating);
+  const ratings = reviews.map(review => review?.rating);
   const [count, setCount] = useState(1);
   const [size, setSize] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -43,8 +43,8 @@ const ProductItem = () => {
   }, [product]);
 
   const reviewAvg = () => {
-    if (reviews.length) {
-      return (ratings.reduce((a, b) => a + b) / reviews.length).toFixed(1);
+    if (reviews?.length) {
+      return (ratings.reduce((a, b) => a + b) / reviews?.length).toFixed(1);
     } else {
       return 0.0;
     }
@@ -107,13 +107,13 @@ const ProductItem = () => {
             <div className="review_stars flex-row"
               onClick={goToReview}>
               {reviewStars()}
-              <p>{reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}</p>
+              <p>{reviews?.length} {reviews?.length === 1 ? 'review' : 'reviews'}</p>
             </div>
             <h1>{product?.name}</h1>
             <h2>{`$${product?.price}`}</h2>
             <p>{product?.productPreview}</p>
             {/* <ProductColor /> */}
-            <ProductSize setSize={setSize} size={size} />
+            <ProductSize setSize={setSize} size={size} key={size} />
             <div className="atc_area flex-col">
               <button
                 className="btn"

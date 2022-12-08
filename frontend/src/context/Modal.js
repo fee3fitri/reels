@@ -29,7 +29,7 @@ export const Modal = ({ onClose, children }) => {
   return ReactDOM.createPortal(
     <div className="modal">
       <div className="modal_background" onClick={onClose} />
-      <div className="modal_content">
+      <div className="modal_content flex-col">
         {children}
       </div>
     </div>,

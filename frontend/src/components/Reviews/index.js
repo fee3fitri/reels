@@ -25,7 +25,7 @@ const Review = () => {
   
   const reviewAvg = () => {
     if (reviews) {
-      return (ratings.reduce((a, b) => a + b) / reviews.length).toFixed(1);
+      return (ratings.reduce((a, b) => a + b) / reviews?.length).toFixed(1);
     } else {
       return 0.0;
     }
@@ -75,12 +75,20 @@ const Review = () => {
     )
   }
 
-  if (reviews.length === 0) return null;
-
-  return (
-    <>
-      <section className="review_wrapper flex-col align-center">
-        <h1>Reviews</h1>
+  const reviewIndex = () => {
+    if (reviews?.length === 0) {
+      return (
+        <div className="review_items empty flex-col align-center">
+          <p>There are no reviews yet..</p>
+          <button 
+            className="review_button"
+            onClick={() => setShowModal(true)}>
+            Write a review
+          </button>
+        </div>
+      )
+    } else {
+      return (
         <div className="review_items flex-row align-center justify-between">
           <div className="flex-col">
             <div className="review_index flex-row align-center">
@@ -91,10 +99,17 @@ const Review = () => {
             </div>
             <p>Based on {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}</p>
           </div>
-          
           {reviewButton()}
         </div>
+      )
+    }
+  }
 
+  return (
+    <>
+      <section className="review_wrapper flex-col align-center">
+        <h1>Reviews</h1>
+        {reviewIndex()}        
         <div className="review_item_wrapper">
           {reviews ? reviews.map(review => (
             <ReviewListing 

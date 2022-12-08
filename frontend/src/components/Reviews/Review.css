@@ -34,6 +34,10 @@
   border-radius: var(--border-radius);
 }
 
+.review_wrapper .review_items.empty > * {
+  margin: 1vh 0;
+}
+
 .review_wrapper .review_items p {
   margin-top: 1vh;
   font-size: 600;

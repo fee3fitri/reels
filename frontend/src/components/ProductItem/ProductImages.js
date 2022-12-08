@@ -24,7 +24,7 @@ const ProductImages = () => {
     <>
       {images.map(image => (
         <picture className="image_wrapper">
-          <img src={image} alt={product.name} />
+          <img src={image} alt={product.name} key={image} />
         </picture>
       ))}
     </>
