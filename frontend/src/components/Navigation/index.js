@@ -36,8 +36,7 @@ const Navigation = () => {
           </Link>
           <Link 
             to="/collections/mens"
-            className='collections flex-col align-center'
-            >
+            className='collections flex-col align-center'>
             Men
           </Link>
           <SearchBar />

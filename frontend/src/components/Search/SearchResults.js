@@ -5,7 +5,7 @@ import { loadProducts, searchProducts } from '../../store/products';
 import Footer from '../Footer';
 import Marquee from '../Marquee/Marquee';
 import ProductListing from '../ProductListing';
-import Suggestions from '../ProductSuggestions';
+// import Suggestions from '../ProductSuggestions';
 import './Search.css';
 
 const SearchResults = () => {
