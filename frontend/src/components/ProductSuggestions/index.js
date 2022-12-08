@@ -7,7 +7,6 @@ import './Suggestion.css';
 
 const Suggestions = () => {
   const products = useSelector(loadProducts);
-
   if (!products) return null;
 
   return (

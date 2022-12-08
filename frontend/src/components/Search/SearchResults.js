@@ -5,6 +5,7 @@ import { loadProducts, searchProducts } from '../../store/products';
 import Footer from '../Footer';
 import Marquee from '../Marquee/Marquee';
 import ProductListing from '../ProductListing';
+import Suggestions from '../ProductSuggestions';
 import './Search.css';
 
 const SearchResults = () => {
@@ -42,7 +43,7 @@ const SearchResults = () => {
       return (
         <div className='results_content flex-col align-center'>
           <h2>Search results for: '{query}'</h2>
-          <p>{products.length} results have been found</p>
+          <p>{products.length} {products.length === 1 ? 'result' : 'results'} have been found</p>
           <div className='results_item_container grid'>
             {products?.map(product => <ProductListing key={product.id} product={product} />)}
           </div>
@@ -57,7 +58,6 @@ const SearchResults = () => {
         <h3 className='text-center'>SEARCH RESULTS</h3>
         {results()}
         <Marquee />
-        {/* <Suggestions /> */}
         <Footer />
       </div>
     </section>

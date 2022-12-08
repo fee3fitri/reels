@@ -3,18 +3,12 @@ import { useHistory, Link } from 'react-router-dom';
 import './Search.css';
 
 const SearchBar = () => {
-  // const history = useHistory();
   const [query, setQuery] = useState('');
-  
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   history.push('/search-results');
-  //   setQuery(query);
-  // }
 
   return (
     <div className="search_bar_wrapper flex-row align-center">
-      <form className='flex-row align-center'>
+      <form className='flex-row align-center'
+        onSubmit={e => e.preventDefault()}>
         <input type="search"
           value={query}
           placeholder="Search product"

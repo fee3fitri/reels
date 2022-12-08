@@ -89,7 +89,7 @@ const Review = () => {
                 {reviewStars()}
               </div>
             </div>
-            <p>Based on {reviews.length} reviews</p>
+            <p>Based on {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}</p>
           </div>
           
           {reviewButton()}
