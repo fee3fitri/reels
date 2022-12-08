@@ -43,7 +43,7 @@ const ProductColor = () => {
             id={`color ${color}`}
             onChange={handleColor}
           />
-          <label for={`color ${color}`}>
+          <label htmlFor={`color ${color}`}>
             <img 
               src={`https://reels-2-dev.s3.us-west-1.amazonaws.com/colors/${name}/${name}_${color}_color.webp`}
               alt={`${name} ${color}`}

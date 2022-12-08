@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReview, getReview, updateReview } from "../../store/reviews";
@@ -30,8 +30,17 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   const [rating, setRating] = useState(existingReview?.rating);
   const [title, setTitle] = useState(existingReview?.title);
   const [body, setBody] = useState(existingReview?.body);
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [hideReview] = useState(false);
-  console.log('review1:', review);
+
+  useEffect(() => {
+    const errors = [];
+    if (!rating) errors.push('Please assign a rating');
+    if (!title?.length) errors.push('Please provide a review title');
+    if (!body?.length) errors.push('Please provide a review');
+    setValidationErrors(errors);
+  }, [rating, title, body]);
 
   const starRating = () => {
     return (
@@ -52,6 +61,8 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setHasSubmitted(true);
+    if (validationErrors.length) return alert('Cannot submit the review');
 
     review = {
       ...review,
@@ -62,14 +73,18 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
       title: title,
       body: body
     };
-
+    
     if (formType === 'Create Review') {
       dispatch(createReview(review));
     } else if (formType === 'Update Review') {
       dispatch(updateReview(review));
     }
 
-    console.log('review2:', review);
+    setRating('');
+    setTitle('');
+    setBody('');
+    setValidationErrors([]);
+    setHasSubmitted(false);
     setShowModal(false);
   }
 
@@ -102,6 +117,16 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
             onChange={e => setBody(e.target.value)}
           />
         </label>
+        {hasSubmitted && validationErrors.length > 0 && (
+          <div className="errors">
+            <p>The following errors were found:</p>
+            <ul>
+              {validationErrors.map(error => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="flex-row">
           <input 
             type="submit" 

@@ -38,7 +38,7 @@ const ProductSize = ({setSize, size}) => {
                 onClick={handleSize}
                 defaultChecked={index === 0}
               />
-              <label for={`size ${size}`}>
+              <label htmlFor={`size ${size}`}>
                 {size}
               </label>
             </li>

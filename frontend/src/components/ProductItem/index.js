@@ -77,7 +77,6 @@ const ProductItem = () => {
     let existingItem = cartItems.find(cartItem => cartItem.productId == productId && cartItem.size == size);
 
     if (existingItem) {
-      console.log(existingItem.size)
       existingItem.quantity += 1;
       dispatch(updateCartItem({
         ...existingItem, 

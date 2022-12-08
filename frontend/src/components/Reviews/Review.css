@@ -72,6 +72,15 @@
   flex-direction: column;
 }
 
+.review_modal .errors {
+  font-size: 75%;
+  color: red;
+}
+
+.review_modal .errors ul > li {
+  list-style: disc inside;
+}
+
 .rating > label {
   color: var(--grey-text);
   float: right;
