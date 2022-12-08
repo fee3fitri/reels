@@ -1,17 +1,37 @@
+.search_component {
+  margin-top: 35vh;
+  color: white;
+}
+
+.search_component h1 {
+  font-weight: bold;
+  letter-spacing: .5vw;
+}
+
+.search_bar_wrapper form {
+  padding: 5% 10%;
+  border: 1px solid white;
+  border-radius: var(--border-radius);
+}
+
 .search_bar_wrapper input {
   background: transparent;
-  border: 1px solid white;
-  padding: 5% 10%;
-  border-radius: var(--border-radius);
+  border: none;
   font-family: Helvetica, 'FontAwesome', sans-serif;
   color: white;
+  font-size: 1vw;
+}
+
+.search_bar_wrapper .fa-solid {
+  font-size: 90%;
+  margin-left: 5px;
 }
 
 .search_bar_wrapper input:focus {
   outline: none;
 }
 
-/* Placehokder color */
+/* Input lacehokder color */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
@@ -23,4 +43,10 @@
 }
 :-moz-placeholder { /* Firefox 18- */
   color: white;
+}
+
+
+/* Product Results */
+.results_item_container {
+  
 }

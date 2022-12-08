@@ -1,25 +1,30 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './Search.css';
 
 const SearchBar = () => {
   const history = useHistory();
   const [query, setQuery] = useState('');
 
-  const handleSearch = e => {
-    e.prevenrDefault();
-    history.push(`/search/${query}`);
-    setQuery('');
-  }
+  // const handleSearch = e => {
+  //   e.preventDefault();
+  //   history.push(`/search/${query}`);
+  //   setQuery('');
+  // }
 
   return (
     <div className="search_bar_wrapper flex-row align-center">
-      <form onSubmit={handleSearch}>
-        <input type="text"
-          className='search'
+      <form className='flex-row align-center'>
+        <input type="search"
           value={query}
-          placeholder="&#xF002; Search product"
+          placeholder="Search product"
           onChange={e => setQuery(e.target.value)} />
+        <Link to={{
+          pathname: '/search-results', 
+          state: {query, fromApp: true}
+        }}>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </Link>
       </form>
     </div>
   )

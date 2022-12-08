@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 const GET_PRODUCTS = 'products/GET_PRODUCTS';
 const GET_PRODUCT = 'products/GET_PRODUCT';
+const REMOVE_PRODUCTS = 'products/REMOVE_PRODUCTS';
 
 export const getProducts = products => ({
   type: GET_PRODUCTS,
@@ -11,6 +12,10 @@ export const getProducts = products => ({
 export const getProduct = product => ({
   type: GET_PRODUCT,
   product
+})
+
+export const removeProducts = () => ({
+  type: REMOVE_PRODUCTS
 })
 
 export const loadProducts = state => {
@@ -41,7 +46,7 @@ export const fetchCategory = category => async dispatch => {
 }
 
 export const searchProducts = query => async dispatch => {
-  const res = await csrfFetch(`/api/products/${query}`);
+  const res = await csrfFetch(`/api/products/search/${query}`);
 
   if (res.ok) {
     const products = await res.json();

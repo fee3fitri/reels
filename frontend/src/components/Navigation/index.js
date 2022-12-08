@@ -40,7 +40,6 @@ const Navigation = () => {
             >
             Men
           </Link>
-          <SearchBar />
         </div>
 
         <div className='center_nav text-center'>
@@ -48,6 +47,7 @@ const Navigation = () => {
         </div>
 
         <div className='right_nav flex-row justify-end align-center'>
+          <SearchBar />
           {/* <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
             <i className="fa-brands fa-github"></i>
           </Link>

@@ -25,5 +25,5 @@
 
 .product_suggestion_wrapper .swiper-button-prev,
 .product_suggestion_wrapper .swiper-button-next {
-  color: var(--black);
+  color: var(--grey-text);
 }

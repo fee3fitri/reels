@@ -5,6 +5,7 @@ import Splash from './components/Splash';
 import WomenCollections from './components/Collections/WomenCollections';
 import MenCollections from './components/Collections/MenCollections';
 import ProductItem from './components/ProductItem';
+import SearchResults from './components/Search/SearchResults';
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
         </Route>
         <Route exact path="/products/:productId">
           <ProductItem />
+        </Route>
+        <Route exact path="/search-results">
+          <SearchResults />
         </Route>
       </Switch>
     </>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { loadProducts, searchProducts } from '../../store/products';
 import Footer from '../Footer';
 import Marquee from '../Marquee/Marquee';
@@ -9,13 +9,16 @@ import Suggestions from '../ProductSuggestions';
 import './Search.css';
 
 const SearchResults = () => {
-  const { query } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
   const products = useSelector(loadProducts);
+  const { query } = location.state || {};
 
   useEffect(() => {
     dispatch(searchProducts(query));
-  }, [dispatch, query])
+  }, [dispatch, query]);
+
+  if (Array.isArray(products[0])) return null;
 
   const results = () => {
     if (products.length === 0) {
@@ -39,9 +42,9 @@ const SearchResults = () => {
     } else {
       return (
         <div className='results_content'>
-          <h2>Showing results for: <p>{query}</p></h2>
+          <h2>Search results for: <p>{query}</p></h2>
 
-          <div className='results_item_container'>
+          <div className='results_item_container grid'>
             {products?.map(product => <ProductListing key={product.id} product={product} />)}
           </div>
         </div>
@@ -50,13 +53,15 @@ const SearchResults = () => {
   }
 
   return (
-    <div className='search_page_wrapper'>
-      <h1>Your Search Results</h1>
-      {results}
-      <Marquee />
-      <Suggestions />
-      <Footer />
-    </div>
+    <section className='page_wrapper'>
+      <div className='search_component'>
+        <h1 className='text-center'>SEARCH RESULTS</h1>
+        {results()}
+        {/* <Marquee /> */}
+        <Suggestions />
+        <Footer />
+      </div>
+    </section>
   )
 }
 
