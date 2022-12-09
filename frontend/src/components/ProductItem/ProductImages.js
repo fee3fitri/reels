@@ -14,9 +14,7 @@ const ProductImages = () => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
-  // const images = product.imageUrl.split(' ');
   const images = product.imgUrls;
-
 
   if (!product) return null;
 

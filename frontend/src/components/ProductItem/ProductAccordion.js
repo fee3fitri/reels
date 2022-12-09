@@ -57,10 +57,10 @@ const ProductAccordion = () => {
         </AccordionSummary>
         <AccordionDetails>
           <div className="accordion_details">
-            <em classname="shipping_title">Free standard shipping on orders shipped to the United States. (Excludes Hawaii, Alaska, Puerto Rico)</em>
+            <em className="shipping_title">Free standard shipping on orders shipped to the United States. (Excludes Hawaii, Alaska, Puerto Rico)</em>
             <p>Standard shipping usually delivers within 3-5 business days to addresses in the  United States. Delivery times are not guaranteed and are subject to several other factors including product availability and credit card authorization. </p>
             <Divider />
-            <em classname="shipping_title">Free international express shipping on all orders over $250</em>
+            <em className="shipping_title">Free international express shipping on all orders over $250</em>
             <p>This service is delivered by Fed Ex and typically arrives within 3 - 5 business days. This service provides a tracking number for your package. Please note that the customer is responsible for any brokerage fees, customs duties, or any other fees that may be imposed upon delivery.</p>
           </div>
         </AccordionDetails>

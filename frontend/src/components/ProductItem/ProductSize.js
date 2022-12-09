@@ -28,15 +28,16 @@ const ProductSize = ({setSize, size}) => {
           </p>
         </div>
         <ul className="flex-row">
-          {sizes.map((size, index) => (
+          {sizes.map((size, idx) => (
             <li>
               <input type="radio"
+                key={idx}
                 name="size"
                 value={size}
                 id={`size ${size}`}
                 className="flex-row justify-center"
                 onClick={handleSize}
-                defaultChecked={index === 0}
+                defaultChecked={idx === 0}
               />
               <label htmlFor={`size ${size}`}>
                 {size}

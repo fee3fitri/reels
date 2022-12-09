@@ -26,23 +26,31 @@ export const loadProduct = productId => state => {
   return state.products ? state.products[productId] : null;
 }
 
-
 export const fetchProducts = () => async dispatch => {
   const res = await csrfFetch(`/api/products`);
-  const products = await res.json();
-  dispatch(getProducts(products));
+
+  if (res.ok) {
+    const products = await res.json();
+    dispatch(getProducts(products));
+  }
 }
 
 export const fetchProduct = productId => async dispatch => {
   const res = await csrfFetch(`/api/products/${productId}`);
-  const product = await res.json();
-  dispatch(getProduct(product));
+
+  if (res.ok) {
+    const product = await res.json();
+    dispatch(getProduct(product));
+  }
 }
 
 export const fetchCategory = category => async dispatch => {
   const res = await csrfFetch(`/api/products?category=${category}`);
-  const product = await res.json();
-  dispatch(getProducts(product));
+
+  if (res.ok) {
+    const product = await res.json();
+    dispatch(getProducts(product));
+  }
 }
 
 export const searchProducts = query => async dispatch => {

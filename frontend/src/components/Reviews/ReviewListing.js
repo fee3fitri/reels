@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 const ReviewListing = ({review}) => {
   const {name, rating, title, body} = review;
   const body_content = body.split('.');
-  const [showModal, setShowModal] = useState(false);
 
   const star = () => {
     const stars = [];
