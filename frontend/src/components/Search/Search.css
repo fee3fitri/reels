@@ -36,7 +36,11 @@
   outline: none;
 }
 
-/* Input lacehokder color */
+.search_bar_wrapper .search-clear {
+  cursor: pointer;
+}
+
+/* Input placeholder color */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
