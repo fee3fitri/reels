@@ -166,11 +166,15 @@ const ProductItem = () => {
       {showModal && (
         <div className="cart_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            {user ? <Cart /> : (
+            {user ? <Cart setShowModal={setShowModal} /> : (
               <div className='cart_modal_login flex-col'>
-                <h1>Your cart</h1>
-                <p>Login to see your cart items</p>
-                <LoginFormModal />
+                <i className="fa-solid fa-xmark"
+                  onClick={() => setShowModal(false)}></i>
+                <div className="cart_modal_login_content flex-col">
+                  <h1>Your cart</h1>
+                  <p>Login to see your cart items</p>
+                  <LoginFormModal />
+                </div>
               </div>
             )}
           </Modal>

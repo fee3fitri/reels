@@ -93,6 +93,11 @@ a {
   color: #FECE31;
 }
 
+.fa-xmark {
+  cursor: pointer;
+  text-align: right;
+}
+
 
 /* Display CSS */
 .flex-row {

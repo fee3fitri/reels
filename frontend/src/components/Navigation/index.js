@@ -47,12 +47,6 @@ const Navigation = () => {
         </div>
 
         <div className='right_nav flex-row justify-end align-center'>
-          {/* <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
-            <i className="fa-brands fa-github"></i>
-          </Link>
-          <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
-            <i className="fa-brands fa-linkedin"></i>
-          </Link> */}
           <div className='account_menu flex-row align-center'>
             <i className="fa-solid fa-circle-user"></i>
             <div className='account_content'>
@@ -71,9 +65,13 @@ const Navigation = () => {
             onClose={() => setShowModal(false)}>
             {user ? <Cart showModal={showModal} setShowModal={setShowModal} /> : (
               <div className='cart_modal_login flex-col'>
-                <h1>Your cart</h1>
-                <p>Login to see your cart items</p>
-                <LoginFormModal />
+                <i className="fa-solid fa-xmark"
+                  onClick={() => setShowModal(false)}></i>
+                <div className='cart_modal_login_content flex-col'>
+                  <h1>Your cart</h1>
+                  <p>Login to see your cart items</p>
+                  <LoginFormModal />
+                </div>
               </div>
             )}
           </Modal>

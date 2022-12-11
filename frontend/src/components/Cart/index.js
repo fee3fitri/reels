@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { fetchCartItems, removeCartItem } from "../../store/cart_item";
+import { fetchCartItems } from "../../store/cart_item";
 import { Modal } from "../../context/Modal";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
@@ -28,20 +28,24 @@ const Cart = ({showModal, setShowModal}) => {
 
   if (!cartItems || !cartItems.length) {
     return (
-      <div className="empty_cart text-center">
-        <h1>Your Cart</h1>
-        <p>Your cart is empty!</p>
-        <Link onClick={() => setShowModal(false)}
-          to="/collections/womens"
-          className={`btn flex-col align-center`}>
-          Women
-        </Link>
-        <Link 
-          to="/collections/mens"
-          onClick={() => setShowModal(false)}
-          className={`btn flex-col align-center`}>
-          Men
-        </Link>
+      <div className="empty_cart flex-col">
+        <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
+        <div className="empty_cart_content text-center">
+          <h1>Your Cart</h1>
+          <p>Your cart is empty!</p>
+          <Link onClick={() => setShowModal(false)}
+            to="/collections/womens"
+            className={`btn flex-col align-center`}>
+            Women
+          </Link>
+          <Link 
+            to="/collections/mens"
+            onClick={() => setShowModal(false)}
+            className={`btn flex-col align-center`}>
+            Men
+          </Link>
+        </div>
       </div>
     )
   }
@@ -49,11 +53,15 @@ const Cart = ({showModal, setShowModal}) => {
 
   return (
     <>
-      <div className={`cart flex-col align-center ${hideCart ? 'hide-modal' : ''}`}>
-        <h1>Your Cart</h1>
-        <ul className="flex-col">
-          {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
-        </ul>
+      <div className={`cart flex-col ${hideCart ? 'hide-modal' : ''}`}>
+          <i className="fa-solid fa-xmark"
+            onClick={() => setShowModal(false)}></i>
+        <div className="cart_content flex-col align-center">
+          <h1>Your Cart</h1>
+          <ul className="flex-col">
+            {cartItems.map((cartItem, idx) => <CartItem key={idx} cartItem={cartItem} />)}
+          </ul>
+        </div>
       </div>
 
       <div className="cart_total text-center">

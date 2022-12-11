@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.cart > .fa-xmark {
+  font-size: 1.5vw;
+}
+
 .cart_header {
   width: 100%;
   margin-bottom: 3%;
@@ -122,8 +126,8 @@ color: var(--grey-text);
   width: 20vw;
 }
 
-.empty_cart > * {
-  margin: 4vh 0;
+.empty_cart .fa-xmark {
+  
 }
 
 .empty_cart h1,
@@ -140,11 +144,20 @@ color: var(--grey-text);
   color: white;
 }
 
+.empty_cart .empty_cart_content > * {
+  margin: 4vh 0;
+}
+
 /* Checkout Modal */
 .checkout_modal {
   width: 40vw;
-  padding: 5vh 0;
   text-align: left !important;
+}
+
+.checkout_modal .fa-xmark {
+  font-size: 2vw;
+  text-align: right;
+  margin-bottom: 5vh;
 }
 
 .checkout_modal h1 {

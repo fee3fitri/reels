@@ -148,7 +148,7 @@
 
 /* Cart Modal */
 
-.cart_modal_login > * {
+.cart_modal_login_content > * {
   margin: 3vh;
   text-align: center;
 }

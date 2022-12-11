@@ -49,7 +49,7 @@ const ProductSize = ({setSize, size}) => {
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <SizeModal />
+          <SizeModal setShowModal={setShowModal} />
         </Modal>
       )}
     </>

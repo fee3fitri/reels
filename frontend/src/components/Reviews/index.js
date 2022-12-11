@@ -124,6 +124,8 @@ const Review = () => {
           <Modal onClose={() => setShowModal(false)}>
             {user ? <ReviewModal setShowModal={setShowModal} formType={formType} existingReview={existingReview} /> : (
               <div className="review_modal_login flex-col">
+                <i className="fa-solid fa-xmark"
+                  onClick={() => setShowModal(false)}></i>
                 <h1>Oops, you're not logged in</h1>
                 <p>Login to write a review</p>
                 <div className="review_login_button">

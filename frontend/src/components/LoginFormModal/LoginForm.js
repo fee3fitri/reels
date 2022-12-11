@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import "./LoginFormModal.css";
 
-const LoginForm = () => {
+const LoginForm = ({setShowModal}) => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,8 +38,10 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="account_form_modal">
-      <h1>Login</h1>
+    <div className="account_form_modal flex-col">
+      <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
+      <h1 className="text-center">Login</h1>
       <form 
         className="login_form flex-col"
         onSubmit={handleSubmit}>

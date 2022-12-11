@@ -53,7 +53,7 @@ const Pitch = () => {
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <VideoModal />
+          <VideoModal setShowModal={setShowModal} />
         </Modal>
       )}
     </>

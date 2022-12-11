@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "../LoginFormModal/LoginFormModal.css"
 
-const SignUpForm = () => {
+const SignUpForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState('');
@@ -43,8 +43,10 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="account_form_modal">
-      <h1>Sign Up</h1>
+    <div className="account_form_modal flex-col">
+      <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
+      <h1 className="text-center">Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}

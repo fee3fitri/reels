@@ -234,3 +234,7 @@
   width: 100%;
   border-radius: var(--border-radius);
 }
+
+.video_modal .fa-xmark {
+  margin-bottom: 5vh;
+}

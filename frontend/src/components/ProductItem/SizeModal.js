@@ -4,13 +4,15 @@ import { useParams } from 'react-router-dom';
 import { loadProduct } from '../../store/products';
 import './ProductItem.css';
 
-const SizeModal = () => {
+const SizeModal = ({ setShowModal }) => {
   const {productId} = useParams();
   const product = useSelector(loadProduct(productId));
   const [hideSize] = useState(false);
 
   return (
-    <div className={`size_modal ${hideSize ? 'hide-modal' : ''}`}>
+    <div className={`size_modal flex-col ${hideSize ? 'hide-modal' : ''}`}>
+      <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
       <h1>{product.name} Sizing</h1>
       <table>
         <tr>

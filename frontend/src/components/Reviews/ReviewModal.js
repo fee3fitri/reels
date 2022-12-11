@@ -89,7 +89,9 @@ const ReviewModal = ({setShowModal, formType, existingReview}) => {
   }
 
   return (
-    <div className={`review_modal ${hideReview ? 'hide-modal' : ''}`}>
+    <div className={`review_modal flex-col ${hideReview ? 'hide-modal' : ''}`}>
+      <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
       <form 
         onSubmit={handleSubmit}
         className="flex-col">

@@ -9,16 +9,14 @@ const LoginFormModal = () => {
     <>
       <button 
         className='account_button'
-        onClick={() => setShowModal(true)}
-      >
+        onClick={() => setShowModal(true)}>
         Login
       </button>
 
       {showModal && (
         <div className="video_modal_wrapper">
-          <Modal 
-            onClose={() => setShowModal(false)}>
-            <LoginForm />
+          <Modal onClose={() => setShowModal(false)}>
+            <LoginForm setShowModal={setShowModal} />
           </Modal>
         </div>
       )}

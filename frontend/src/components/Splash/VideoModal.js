@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Splash.css';
 
-const VideoModal = ({ onClose }) => {
+const VideoModal = ({ setShowModal }) => {
   const videoEl = useRef(null);
   const [hideVideo] = useState(false);
 
@@ -23,6 +23,8 @@ const VideoModal = ({ onClose }) => {
 
   return (
     <div className={`video_modal flex-col align-end ${hideVideo ? 'hide-modal' : ''}`}>
+      <i className="fa-solid fa-xmark"
+          onClick={() => setShowModal(false)}></i>
       <video
             muted 
             loop 
