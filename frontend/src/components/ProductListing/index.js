@@ -14,21 +14,21 @@ const ProductListing = ({product}) => {
 
   return (
     <div className="product_listing_wrapper">
+      <Swiper 
+        navigation={true} 
+        modules={[Navigation]}>
+        <SwiperSlide className="swiper_listing">
+          <picture>
+            <img src={image} alt={`${name}`} />
+          </picture>
+        </SwiperSlide>
+        <SwiperSlide>
+          <picture>
+            <img src={randImg} alt={`${name}`} />
+          </picture>
+        </SwiperSlide>
+      </Swiper>
       <Link to={`/products/${id}`}>
-        <Swiper 
-          navigation={true} 
-          modules={[Navigation]}>
-          <SwiperSlide className="swiper_listing">
-            <picture>
-              <img src={image} alt={`${name}`} />
-            </picture>
-          </SwiperSlide>
-          <SwiperSlide>
-            <picture>
-              <img src={randImg} alt={`${name}`} />
-            </picture>
-          </SwiperSlide>
-        </Swiper>
         <div className="product_listing_detail flex-row justify-between">
           <p>{name}</p>
           <p>{`$${price}`}</p>

@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="footer_author flex-col align-center">
           <p>Made with <i className="fa-solid fa-heart"></i> by Safitri Shelton</p>
           <div className="flex-row justify-center">
-            <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">
+            <Link to={{ pathname: "https://github.com/fee3fitri" }} target="_blank">
               <i className="fa-brands fa-github"></i>
             </Link>
             <Link to={{ pathname: "https://www.linkedin.com/in/safitri-shelton/" }} target="_blank">

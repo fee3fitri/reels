@@ -211,11 +211,15 @@
 .product_accordion .accordion_title {
   margin-bottom: 0;
   padding: 2vh 0;
-  font-size: 1.3vw;
+  font-size: 1.45vw;
 }
 
 .product_accordion .accordion_details {
   display: inline;
+}
+
+.product_accordion .accordion_details p {
+  font-weight: lighter;
 }
 
 .product_accordion .accordion_details > * {
