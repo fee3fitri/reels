@@ -8,6 +8,9 @@ import ReviewListing from "./ReviewListing";
 import LoginFormModal from "../LoginFormModal";
 import "./Review.css"
 
+
+// frontend/src/components/Reviews/index/js
+
 const Review = () => {
   const dispatch = useDispatch();
   const {productId} = useParams();
@@ -22,24 +25,7 @@ const Review = () => {
   }, [dispatch, productId]);
   
   const existingReview = reviews.find(review => review?.userId === user?.id);
-  
-  const reviewAvg = () => {
-    if (reviews) {
-      return (ratings.reduce((a, b) => a + b) / reviews?.length).toFixed(1);
-    } else {
-      return 0.0;
-    }
-  }
-  
-  const reviewStars = () => {
-    const roundedRating = Math.round(reviewAvg());
-    const stars = [];
-    for (let i = 0; i < roundedRating; i++) {
-      stars.push(<i className="fa-solid fa-star"></i>)
-    }
-    return stars;
-  }
-  
+
   const reviewButton = () => {
     if (existingReview) {
       return (
@@ -74,7 +60,24 @@ const Review = () => {
       </button>
     )
   }
-
+  
+  const reviewAvg = () => {
+    if (reviews) {
+      return (ratings.reduce((a, b) => a + b) / reviews?.length).toFixed(1);
+    } else {
+      return 0.0;
+    }
+  }
+  
+  const reviewStars = () => {
+    const roundedRating = Math.round(reviewAvg());
+    const stars = [];
+    for (let i = 0; i < roundedRating; i++) {
+      stars.push(<i className="fa-solid fa-star"></i>)
+    }
+    return stars;
+  }
+  
   const reviewIndex = () => {
     if (reviews?.length === 0) {
       return (

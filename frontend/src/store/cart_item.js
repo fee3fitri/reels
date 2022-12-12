@@ -41,10 +41,6 @@ export const fetchCartItems = (userId) => async dispatch => {
 export const createCartItem = cartData => async dispatch => {
   const res = await csrfFetch(`/api/cart_items`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
     body: JSON.stringify(cartData)
   });
 
@@ -59,10 +55,6 @@ export const updateCartItem = cartData => async dispatch => {
   const {id} = cartData;
   const res = await csrfFetch(`/api/cart_items/${id}`, {
     method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
     body: JSON.stringify({cartItem: cartData})
   });
 

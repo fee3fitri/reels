@@ -6,7 +6,7 @@ import { removeCartItem, updateCartItem } from "../../store/cart_item";
 const CartItem = ({cartItem}) => {
   const dispatch = useDispatch();
   let {quantity, productName, price} = cartItem;
-  let [count, setCount] = useState(quantity);
+  let [count, setCount] = useState(Number(quantity));
   const totalPricePerItem = (price * quantity).toFixed(2);
   const images = cartItem.imageUrl;
 
@@ -43,8 +43,8 @@ const CartItem = ({cartItem}) => {
                 className="cart_item_quantity"
                 type="text"
                 value={Number(quantity)}
-                onChange={e => setCount(e.target.value)}
-                onBlur={() => dispatch(updateCartItem({...cartItem, quantity: count}))}
+                onChange={e => setCount(Number(e.target.value))}
+                onBlur={() => dispatch(updateCartItem({...cartItem, quantity: Number(count)}))}
               />
               <button onClick={addQuantity}> + </button>
             </div>

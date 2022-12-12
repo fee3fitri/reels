@@ -49,10 +49,6 @@ export const fetchReview = reviewId => async dispatch => {
 export const createReview = currentReview => async dispatch => {
 const res = await csrfFetch(`/api/reviews`, {
   method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
   body: JSON.stringify({review: currentReview})
   });
 
@@ -65,10 +61,6 @@ const res = await csrfFetch(`/api/reviews`, {
 export const updateReview = review => async dispatch => {
   const res = await csrfFetch(`/api/reviews/${review.id}`, {
     method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
     body: JSON.stringify(review)
   });
 
