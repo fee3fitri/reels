@@ -5,6 +5,15 @@
 Reels is a full-stack, multi-page application clone of an award winning ecommerce site, called Rollies, where users can do online shopping and leave a review of products they bought. This project utilized Rails and postgreSQL for the backend, React/Redux and CSS3 for the frontend.
 Reels is heavily focused on front-end animation and UI/UX design to mimic the original site which won a Site of The Day awards by awwwards.com.  
 
+## Tech Stack
+<img align="left" alt="javascript" width="30px" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/javascript.svg">
+<img align="left" alt="html5" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png">
+<img align="left" alt="css3" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png">
+<img align="left" alt="react" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png">
+<img align="left" alt="node.js" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png">
+<img align="left" alt="ruby" width="30px" src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/ruby.svg">
+<img align="left" alt="postgresql" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png">
+
 ## Features
 ### User Authentication - Login/Signup
 Reels user auth features allow user create an account or login, either with their own account or as a demo user. A login modal will popup when they are attempting to purchase an item, check their cart, or create a review without logged in. This authentication modal gives an easy access to try the site features without the need to leave their current page.
