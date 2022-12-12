@@ -14,4 +14,4 @@ Reels user auth features allow user create an account or login, either with thei
 ### Product Pages
 Each product page shows product details where users can purchase the product. Users will be able to select the size options before they add item to the cart, update the item quantity of their cart, and delete item. 
 
-![image add to cart]([https://ibb.co/8xP1gqR](https://i.ibb.co/s1s89nD/product-atc.gif))
+![image add to cart]([https://ibb.co/8xP1gqR](https://i.ibb.co/s1s89nD/product-atc.gif)
