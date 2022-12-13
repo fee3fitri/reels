@@ -1,7 +1,7 @@
 .product_wrapper {
   grid-template-columns: 55vw 30vw;
   gap: 5vw;
-  margin: 30vh 0 10vh 0;
+  margin: 30vh 0;
   padding: 0 5vw;
   color: white;
 }
@@ -66,7 +66,7 @@
   width: 55vw;
   grid-template-columns: repeat(2, 1fr);
   gap: 2vw;
-  max-height: 1300px;
+  max-height: 1100px;
 }
 
 .product_img_gallery .image_wrapper img {
