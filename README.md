@@ -36,11 +36,11 @@ Each product page shows product details where users can purchase the product. Us
 ### Reviews
 Review section located underneath product details of Product Pages. It shows the average rating of the reviews and star ratings. If user is logged in, they can create, update, or delete their reviews. Each user is only allowed to leave one review per product. If the review exists, user will only be able to update or delete their review.
 
-!![gif review](https://i.ibb.co/NsxnTL5/reviews.gif)
+![gif review](https://i.ibb.co/NsxnTL5/reviews.gif)
 
 The code snippet below handles the logic whether the review is created or updated. If a user doesn't leave any review, a button of "Write Review" will appear and shows a "Create Review" modal. In the other hand, if a review exists, a button of "Update Review" and "Delete Review" will be shown. Whenever user clicks the Update Review, an "Update Review" modal will popup with prepopulated form.
 
-![image code snippet](https://user-images.githubusercontent.com/110148438/207154884-38649284-e263-4d50-9f24-b08cb88f4c29.png)
+https://github.com/fee3fitri/reels/blob/9f01c97d513ed97761b0926e34d243bc57233950/frontend/src/components/Reviews/index.js#L15-L62
 <br>
 <br>
 
