@@ -40,7 +40,48 @@ Review section located underneath product details of Product Pages. It shows the
 
 The code snippet below handles the logic whether the review is created or updated. If a user doesn't leave any review, a button of "Write Review" will appear and shows a "Create Review" modal. In the other hand, if a review exists, a button of "Update Review" and "Delete Review" will be shown. Whenever user clicks the Update Review, an "Update Review" modal will popup with prepopulated form.
 
-https://github.com/fee3fitri/reels/blob/9f01c97d513ed97761b0926e34d243bc57233950/frontend/src/components/Reviews/index.js#L15-L62
+```javascript
+const Review = () => {
+const dispatch = useDispatch();
+const {productId} = useParams();
+const user = useSelector(state => state.session.user);
+const reviews = useSelector(getReviews);
+const ratings = reviews.map(review => review.rating);
+const [showModal, setShowModal] = useState(false);
+const [formType, setFormType] = useState('Create Review');
+
+useEffect(() => {
+  dispatch(fetchReviews(productId));
+}, [dispatch, productId]);
+
+const existingReview = reviews.find(review => review?.userId === user?.id);
+
+const reviewButton = () => {
+  if (existingReview) {
+    return (
+      <div className="review_button_area flex-row">
+        <button 
+          className="review_button"
+          onClick={() => {
+            dispatch(fetchReview(existingReview.id));
+            setShowModal(true);
+            setFormType('Update Review');
+          }}>
+          Update Review
+        </button>
+        <button 
+          className="review_button"
+          onClick={() => {
+            if (window.confirm('Are you sure? Deleting a review is irreversible.')) {
+              dispatch(deleteReview(existingReview.id))
+            }}}
+            >
+          Delete Review
+        </button>
+      </div>
+    )
+}
+```
 <br>
 <br>
 
@@ -48,6 +89,46 @@ https://github.com/fee3fitri/reels/blob/9f01c97d513ed97761b0926e34d243bc57233950
 When the user add an item to the cart on product page, a shopping cart modal will appear to signify successful completion. The cart item quantity can be updated using the +/- button. Each cart item can also be deleted by clicking the remove button or reduce the quantity to 0. The price of each item and subtotal are dynamically updated according to each user's cart. Additionally, whenever the user click the checkout button, user's cart will be cleared, a Thank You modal will appear and redirect the user to the Home Page.
 
 ![gif add to cart](https://i.ibb.co/s1s89nD/product-atc.gif)
+
+The code snippet below handles the logic of adding item quantity to the shopping cart. When the "+" or "-" button is clicked, it will add or subtract quantity by 1 respectively. There is also the input field where users are able to update the quantity by typing inside this field. If product quantity is 0, it will be automatically remove from the cart.
+
+```javascript
+const dispatch = useDispatch();
+let {quantity, productName, price} = cartItem;
+let [count, setCount] = useState(Number(quantity));
+const totalPricePerItem = (price * quantity).toFixed(2);
+const images = cartItem.imageUrl;
+
+const addQuantity = () => {
+  dispatch(updateCartItem({...cartItem, quantity: quantity += 1}));
+}
+
+const subtractQuantity = () => {
+  cartItem.quantity === 1 ? 
+    dispatch(removeCartItem(cartItem.id)) : 
+    dispatch(updateCartItem({...cartItem, quantity: quantity -= 1}));
+}
+
+if (!cartItem) return null;
+
+return (
+  <div className="quantity_price flex-row justify-between">
+    <div className="quantity_button flex-row">
+      <button onClick={subtractQuantity}> - </button>
+      <input 
+        className="cart_item_quantity"
+        type="text"
+        value={Number(quantity)}
+        onChange={e => setCount(Number(e.target.value))}
+        onBlur={() => dispatch(updateCartItem({...cartItem, quantity: Number(count)}))}
+      />
+      <button onClick={addQuantity}> + </button>
+    </div>
+    <p className="cart_subprice">{`$${totalPricePerItem}`}</p>
+  </div>
+ </div>
+)
+  ```
 <br>
 <br>
 
@@ -55,3 +136,15 @@ When the user add an item to the cart on product page, a shopping cart modal wil
 User can perform a search product function through the search bar that is located on the navbar. If the search yield results, list of products with matching query will show up and user can click through each product to their corresponding pages.
 
 ![image search bar](https://i.ibb.co/gVbCbPT/search.png)
+
+Search product async function
+```javascript
+export const searchProducts = query => async dispatch => {
+const res = await csrfFetch(`/api/products/search/${query}`);
+
+if (res.ok) {
+  const products = await res.json();
+  dispatch(getProducts(products));
+}
+}
+```
