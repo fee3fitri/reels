@@ -143,8 +143,8 @@ export const searchProducts = query => async dispatch => {
 const res = await csrfFetch(`/api/products/search/${query}`);
 
 if (res.ok) {
-  const products = await res.json();
-  dispatch(getProducts(products));
-}
+    const products = await res.json();
+    dispatch(getProducts(products));
+  }
 }
 ```
